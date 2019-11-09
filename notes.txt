@@ -1,16 +1,14 @@
 to do:
 
+	- files on school comp are old - files in git repo are the newest,
+	  just need to add header macro changes made on friday to these
+	  files - look at files on school comp for these changes
+	- add size prefix section from notes.txt file on school comp to
+	  this notes file
 	- if precision is specified as 0, and the value to be converted is 0,
 	  the result is no characters output, as shown in this example:
 	  	- printf( "%.0d", 0 ); /* No characters output */
 	- check return values of functions and error handling
-	- check handling of multiple stars in process flag in flag_processing
-	- include rules for precision in all conversion functions
-	- need to check handling of spaces in different positions in specifier
-	- check handling of mixtures of * and nums:
-		- e.g "%.4*f" - finds the ., atois all digits after it (just 4),
-		  then just repeats, not finding another flag (* not in flag chars)
-		  and finishing
 
 precision:
 

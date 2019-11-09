@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:53:52 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/07 16:44:45 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/09 13:43:06 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ int		get_width(t_list *elem, const char *str, int i, char flag)
 
 	if (str[i + 1] == '*')
 	{
-		if (i + 2 == elem->end_pos || is_in(str[i + 2], FLAG_CHARS))
+		if (i + 2 == elem->end_pos || is_in(str[i + 2], FLAG_CHARS)
+				|| is_in(str[i + 2], SIZE_CHARS))
 		{
 			set_flag_value(elem, flag, -1);
 			i += 2;
@@ -93,6 +94,26 @@ int		get_width(t_list *elem, const char *str, int i, char flag)
 		set_flag_value(elem, flag, flag_atoi(str, width_start, i));
 	}
 	return (i);
+}
+
+int		get_size_prefix(t_list *elem, const char *str, int i)
+{
+	if (str[i] == str[i + 1])
+	{
+		if (str[i] == 'h')
+			elem->h = 2;
+		if (str[i] == 'l')
+			elem->l = 2;
+		return (i + 2);
+	}
+	else
+	{
+		if (str[i] == 'h')
+			elem->h = 1;
+		if (str[i] == 'l')
+			elem->l = 1;
+		return (i + 1);
+	}
 }
 
 void	set_format(const char *str, t_list *elem)
@@ -114,6 +135,8 @@ void	set_format(const char *str, t_list *elem)
 			else
 				flag = str[i];
 			i = get_width(elem, str, i, flag);
+			if (is_in(str[i], SIZE_CHARS))
+				i = get_size_prefix(elem, str, i);
 		}
 		else
 			i++;

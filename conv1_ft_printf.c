@@ -6,17 +6,16 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:47:51 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/07 16:39:22 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/09 12:58:17 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-char	*c_convert(va_list arg_list, int prec)
+char	*c_convert(va_list arg_list, t_list *list)
 {
 	char *var;
 
-	prec = 0;
 	var = (char*)malloc(2);
 	if (!var)
 		return (NULL);
@@ -25,34 +24,37 @@ char	*c_convert(va_list arg_list, int prec)
 	return (var);
 }
 
-char	*s_convert(va_list arg_list, int prec)
+char	*s_convert(va_list arg_list, t_list *list)
 {
+	int		prec_pos;
 	char	*var;
 
+	prec_pos = get_pos(list->flag_chars, '.');
 	var = va_arg(arg_list, char *);
 	if (!var)
 		var = "(null)";
-	else if (prec > -1)
-		var = str_precision(var, prec);
+	if (list->flag_found[prec_pos])
+		var = str_precision(var, list->flag_vals[prec_pos]);
 	return (var);
 }
 
-char	*p_convert(va_list arg_list, int prec)
+char	*p_convert(va_list arg_list, t_list *list)
 {
 	unsigned long	addr;
 	char			*var;
 
-	prec = 0;
 	addr = (unsigned long)va_arg(arg_list, void *);
 	var = add_prefix(hex_convert(addr, 87));
 	return (var);
 }
 
-char	*di_convert(va_list arg_list, int prec)
+char	*di_convert(va_list arg_list, t_list *list)
 {
 	int		i;
+	int		prec;
 	char	*var;
 
+	prec = list->flag_vals[get_pos(list->flag_chars, '.')];
 	var = ft_itoa(va_arg(arg_list, int));
 	i = 0;
 	while (var[i])
@@ -62,12 +64,46 @@ char	*di_convert(va_list arg_list, int prec)
 	return (var);
 }
 
-char	*u_convert(va_list arg_list, int prec)
+char	*u_convert(va_list arg_list, t_list *list)
 {
 	int		i;
+	int		prec;
 	char	*var;
 
+	prec = list->flag_vals[get_pos(list->flag_chars, '.')];
 	var = ft_u_itoa(va_arg(arg_list, unsigned int));
+	i = 0;
+	while (var[i])
+		i++;
+	if (prec > i)
+		var = num_precision(var, prec, i);
+	return (var);
+}
+
+char	*x_convert(va_list arg_list, t_list *list)
+{
+	int		i;
+	int		prec;
+	char	*var;
+
+	prec = list->flag_vals[get_pos(list->flag_chars, '.')];
+	var = hex_convert(va_arg(arg_list, unsigned int), 87);
+	i = 0;
+	while (var[i])
+		i++;
+	if (prec > i)
+		var = num_precision(var, prec, i);
+	return (var);
+}
+
+char	*xx_convert(va_list arg_list, t_list *list)
+{
+	int		i;
+	int		prec;
+	char	*var;
+
+	prec = list->flag_vals[get_pos(list->flag_chars, '.')];
+	var = hex_convert(va_arg(arg_list, unsigned int), 55);
 	i = 0;
 	while (var[i])
 		i++;

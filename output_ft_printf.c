@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:59:55 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/07 16:01:57 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/09 12:54:01 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,9 @@ void	write_padded(char *str, t_list *spec_list)
 }
 
 int		write_spec(va_list arg_list, t_list *spec_list,
-					char *(*f_ptr_arr[TYPE_NUM])(va_list, int))
+					char *(*f_ptr_arr[TYPE_NUM])(va_list, t_list *))
 {
 	int		type_index;
-	int		prec;
 	char	*var;
 
 	check_stars(arg_list, spec_list);
@@ -70,11 +69,7 @@ int		write_spec(va_list arg_list, t_list *spec_list,
 	else
 	{
 		type_index = get_pos(TYPE_SET, spec_list->type);
-		prec = get_pos(spec_list->flag_chars, '.');
-		if (spec_list->type == 's' && !(spec_list->flag_found[prec]))
-			var = f_ptr_arr[type_index](arg_list, -1);
-		else
-			var = f_ptr_arr[type_index](arg_list, spec_list->flag_vals[prec]);
+		var = f_ptr_arr[type_index](arg_list, spec_list);
 	}
 	write_padded(var, spec_list);
 	if (spec_list->type != 's')
@@ -86,7 +81,7 @@ int		write_output(const char *str, va_list arg_list, t_list *spec_list)
 {
 	int			i;
 	const char	*ch_ptr;
-	char		*(*f_ptr_arr[TYPE_NUM])(va_list, int);
+	char		*(*f_ptr_arr[TYPE_NUM])(va_list, t_list *);
 
 	init_f_ptr_arr(f_ptr_arr);
 	ch_ptr = str;

@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:56:11 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/07 16:43:02 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/09 13:41:37 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	init_elem(t_list *elem, int *spec_pos)
 	elem->next = NULL;
 	elem->start_pos = spec_pos[START];
 	elem->end_pos = spec_pos[END];
+	elem->h = 0;
+	elem->l = 0;
 	i = 0;
 	while (F_CHARS_ARR[i])
 	{

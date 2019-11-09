@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/07 16:51:34 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/09 13:46:17 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,12 @@
 # define CHAR 2
 # define TYPE_SET "cspdiuxX"
 # define TYPE_NUM 8
-# define SPEC_CHARS "-0.* 123456789"
+# define SPEC_CHARS "-0.* 123456789lh"
 # define FLAG_CHARS "%-."
 # define F_NUM 4
 # define F_CHARS_ARR "r0-."
+# define SIZE_CHARS "hl"
+
 
 typedef struct		s_struct
 {
@@ -36,16 +38,18 @@ typedef struct		s_struct
 	char			flag_chars[F_NUM];
 	int				flag_vals[F_NUM];
 	char			flag_found[F_NUM];
+	int				h;
+	int				l;
 	struct s_struct	*next;
 }					t_list;
 
-char				*c_convert(va_list arg_list, int prec);
-char				*s_convert(va_list arg_list, int prec);
-char				*p_convert(va_list arg_list, int prec);
-char				*di_convert(va_list arg_list, int prec);
-char				*u_convert(va_list arg_list, int prec);
-char				*x_convert(va_list arg_list, int prec);
-char				*xx_convert(va_list arg_list, int prec);
+char				*c_convert(va_list arg_list, t_list *list);
+char				*s_convert(va_list arg_list, t_list *list);
+char				*p_convert(va_list arg_list, t_list *list);
+char				*di_convert(va_list arg_list, t_list *list);
+char				*u_convert(va_list arg_list, t_list *list);
+char				*x_convert(va_list arg_list, t_list *list);
+char				*xx_convert(va_list arg_list, t_list *list);
 char				*num_precision(char *str, int prec, int len);
 char				*add_prefix(char *str);
 int					hex_get_mem_size(unsigned long n);
@@ -72,8 +76,8 @@ void				check_stars(va_list arg_list, t_list *list);
 void				pad(char *str, char ch, int width);
 void				write_padded(char *str, t_list *spec_list);
 int					write_spec(va_list arg_list, t_list *spec_list,
-								char *(*f_ptr_arr[TYPE_NUM])(va_list, int));
-void				init_f_ptr_arr(char *(*f_ptr_arr[TYPE_NUM])(va_list, int));
+								char *(*f_ptr_arr[TYPE_NUM])(va_list, t_list *));
+void				init_f_ptr_arr(char *(*f_ptr_arr[])(va_list, t_list *));
 int					write_output(const char *str, va_list arg_list,
 									t_list *spec_list);
 int					ft_printf(const char *str, ...);
