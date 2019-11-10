@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 17:13:50 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/09 13:51:40 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/10 16:34:49 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ int	main(int c, char **v)
 		printf("one arg please\n");
 		return (1);
 	}
-	ft_printf(v[1], 12345);
+	ft_printf(v[1], 'f');
 	return (0);
 }

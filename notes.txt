@@ -5,6 +5,8 @@ to do:
 	  files - look at files on school comp for these changes
 	- add size prefix section from notes.txt file on school comp to
 	  this notes file
+	- add long and long long versions of itoa and hex_convert functions,
+	  and add calls in conv1
 	- if precision is specified as 0, and the value to be converted is 0,
 	  the result is no characters output, as shown in this example:
 	  	- printf( "%.0d", 0 ); /* No characters output */
@@ -27,6 +29,15 @@ precision:
 						  with no specified width
 						- if no digits after decimal point in variable,
 						  prints default 6 zeros
+
+size prefixes:
+
+	- default size (for d, i o, u, x, X) - 4 bytes
+	- hh makes it into 1 byte (char) data type
+	- h - 2 bytes
+	- l - 8 bytes
+	- ll - 8 bytes
+
 
 files:
 
