@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/09 13:46:17 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/12 11:08:17 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@
 # define F_NUM 4
 # define F_CHARS_ARR "r0-."
 # define SIZE_CHARS "hl"
-
 
 typedef struct		s_struct
 {
@@ -52,12 +51,12 @@ char				*x_convert(va_list arg_list, t_list *list);
 char				*xx_convert(va_list arg_list, t_list *list);
 char				*num_precision(char *str, int prec, int len);
 char				*add_prefix(char *str);
-int					hex_get_mem_size(unsigned long n);
-char				*hex_convert(unsigned long n, int caps);
-int					get_mem_size(int nb);
-char				*ft_itoa(int n);
-int					u_get_mem_size(unsigned int nb);
-char				*ft_u_itoa(unsigned int n);
+int					hex_get_mem_size(unsigned long long n);
+char				*hex_convert(unsigned long long n, int caps);
+int					get_mem_size(long long nb);
+char				*ft_itoa(long long n);
+int					u_get_mem_size(long long unsigned nb);
+char				*ft_u_itoa(long long unsigned n);
 char				*str_precision(char *str, int prec);
 void				push_back(t_list **alst, t_list *new);
 int					is_in(char ch, const char *set);

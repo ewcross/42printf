@@ -6,13 +6,13 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:46:58 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/07 14:48:19 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/12 10:17:38 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int		get_mem_size(int nb)
+int		get_mem_size(long long nb)
 {
 	int mem_size;
 
@@ -29,11 +29,11 @@ int		get_mem_size(int nb)
 	return (mem_size);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(long long n)
 {
-	int		mem_size;
-	long	num;
-	char	*str;
+	int			mem_size;
+	long long	num;
+	char		*str;
 
 	num = n;
 	mem_size = get_mem_size(n);
@@ -55,7 +55,7 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-int		u_get_mem_size(unsigned int nb)
+int		u_get_mem_size(long long unsigned nb)
 {
 	int mem_size;
 
@@ -70,11 +70,11 @@ int		u_get_mem_size(unsigned int nb)
 	return (mem_size);
 }
 
-char	*ft_u_itoa(unsigned int n)
+char	*ft_u_itoa(long long unsigned n)
 {
-	int		mem_size;
-	long	num;
-	char	*str;
+	int			mem_size;
+	long long	num;
+	char		*str;
 
 	num = n;
 	mem_size = u_get_mem_size(n);

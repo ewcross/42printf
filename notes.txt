@@ -5,12 +5,23 @@ to do:
 	  files - look at files on school comp for these changes
 	- add size prefix section from notes.txt file on school comp to
 	  this notes file
-	- add long and long long versions of itoa and hex_convert functions,
-	  and add calls in conv1
+	- add escape char handling
+	- write free_function if needed
 	- if precision is specified as 0, and the value to be converted is 0,
 	  the result is no characters output, as shown in this example:
 	  	- printf( "%.0d", 0 ); /* No characters output */
 	- check return values of functions and error handling
+	
+notes:	  
+	- all diouxX conversions just take long long in va_arg(), or cast to
+	  long long when passing the variable to the converter
+	- if this works, can remove h and l variables from struct
+	- if this doesn't pass, might be because real printf will give wrapped
+	  values if long passed with %d for example - although it is impossible
+	  to compile with the flags in this way, so Moulinette might not be able
+	  to test that
+	- find out about max unsigned long long - throws compiler error, and gives
+	  strange output, but should work
 
 precision:
 
@@ -91,6 +102,7 @@ files:
 			- push_back
 
 	- utils3:
+			- free_list
 			- pad
 			- is_in
 			- get_pos
