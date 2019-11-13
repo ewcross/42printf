@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 17:13:50 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/12 11:08:37 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/12 16:34:43 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,10 @@ int		ft_printf(const char *str, ...)
 	return (0);
 }
 
-int	main(int c, char **v)
+int	main(void)
 {
-	if (c < 2)
-	{
-		printf("one arg please\n");
-		return (1);
-	}
-	ft_printf(v[1], 123456789);
+	/*ft_printf(v[1], i);*/
+	ft_printf("...%d...%%...", 5);
+	printf("...%d...%%...", 5);
 	return (0);
 }

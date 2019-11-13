@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:47:51 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/12 10:40:37 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/12 17:02:19 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,17 @@ char	*di_convert(va_list arg_list, t_list *list)
 {
 	int		i;
 	int		prec;
+	int		arg;
 	char	*var;
 
 	prec = list->flag_vals[get_pos(list->flag_chars, '.')];
-	var = ft_itoa(va_arg(arg_list, long long));
+	arg = va_arg(arg_list, int);
+	if (list->h == 2)
+		var = ft_itoa((long long)((char)arg));
+	else if (list->h == 1)
+		var = ft_itoa((long long)((short)arg));
+	else
+		var = ft_itoa((long long)(arg));
 	i = 0;
 	while (var[i])
 		i++;
@@ -70,42 +77,17 @@ char	*u_convert(va_list arg_list, t_list *list)
 {
 	int		i;
 	int		prec;
+	int		arg;
 	char	*var;
 
 	prec = list->flag_vals[get_pos(list->flag_chars, '.')];
-	var = ft_u_itoa(va_arg(arg_list, long long unsigned));
-	i = 0;
-	while (var[i])
-		i++;
-	if (prec > i)
-		var = num_precision(var, prec, i);
-	return (var);
-}
-
-char	*x_convert(va_list arg_list, t_list *list)
-{
-	int		i;
-	int		prec;
-	char	*var;
-
-	prec = list->flag_vals[get_pos(list->flag_chars, '.')];
-	var = hex_convert(va_arg(arg_list, long long unsigned), 87);
-	i = 0;
-	while (var[i])
-		i++;
-	if (prec > i)
-		var = num_precision(var, prec, i);
-	return (var);
-}
-
-char	*xx_convert(va_list arg_list, t_list *list)
-{
-	int		i;
-	int		prec;
-	char	*var;
-
-	prec = list->flag_vals[get_pos(list->flag_chars, '.')];
-	var = hex_convert(va_arg(arg_list, long long unsigned), 55);
+	arg = va_arg(arg_list, unsigned int);
+	if (list->h == 2)
+		var = ft_itoa((long long unsigned)((char unsigned)arg));
+	else if (list->h == 1)
+		var = ft_itoa((long long unsigned)((short unsigned)arg));
+	else
+		var = ft_u_itoa((long long unsigned)arg);
 	i = 0;
 	while (var[i])
 		i++;

@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:53:52 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/09 13:43:06 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/12 15:14:36 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int		get_width(t_list *elem, const char *str, int i, char flag)
 
 	if (str[i + 1] == '*')
 	{
-		if (i + 2 == elem->end_pos || is_in(str[i + 2], FLAG_CHARS)
+		if (i + 2 == elem->end_pos || is_in(str[i + 2], SPEC_DELIMS)
 				|| is_in(str[i + 2], SIZE_CHARS))
 		{
 			set_flag_value(elem, flag, -1);
@@ -128,7 +128,7 @@ void	set_format(const char *str, t_list *elem)
 		return ;
 	while (i < end)
 	{
-		if (is_in(str[i], FLAG_CHARS))
+		if (is_in(str[i], SPEC_DELIMS))
 		{
 			if (i == elem->start_pos && str[i + 1] == '0')
 				flag = str[++i];

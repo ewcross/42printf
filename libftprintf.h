@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/12 11:08:17 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/12 16:39:24 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@
 # define CHAR 2
 # define TYPE_SET "cspdiuxX"
 # define TYPE_NUM 8
-# define SPEC_CHARS "-0.* 123456789lh"
-# define FLAG_CHARS "%-."
+# define SPEC_CHARS "-0.*123456789lh"
+# define SPEC_DELIMS "%-."
 # define F_NUM 4
-# define F_CHARS_ARR "r0-."
+# define FLAG_CHARS_ARR "r0-."
 # define SIZE_CHARS "hl"
 
 typedef struct		s_struct
@@ -69,13 +69,14 @@ void				set_format(const char *str, t_list *elem);
 void				init_elem(t_list *elem, int *spec_pos);
 int					add_elem(const char *str, t_list **spec_list,
 								int *spec_pos);
-void				specifier_pos(const char *str, int *spec_pos);
+int					specifier_pos(const char *str, int *spec_pos);
 int					make_list(const char *str, t_list **spec_list);
 void				check_stars(va_list arg_list, t_list *list);
 void				pad(char *str, char ch, int width);
 void				write_padded(char *str, t_list *spec_list);
 int					write_spec(va_list arg_list, t_list *spec_list,
 								char *(*f_ptr_arr[TYPE_NUM])(va_list, t_list *));
+char				*write_plaintext(const char *ch_ptr);
 void				init_f_ptr_arr(char *(*f_ptr_arr[])(va_list, t_list *));
 int					write_output(const char *str, va_list arg_list,
 									t_list *spec_list);

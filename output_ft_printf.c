@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:59:55 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/12 11:09:08 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/12 17:05:35 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,19 +77,41 @@ int		write_spec(va_list arg_list, t_list *spec_list,
 	return (0);
 }
 
+char	*write_plaintext(const char *ch_ptr)
+{
+	char special[2];
+	char *chars = "\nrtvabfe0?";
+
+	if (*ch_ptr == '/')
+	{
+		if (is_in(chars, *(ch_ptr + 1)))
+		{
+			special[0] = '\';
+			special[1] = *(ch_ptr + 1);
+			write(1, special, 2);
+			ch_ptr += 2;
+		}
+		else
+			write(1, ch_ptr++, 1);
+		return (ch_ptr);
+	}
+	if (*ch_ptr == '%')
+		ch_ptr++;
+	write(1, ch_ptr++, 1);
+	return (ch_ptr);
+}
+
 int		write_output(const char *str, va_list arg_list, t_list *spec_list)
 {
-	int			i;
 	const char	*ch_ptr;
 	char		*(*f_ptr_arr[TYPE_NUM])(va_list, t_list *);
 
 	init_f_ptr_arr(f_ptr_arr);
 	ch_ptr = str;
-	i = 0;
 	while (spec_list)
 	{
 		while (ch_ptr < str + spec_list->start_pos)
-			write(1, ch_ptr++, 1);
+			ch_ptr = write_plaintext(ch_ptr);
 		if (spec_list->type == 0)
 			return (1);
 		write_spec(arg_list, spec_list, f_ptr_arr);
@@ -98,6 +120,6 @@ int		write_output(const char *str, va_list arg_list, t_list *spec_list)
 		spec_list = spec_list->next;
 	}
 	while (*ch_ptr)
-		write(1, ch_ptr++, 1);
+		ch_ptr = write_plaintext(ch_ptr);
 	return (0);
 }

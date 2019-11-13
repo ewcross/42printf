@@ -1,12 +1,6 @@
 to do:
 
-	- files on school comp are old - files in git repo are the newest,
-	  just need to add header macro changes made on friday to these
-	  files - look at files on school comp for these changes
-	- add size prefix section from notes.txt file on school comp to
-	  this notes file
 	- add escape char handling
-	- write free_function if needed
 	- if precision is specified as 0, and the value to be converted is 0,
 	  the result is no characters output, as shown in this example:
 	  	- printf( "%.0d", 0 ); /* No characters output */
@@ -22,6 +16,28 @@ notes:
 	  to test that
 	- find out about max unsigned long long - throws compiler error, and gives
 	  strange output, but should work
+
+escape chars:
+
+	- if '\' is found, need to do something
+	- if certain chars are found, need to print something special
+	  and then point to char after them
+	- otherwise just point to next
+	- chars are:
+					- \ print '\'
+					- n print 10
+					- r print 13
+					- t print 9
+					- v print 11
+					- a print 7
+					- b print 8
+					- f print 12
+					- e print 27
+					- 0 print 0
+					- ' print '''
+					- " print '"'
+					- ? printf '?'
+
 
 precision:
 
@@ -49,6 +65,8 @@ size prefixes:
 	- l - 8 bytes
 	- ll - 8 bytes
 
+	- if size is smaller than int - cast down and then cast back to long long
+	- if size is bigger than int - can just get bigger size
 
 files:
 

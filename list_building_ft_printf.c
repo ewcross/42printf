@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:56:11 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/09 13:41:37 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/12 16:35:12 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	init_elem(t_list *elem, int *spec_pos)
 	elem->h = 0;
 	elem->l = 0;
 	i = 0;
-	while (F_CHARS_ARR[i])
+	while (FLAG_CHARS_ARR[i])
 	{
-		elem->flag_chars[i] = F_CHARS_ARR[i];
+		elem->flag_chars[i] = FLAG_CHARS_ARR[i];
 		elem->flag_vals[i] = 0;
 		elem->flag_found[i] = 0;
 		i++;
@@ -44,7 +44,7 @@ int		add_elem(const char *str, t_list **spec_list, int *spec_pos)
 	return (1);
 }
 
-void	specifier_pos(const char *str, int *spec_pos)
+int		specifier_pos(const char *str, int *spec_pos)
 {
 	int i;
 
@@ -57,6 +57,7 @@ void	specifier_pos(const char *str, int *spec_pos)
 	}
 	spec_pos[END] = i;
 	spec_pos[CHAR] = str[i];
+	return (i);
 }
 
 int		make_list(const char *str, t_list **spec_list)
@@ -70,16 +71,17 @@ int		make_list(const char *str, t_list **spec_list)
 		if (str[i] == '%')
 		{
 			if (str[i + 1] == '%')
-				i++;
+				i += 2;
 			else
 			{
 				spec_pos[START] = i;
-				specifier_pos(str, spec_pos);
+				i = specifier_pos(str, spec_pos);
 				add_elem(str, spec_list, spec_pos);
 				/*return value of 0 means failed malloc*/
 			}
 		}
-		i++;
+		else
+			i++;
 	}
 	return (0);
 }
