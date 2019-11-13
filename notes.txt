@@ -1,19 +1,6 @@
 to do:
 
-	- add escape char handling
-	- if precision is specified as 0, and the value to be converted is 0,
-	  the result is no characters output, as shown in this example:
-	  	- printf( "%.0d", 0 ); /* No characters output */
-	- check return values of functions and error handling
-	
-notes:	  
-	- all diouxX conversions just take long long in va_arg(), or cast to
-	  long long when passing the variable to the converter
-	- if this works, can remove h and l variables from struct
-	- if this doesn't pass, might be because real printf will give wrapped
-	  values if long passed with %d for example - although it is impossible
-	  to compile with the flags in this way, so Moulinette might not be able
-	  to test that
+	- check freeing of var with %s
 	- find out about max unsigned long long - throws compiler error, and gives
 	  strange output, but should work
 
@@ -86,11 +73,13 @@ files:
 
 	- flag_processing:
 			- set_flag_value
-			- flag_atoi
 			- manage_flags
+			- get_width
+			- get_size_prefix
 			- set_format
 
 	- list_building:
+			- flag_atoi
 			- init_elem
 			- add_elem
 			- specifier_pos

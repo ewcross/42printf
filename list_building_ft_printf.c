@@ -6,11 +6,24 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:56:11 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/12 16:35:12 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/13 11:50:13 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+
+int		flag_atoi(const char *str, int start, int end)
+{
+	int output;
+
+	output = 0;
+	while (start < end)
+	{
+		output = (output * 10) + (str[start] - 48);
+		start++;
+	}
+	return (output);
+}
 
 void	init_elem(t_list *elem, int *spec_pos)
 {
@@ -76,12 +89,12 @@ int		make_list(const char *str, t_list **spec_list)
 			{
 				spec_pos[START] = i;
 				i = specifier_pos(str, spec_pos);
-				add_elem(str, spec_list, spec_pos);
-				/*return value of 0 means failed malloc*/
+				if (!add_elem(str, spec_list, spec_pos))
+					return (0);
 			}
 		}
 		else
 			i++;
 	}
-	return (0);
+	return (1);
 }

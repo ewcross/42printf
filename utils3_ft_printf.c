@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:51:38 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/07 16:57:22 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/13 12:42:53 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,17 @@ void	free_list(t_list **list)
 	}
 }
 
+char	*malloc_empty_string(void)
+{
+	char *str;
+
+	str = (char*)malloc(1);
+	if (!str)
+		return (NULL);
+	str[0] = 0;
+	return (str);
+}
+
 void	pad(char *str, char ch, int width)
 {
 	int i;
@@ -36,6 +47,7 @@ void	pad(char *str, char ch, int width)
 	while (i < width)
 	{
 		write(1, &ch, 1);
+		g_char_count++;
 		i++;
 	}
 }

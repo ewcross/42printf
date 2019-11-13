@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:53:52 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/12 15:14:36 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/13 11:52:41 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,6 @@ void	set_flag_value(t_list *elem, char flag, int value)
 	}
 	elem->flag_vals[i] = value;
 	elem->flag_found[i] = 1;
-}
-
-int		flag_atoi(const char *str, int start, int end)
-{
-	int output;
-
-	output = 0;
-	while (start < end)
-	{
-		output = (output * 10) + (str[start] - 48);
-		start++;
-	}
-	return (output);
 }
 
 void	manage_flags(t_list *elem)
@@ -80,10 +67,6 @@ int		get_width(t_list *elem, const char *str, int i, char flag)
 		{
 			set_flag_value(elem, flag, -1);
 			i += 2;
-		}
-		else
-		{
-			/*error and exit*/
 		}
 	}
 	else
