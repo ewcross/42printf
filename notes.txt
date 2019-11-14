@@ -31,7 +31,6 @@ escape chars:
 
 
 precision:
-
 	- d, i, o, u, x, X:
 						- prec gives minimum number of printed digits
 						- no truncation if prec < digits
@@ -93,9 +92,10 @@ files:
 			- check_stars
 			- write_padded
 			- write_spec
+			- write_plaintext
 			- write_output
 
-	- func_arr:
+	- utils4:
 			- init_f_ptr_arr
 
 	- utils1:
@@ -114,6 +114,7 @@ files:
 
 	- utils3:
 			- free_list
+			- malloc_empty_string
 			- pad
 			- is_in
 			- get_pos

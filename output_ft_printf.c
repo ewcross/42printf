@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:59:55 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/14 12:43:53 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/14 14:50:58 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,24 @@
 
 void		check_stars(va_list arg_list, t_list *list)
 {
-	if (list->flag_vals[get_pos(list->flag_chars, 'r')] == -1)
-		list->flag_vals[get_pos(list->flag_chars, 'r')] = va_arg(arg_list, int);
-	else if (list->flag_vals[get_pos(list->flag_chars, '0')] == -1)
-		list->flag_vals[get_pos(list->flag_chars, '0')] = va_arg(arg_list, int);
-	else if (list->flag_vals[get_pos(list->flag_chars, '-')] == -1)
-		list->flag_vals[get_pos(list->flag_chars, '-')] = va_arg(arg_list, int);
-	if (list->flag_vals[get_pos(list->flag_chars, '.')] == -1)
-		list->flag_vals[get_pos(list->flag_chars, '.')] = va_arg(arg_list, int);
+	int r_pos;
+	int zero_pos;
+	int dash_pos;
+	int dot_pos;
+
+	r_pos = get_pos(list->flag_chars, 'r');
+	zero_pos = get_pos(list->flag_chars, '0');
+	dash_pos = get_pos(list->flag_chars, '-');
+	dot_pos = get_pos(list->flag_chars, '.');
+	if (list->flag_vals[r_pos] == -1)
+		list->flag_vals[r_pos] = va_arg(arg_list, int);
+	else if (list->flag_vals[zero_pos] == -1)
+		list->flag_vals[zero_pos] = va_arg(arg_list, int);
+	else if (list->flag_vals[dash_pos] == -1)
+		list->flag_vals[dash_pos] = va_arg(arg_list, int);
+	negs(r_pos, zero_pos, dash_pos, list);
+	if (list->flag_vals[dot_pos] == -1)
+		list->flag_vals[dot_pos] = va_arg(arg_list, int);
 }
 
 void		write_padded(char *str, t_list *spec_list)
