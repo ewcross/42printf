@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 17:13:50 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/14 12:57:07 by ecross           ###   ########.fr       */
+/*   Created: 2019/11/14 12:54:47 by ecross            #+#    #+#             */
+/*   Updated: 2019/11/14 13:07:06 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+#include <stdlib.h>
 
-int		ft_printf(const char *str, ...)
+int main(int c, char **v)
 {
-	t_list		*spec_list;
-	va_list		arg_list;
+	(void)c;
+	int a = atoi(v[1]);
+	int i = 0;
 
-	g_char_count = 0;
-	spec_list = NULL;
-	va_start(arg_list, str);
-	if (make_list(str, &spec_list))
-		if (!write_output(str, arg_list, spec_list))
-			g_char_count = -1;
-	free_list(&spec_list);
-	va_end(arg_list);
-	return (g_char_count);
+	ft_printf("-->%d\n", ft_printf("...%.*i...", a, i));
+	printf("-->%d\n", printf("...%.*i...", a, i));
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/13 12:45:32 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/14 12:38:45 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ char				*malloc_empty_string(void);
 void				pad(char *str, char ch, int width);
 void				write_padded(char *str, t_list *spec_list);
 int					write_spec(va_list arg_list, t_list *spec_list,
-								char *(*f_ptr_arr[TYPE_NUM])(va_list, t_list *));
+							char *(*f_ptr_arr[TYPE_NUM])(va_list, t_list *));
 const char			*write_plaintext(const char *ch_ptr);
 void				init_f_ptr_arr(char *(*f_ptr_arr[])(va_list, t_list *));
 int					write_output(const char *str, va_list arg_list,
