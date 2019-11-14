@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:46:58 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/12 10:17:38 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/14 16:54:07 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,14 +70,12 @@ int		u_get_mem_size(long long unsigned nb)
 	return (mem_size);
 }
 
-char	*ft_u_itoa(long long unsigned n)
+char	*ft_u_itoa(long long unsigned num)
 {
-	int			mem_size;
-	long long	num;
-	char		*str;
+	int		mem_size;
+	char	*str;
 
-	num = n;
-	mem_size = u_get_mem_size(n);
+	mem_size = u_get_mem_size(num);
 	str = (char*)malloc(sizeof(char) * (mem_size + 1));
 	if (str == NULL)
 		return (NULL);

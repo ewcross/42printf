@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/14 14:13:23 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/14 15:43:30 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char				*hex_convert(unsigned long long n, int caps);
 int					get_mem_size(long long nb);
 char				*ft_itoa(long long n);
 int					u_get_mem_size(long long unsigned nb);
-char				*ft_u_itoa(long long unsigned n);
+char				*ft_u_itoa(long long unsigned num);
 char				*str_precision(char *str, int prec);
 void				push_back(t_list **alst, t_list *new);
 int					is_in(char ch, const char *set);

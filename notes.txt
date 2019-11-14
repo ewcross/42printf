@@ -1,9 +1,5 @@
 to do:
 
-	- if negative value supplied with *, the - should be intetpreted as
-	  the - flag, and the positive value assigned to this flag
-	- this is not true for precision, if negative passed via * here, it
-	  is interpreted as zero - mine works in this case
 	- check freeing of var with %s
 	- find out about max unsigned long long - throws compiler error, and gives
 	  strange output, but should work
