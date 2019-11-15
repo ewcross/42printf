@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:47:51 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/14 16:53:26 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/15 09:16:09 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ char	*di_convert(va_list arg_list, t_list *list)
 	else if (list->h == 1)
 		var = ft_itoa((long long)((short)arg));
 	else
-		var = ft_itoa((long long)(arg));
+		var = ft_itoa((long long)arg);
 	i = 0;
 	while (var[i])
 		i++;
@@ -78,13 +78,13 @@ char	*di_convert(va_list arg_list, t_list *list)
 
 char	*u_convert(va_list arg_list, t_list *list)
 {
-	int		i;
-	int		prec;
-	int		arg;
-	char	*var;
+	int				i;
+	int				prec;
+	unsigned int	arg;
+	char			*var;
 
 	prec = list->flag_vals[get_pos(list->flag_chars, '.')];
-	arg = va_arg(arg_list, int);
+	arg = va_arg(arg_list, unsigned int);
 	if (arg == 0 && prec == 0
 			&& list->flag_found[get_pos(list->flag_chars, '.')] == 1)
 		return (malloc_empty_string());
@@ -93,7 +93,7 @@ char	*u_convert(va_list arg_list, t_list *list)
 	else if (list->h == 1)
 		var = ft_itoa((long long unsigned)((short unsigned)arg));
 	else
-		var = ft_u_itoa((long long unsigned)(unsigned int)arg);
+		var = ft_u_itoa((long long unsigned)arg);
 	i = 0;
 	while (var[i])
 		i++;

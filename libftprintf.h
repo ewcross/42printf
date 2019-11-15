@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/14 15:43:30 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/15 09:39:38 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int					make_list(const char *str, t_list **spec_list);
 void				negs(int r_pos, int zero_pos, int dash_pos, t_list *list);
 void				check_stars(va_list arg_list, t_list *list);
 char				*malloc_empty_string(void);
-void				pad(char *str, char ch, int width);
+char				*pad(char *str, char ch, int width);
 void				write_padded(char *str, t_list *spec_list);
 int					write_spec(va_list arg_list, t_list *spec_list,
 							char *(*f_ptr_arr[TYPE_NUM])(va_list, t_list *));

@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:59:55 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/14 14:50:58 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/15 09:47:34 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void		write_padded(char *str, t_list *spec_list)
 	if (r)
 		pad(str, ' ', r);
 	else if (zero)
-		pad(str, '0', zero);
+		str = pad(str, '0', zero);
 	i = 0;
 	while (str[i])
 	{

@@ -92,6 +92,7 @@ files:
 			- write_output
 
 	- utils4:
+			- negs
 			- init_f_ptr_arr
 
 	- utils1:
