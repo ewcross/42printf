@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:59:55 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/15 11:29:38 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/15 18:43:57 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,20 +46,27 @@ void		write_padded(char *str, t_list *spec_list)
 	if (!str)
 		return ;
 	if (r)
-		pad(str, ' ', r);
+		pad(str, ' ', r, spec_list->type);
 	else if (zero)
-		str = pad(str, '0', zero);
+		str = pad(str, '0', zero, spec_list->type);
 	i = 0;
-	while (str[i])
+	/*if type is c and str is 2 null bytes, need to write one*/
+	if (spec_list->type == 'c' && str[0] == 0)
 	{
-		write(1, str + i, 1);
+		write(1, "\0", 1);
 		g_char_count++;
-		i++;
 	}
+	else
+		while (str[i])
+		{
+			write(1, str + i, 1);
+			g_char_count++;
+			i++;
+		}
 	if (!r && !zero)
 	{
 		l = spec_list->flag_vals[get_pos(spec_list->flag_chars, '-')];
-		pad(str, ' ', l);
+		pad(str, ' ', l, spec_list->type);
 	}
 }
 

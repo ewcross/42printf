@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 12:36:34 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/15 11:44:02 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/15 18:12:45 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	negs(int r_pos, int zero_pos, int dash_pos, t_list *list)
 	}
 	else if (list->flag_vals[dash_pos] < 0)
 		list->flag_vals[dash_pos] *= -1;
-	if (list->flag_vals[get_pos(list->flag_chars, '.')] < 0)
+	if (list->flag_vals[get_pos(list->flag_chars, '.')] < 0
+			&& !list->flag_found[r_pos] && list->type != 'c')
 	{
 		list->flag_vals[zero_pos] = list->flag_vals[r_pos];
 		list->flag_vals[r_pos] = 0;

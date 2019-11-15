@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:53:52 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/15 11:27:37 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/15 18:17:15 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,7 @@ void	manage_flags(t_list *elem)
 		elem->flag_vals[r] = 0;
 		elem->flag_vals[zero] = 0;
 	}
-	if (elem->type == 'd' || elem->type == 'i' || elem->type == 'u'
-			|| elem->type == 'x' || elem->type == 'X')
+	if (is_in(elem->type, "diuxX"))
 	{
 		if (elem->flag_found[dot] && elem->flag_vals[zero])
 		{

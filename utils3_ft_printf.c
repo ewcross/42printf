@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:51:38 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/15 11:11:12 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/15 18:41:26 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*malloc_empty_string(void)
 	return (str);
 }
 
-char	*pad(char *str, char ch, int width)
+char	*pad(char *str, char ch, int width, char type)
 {
 	int		i;
 	char	*point;
@@ -44,6 +44,8 @@ char	*pad(char *str, char ch, int width)
 	i = 0;
 	while (str[i])
 		i++;
+	if (type == 'c' && str[0] == 0)
+		i = 1;
 	width -= i;
 	i = 0;
 	if (str[i] == '-' && ch == '0')

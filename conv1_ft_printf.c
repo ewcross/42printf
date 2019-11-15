@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:47:51 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/15 11:02:05 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/15 18:29:52 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,22 @@ char	*c_convert(va_list arg_list, t_list *list)
 char	*s_convert(va_list arg_list, t_list *list)
 {
 	int		prec_pos;
+	int		i;
 	char	*var;
+	char	*null;
 
+	i = -1;
+	null = "(null)";
 	prec_pos = get_pos(list->flag_chars, '.');
 	var = va_arg(arg_list, char *);
 	if (!var)
-		var = "(null)";
+	{
+		if (!(var = (char*)malloc(7)))
+			return (NULL);
+		while (null[i++])
+			var[i] = null[i];
+		var[i] = null[i];
+	}
 	if (list->flag_found[prec_pos])
 		var = str_precision(var, list->flag_vals[prec_pos]);
 	return (var);
@@ -98,6 +108,6 @@ char	*u_convert(va_list arg_list, t_list *list)
 	while (var[i])
 		i++;
 	if (prec > i)
-		var = num_precision(var, prec, i);
+		var = num_precision(var, prec, i - 1);
 	return (var);
 }

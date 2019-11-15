@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:44:32 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/15 11:12:09 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/15 15:44:18 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*str_precision(char *str, int prec)
 	i = 0;
 	while (str[i])
 		i++;
-	if (prec < i)
+	if (prec > -1 && prec < i)
 	{
 		if (!(new = (char*)malloc(prec + 1)))
 			return (NULL);
