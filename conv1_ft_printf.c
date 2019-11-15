@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:47:51 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/15 10:27:10 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/15 11:02:05 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char	*di_convert(va_list arg_list, t_list *list)
 	i = 0;
 	while (var[i])
 		i++;
-	if (prec > i)
+	if (prec > i - 1)
 		var = num_precision(var, prec, i - 1);
 	return (var);
 }

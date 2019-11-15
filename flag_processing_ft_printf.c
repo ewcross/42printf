@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:53:52 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/14 13:48:04 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/15 11:27:37 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,26 +32,26 @@ void	set_flag_value(t_list *elem, char flag, int value)
 void	manage_flags(t_list *elem)
 {
 	int r;
-	int z;
+	int zero;
 	int dash;
 	int dot;
 
 	r = get_pos(elem->flag_chars, 'r');
-	z = get_pos(elem->flag_chars, '0');
+	zero = get_pos(elem->flag_chars, '0');
 	dash = get_pos(elem->flag_chars, '-');
 	dot = get_pos(elem->flag_chars, '.');
 	if (elem->flag_vals[dash])
 	{
 		elem->flag_vals[r] = 0;
-		elem->flag_vals[z] = 0;
+		elem->flag_vals[zero] = 0;
 	}
 	if (elem->type == 'd' || elem->type == 'i' || elem->type == 'u'
 			|| elem->type == 'x' || elem->type == 'X')
 	{
-		if (elem->flag_found[dot] && elem->flag_vals[z])
+		if (elem->flag_found[dot] && elem->flag_vals[zero])
 		{
-			elem->flag_vals[r] = elem->flag_vals[z];
-			elem->flag_vals[z] = 0;
+			elem->flag_vals[r] = elem->flag_vals[zero];
+			elem->flag_vals[zero] = 0;
 		}
 	}
 }

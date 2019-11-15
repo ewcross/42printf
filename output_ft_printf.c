@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:59:55 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/15 09:55:41 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/15 11:29:38 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ void		check_stars(va_list arg_list, t_list *list)
 		list->flag_vals[zero_pos] = va_arg(arg_list, int);
 	else if (list->flag_vals[dash_pos] == -1)
 		list->flag_vals[dash_pos] = va_arg(arg_list, int);
-	negs(r_pos, zero_pos, dash_pos, list);
 	if (list->flag_vals[dot_pos] == -1)
 		list->flag_vals[dot_pos] = va_arg(arg_list, int);
+	negs(r_pos, zero_pos, dash_pos, list);
 }
 
 void		write_padded(char *str, t_list *spec_list)

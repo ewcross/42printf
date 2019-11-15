@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 12:54:47 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/15 10:54:30 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/15 11:33:32 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(int c, char **v)
 {
 	(void)c;
 
-	ft_printf("-->%d\n", ft_printf("...%012.*d...", atoi(v[1]), -14));
-	printf("-->%d\n", printf("...%012.*d...", atoi(v[1]), -14));
+	ft_printf("-->%d\n", ft_printf("...%*.*i...", atoi(v[1]), atoi(v[2]), 8));
+	printf("-->%d\n", printf("...%*.*i...", atoi(v[1]), atoi(v[2]), 8));
 	return (0);
 }
