@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:44:32 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/14 17:02:52 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/15 10:55:03 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,24 +37,26 @@ char	*str_precision(char *str, int prec)
 		return (str);
 }
 
-char	*num_precision(char *str, int prec, int len)
+char	*num_precision(char *str, int prec, int str_pos)
 {
-	int		i;
+	int		str_begin;
 	char	*new;
 
-	if (!(new = (char*)malloc(prec + 1)))
+	if (str[0] == '-')
+		str_begin = 1;
+	else
+		str_begin = 0;
+	if (!(new = (char*)malloc(prec + 1 + str_begin)))
 		return (NULL);
-	new[prec] = 0;
-	i = 0;
-	while (i < prec - len)
+	new[str_begin + prec--] = 0;
+	while (str_pos > str_begin - 1)
+		new[str_begin + prec--] = str[str_pos--];
+	while (prec > str_begin - 1)
+		new[str_begin + prec--] = 48;
+	if (str_begin)
 	{
-		new[i] = 48;
-		i++;
-	}
-	while (str[i - (prec - len)])
-	{
-		new[i] = str[i - (prec - len)];
-		i++;
+		new[str_begin + prec] = 48;
+		new[prec] = '-';
 	}
 	free(str);
 	return (new);
