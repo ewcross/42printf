@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:47:51 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/15 18:29:52 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/16 12:06:11 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*s_convert(va_list arg_list, t_list *list)
 	{
 		if (!(var = (char*)malloc(7)))
 			return (NULL);
-		while (null[i++])
+		while (null[++i])
 			var[i] = null[i];
 		var[i] = null[i];
 	}

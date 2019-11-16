@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/15 18:39:52 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/16 11:58:33 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # define START 0
 # define END 1
 # define CHAR 2
-# define TYPE_SET "cspdiuxX"
-# define TYPE_NUM 8
+# define TYPE_SET "cspdiuxXf"
+# define TYPE_NUM 9
 # define SPEC_CHARS "-0.*123456789lh"
 # define SPEC_DELIMS "%-."
 # define F_NUM 4
@@ -51,6 +51,7 @@ char				*di_convert(va_list arg_list, t_list *list);
 char				*u_convert(va_list arg_list, t_list *list);
 char				*x_convert(va_list arg_list, t_list *list);
 char				*xx_convert(va_list arg_list, t_list *list);
+char				*f_convert(va_list arg_list, t_list *list);
 char				*num_precision(char *str, int prec, int len);
 char				*add_prefix(char *str);
 int					hex_get_mem_size(unsigned long long n);

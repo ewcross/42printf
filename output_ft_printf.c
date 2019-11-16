@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:59:55 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/15 18:43:57 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/16 11:54:09 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void		write_padded(char *str, t_list *spec_list)
 	else if (zero)
 		str = pad(str, '0', zero, spec_list->type);
 	i = 0;
-	/*if type is c and str is 2 null bytes, need to write one*/
 	if (spec_list->type == 'c' && str[0] == 0)
 	{
 		write(1, "\0", 1);
