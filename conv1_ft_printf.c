@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:47:51 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/18 10:17:34 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/18 16:21:43 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,13 +62,13 @@ char	*p_convert(va_list arg_list, t_list *list)
 
 char	*di_convert(va_list arg_list, t_list *list)
 {
-	int		i;
-	int		prec;
-	int		arg;
-	char	*var;
+	int			i;
+	int			prec;
+	long long	arg;
+	char		*var;
 
 	prec = list->flag_vals[get_pos(list->flag_chars, '.')];
-	arg = va_arg(arg_list, int);
+	arg = va_arg(arg_list, long long);
 	if (arg == 0 && prec == 0
 			&& list->flag_found[get_pos(list->flag_chars, '.')] == 1)
 		return (malloc_empty_string());
@@ -76,8 +76,12 @@ char	*di_convert(va_list arg_list, t_list *list)
 		var = ft_itoa((long long)((char)arg));
 	else if (list->h == 1)
 		var = ft_itoa((long long)((short)arg));
+	else if (list->l == 1)
+		var = ft_itoa((long long)((long)arg));
+	else if (list->l == 2)
+		var = ft_itoa(arg);
 	else
-		var = ft_itoa((long long)arg);
+		var = ft_itoa((long long)(int)arg);
 	i = 0;
 	while (var[i])
 		i++;
