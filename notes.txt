@@ -1,6 +1,5 @@
 to do:
 
-	- deal with negative precisions with floats
 	- test %n with h and l
 	- deal with freeing of strings
 	- find out about max unsigned long long - throws compiler error, and gives

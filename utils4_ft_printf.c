@@ -6,11 +6,33 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 12:36:34 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/18 19:03:18 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/18 19:13:00 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+
+char	*copy(char *str)
+{
+	int		i;
+	char	*new;
+
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (str[i])
+		i++;
+	if (!(new = (char*)malloc(i + 1)))
+		return (NULL);
+	new[i] = 0;
+	i = 0;
+	while (str[i])
+	{
+		new[i] = str[i];
+		i++;
+	}
+	return (new);
+}
 
 void	negs(int r_pos, int zero_pos, int dash_pos, t_list *list)
 {

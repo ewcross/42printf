@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:47:51 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/18 18:01:47 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/18 19:12:16 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ char	*s_convert(va_list arg_list, t_list *list)
 	null = "(null)";
 	prec_pos = get_pos(list->flag_chars, '.');
 	var = va_arg(arg_list, char *);
+	var = copy(var);
 	if (!var)
 	{
 		if (!(var = (char*)malloc(7)))
