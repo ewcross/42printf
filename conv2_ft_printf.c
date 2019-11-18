@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 15:34:19 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/16 12:10:47 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/18 11:35:13 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,19 +66,15 @@ char	*xx_convert(va_list arg_list, t_list *list)
 
 char	*f_convert(va_list arg_list, t_list *list)
 {
+	int		prec;
 	float	arg;
 	char	*var;
 
-	arg = va_arg(arg_list, double);
-	/*check if this is same for float*/
-	if (arg == 0 && prec == 0
-			&& list->flag_found[get_pos(list->flag_chars, '.')] == 1)
-		return (malloc_empty_string());
-	if (list->h == 2)
-		var = float_itoa((long long double)((/*1 byte float*/)arg));
-	else if (list->h == 1)
-		var = float_itoa((long long double)((short float)arg));
+	if (list->flag_found[get_pos(list->flag_chars, '.')])
+		prec = list->flag_vals[get_pos(list->flag_chars, '.')];
 	else
-		var = float_itoa((long long double)arg);
+		prec = 6;
+	arg = va_arg(arg_list, double);
+	var = ftoa((long double)arg, prec);
 	return (var);
 }

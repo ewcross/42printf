@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/16 11:58:33 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/18 11:37:34 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,9 @@ void				init_f_ptr_arr(char *(*f_ptr_arr[])(va_list, t_list *));
 int					write_output(const char *str, va_list arg_list,
 									t_list *spec_list);
 int					ft_printf(const char *str, ...);
+int					ft_getlen(char *str);
+char				*ft_strjoin(char *s1, char *s2);
+void				ft_round(char *str, int next_digit);
+char				*make_after(int prec);
+char				*ftoa(long double f, int prec);
 #endif
