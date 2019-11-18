@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2ch19/11/14 12:54:47 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/18 16:23:45 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/18 18:56:10 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 
 int main(int c, char **v)
 {
-	long long li = -9223372036854775807;
+	double d = 123.12993456789;
 
 	(void)c;
-	/*ft_printf("...%.*f...\n", atoi(v[1]), f);
-	printf("...%.*f...\n", atoi(v[1]), f);*/
-	ft_printf("mine...%lld...\n", li);
-	printf("real...%lld...\n", li);
+	ft_printf("mine:...%*.*f...\n", atoi(v[1]), atoi(v[2]), d);
+	printf("real:...%*.*f...\n", atoi(v[1]), atoi(v[2]), d);
 	(void)v;
 	return (0);
 }

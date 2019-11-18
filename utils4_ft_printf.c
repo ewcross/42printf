@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 12:36:34 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/18 15:45:39 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/18 19:03:18 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ void	negs(int r_pos, int zero_pos, int dash_pos, t_list *list)
 	else if (list->flag_vals[dash_pos] < 0)
 		list->flag_vals[dash_pos] *= -1;
 	if (list->flag_vals[get_pos(list->flag_chars, '.')] < 0
-			&& !list->flag_found[r_pos] && list->type != 'c')
+			&& !list->flag_found[r_pos] && list->type != 'c'
+			&& list->type != 'f')
 	{
 		list->flag_vals[zero_pos] = list->flag_vals[r_pos];
 		list->flag_vals[r_pos] = 0;
@@ -46,4 +47,26 @@ void	init_f_ptr_arr(char *(*f_ptr_arr[])(va_list, t_list *))
 	f_ptr_arr[get_pos(TYPE_SET, 'X')] = xx_convert;
 	f_ptr_arr[get_pos(TYPE_SET, 'f')] = f_convert;
 	f_ptr_arr[get_pos(TYPE_SET, 'n')] = n_convert;
+}
+
+void	check_stars(va_list arg_list, t_list *list)
+{
+	int r_pos;
+	int zero_pos;
+	int dash_pos;
+	int dot_pos;
+
+	r_pos = get_pos(list->flag_chars, 'r');
+	zero_pos = get_pos(list->flag_chars, '0');
+	dash_pos = get_pos(list->flag_chars, '-');
+	dot_pos = get_pos(list->flag_chars, '.');
+	if (list->flag_vals[r_pos] == -1)
+		list->flag_vals[r_pos] = va_arg(arg_list, int);
+	else if (list->flag_vals[zero_pos] == -1)
+		list->flag_vals[zero_pos] = va_arg(arg_list, int);
+	else if (list->flag_vals[dash_pos] == -1)
+		list->flag_vals[dash_pos] = va_arg(arg_list, int);
+	if (list->flag_vals[dot_pos] == -1)
+		list->flag_vals[dot_pos] = va_arg(arg_list, int);
+	negs(r_pos, zero_pos, dash_pos, list);
 }

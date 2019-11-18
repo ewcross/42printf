@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/18 15:53:28 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/18 19:01:19 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ char				*x_convert(va_list arg_list, t_list *list);
 char				*xx_convert(va_list arg_list, t_list *list);
 char				*f_convert(va_list arg_list, t_list *list);
 char				*n_convert(va_list arg_list, t_list *list);
+long long			resize(long long arg, t_list *list);
+long long unsigned	u_resize(long long unsigned arg, t_list *list);
 char				*num_precision(char *str, int prec, int len);
 char				*add_prefix(char *str);
 int					hex_get_mem_size(unsigned long long n);
@@ -79,6 +81,7 @@ void				negs(int r_pos, int zero_pos, int dash_pos, t_list *list);
 void				check_stars(va_list arg_list, t_list *list);
 char				*malloc_empty_string(void);
 char				*pad(char *str, char ch, int width, char type);
+void				write_var(char *str, t_list *spec_list);
 void				write_padded(char *str, t_list *spec_list);
 int					write_spec(va_list arg_list, t_list *spec_list,
 							char *(*f_ptr_arr[TYPE_NUM])(va_list, t_list *));
@@ -91,5 +94,5 @@ int					ft_getlen(char *str);
 char				*ft_strjoin(char *s1, char *s2);
 void				ft_round(char *str, int next_digit);
 char				*make_after(int prec);
-char				*ftoa(long double f, int prec);
+char				*ftoa(double f, int prec);
 #endif

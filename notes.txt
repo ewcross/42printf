@@ -1,32 +1,10 @@
 to do:
 
-	- need to deal with l and ll when getting arg, not just h and hh
+	- deal with negative precisions with floats
 	- test %n with h and l
-	- check freeing of var with %s
+	- deal with freeing of strings
 	- find out about max unsigned long long - throws compiler error, and gives
 	  strange output, but should work
-
-escape chars:
-
-	- if '\' is found, need to do something
-	- if certain chars are found, need to print something special
-	  and then point to char after them
-	- otherwise just point to next
-	- chars are:
-					- \ print '\'
-					- n print 10
-					- r print 13
-					- t print 9
-					- v print 11
-					- a print 7
-					- b print 8
-					- f print 12
-					- e print 27
-					- 0 print 0
-					- ' print '''
-					- " print '"'
-					- ? printf '?'
-
 
 precision:
 	- d, i, o, u, x, X:

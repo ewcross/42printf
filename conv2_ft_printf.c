@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 15:34:19 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/18 16:14:30 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/18 18:57:01 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,17 @@
 
 char	*x_convert(va_list arg_list, t_list *list)
 {
-	int				i;
-	int				prec;
-	unsigned int	arg;
-	char			*var;
+	int					i;
+	int					prec;
+	long long unsigned	arg;
+	char				*var;
 
 	prec = list->flag_vals[get_pos(list->flag_chars, '.')];
-	arg = va_arg(arg_list, unsigned int);
+	arg = va_arg(arg_list, long long unsigned);
 	if (arg == 0 && prec == 0
 			&& list->flag_found[get_pos(list->flag_chars, '.')] == 1)
 		return (malloc_empty_string());
-	if (list->h == 2)
-		var = hex_convert((long long unsigned)((char unsigned)arg), 87);
-	else if (list->h == 1)
-		var = hex_convert((long long unsigned)((short unsigned)arg), 87);
-	else
-		var = hex_convert((long long unsigned)arg, 87);
+	var = hex_convert(u_resize(arg, list), 87);
 	i = 0;
 	while (var[i])
 		i++;
@@ -40,22 +35,17 @@ char	*x_convert(va_list arg_list, t_list *list)
 
 char	*xx_convert(va_list arg_list, t_list *list)
 {
-	int				i;
-	int				prec;
-	unsigned int	arg;
-	char			*var;
+	int					i;
+	int					prec;
+	long long unsigned	arg;
+	char				*var;
 
 	prec = list->flag_vals[get_pos(list->flag_chars, '.')];
-	arg = va_arg(arg_list, unsigned int);
+	arg = va_arg(arg_list, long long unsigned);
 	if (arg == 0 && prec == 0
 			&& list->flag_found[get_pos(list->flag_chars, '.')] == 1)
 		return (malloc_empty_string());
-	if (list->h == 2)
-		var = hex_convert((long long unsigned)((char unsigned)arg), 55);
-	else if (list->h == 1)
-		var = hex_convert((long long unsigned)((short unsigned)arg), 55);
-	else
-		var = hex_convert((long long unsigned)arg, 55);
+	var = hex_convert(u_resize(arg, list), 55);
 	i = 0;
 	while (var[i])
 		i++;
@@ -66,16 +56,20 @@ char	*xx_convert(va_list arg_list, t_list *list)
 
 char	*f_convert(va_list arg_list, t_list *list)
 {
-	int		prec;
-	float	arg;
-	char	*var;
+	int			prec;
+	double		arg;
+	char		*var;
 
 	if (list->flag_found[get_pos(list->flag_chars, '.')])
+	{
 		prec = list->flag_vals[get_pos(list->flag_chars, '.')];
+		if (prec < 0)
+			prec = 6;
+	}
 	else
 		prec = 6;
 	arg = va_arg(arg_list, double);
-	var = ftoa((long double)arg, prec);
+	var = ftoa((double)arg, prec);
 	return (var);
 }
 
@@ -83,7 +77,7 @@ char	*n_convert(va_list arg_list, t_list *list)
 {
 	char	*var;
 	void	*arg_ptr;
-	
+
 	arg_ptr = va_arg(arg_list, void *);
 	if (list->h == 2)
 		*((char *)arg_ptr) = (char)g_char_count;

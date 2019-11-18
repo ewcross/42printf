@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:44:32 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/15 15:44:18 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/18 19:02:02 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ char	*str_precision(char *str, int prec)
 			new[i] = str[i];
 			i++;
 		}
+		free(str);
 		return (new);
 	}
 	else

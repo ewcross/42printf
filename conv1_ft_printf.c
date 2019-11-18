@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:47:51 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/18 16:21:43 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/18 18:01:47 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,16 +72,7 @@ char	*di_convert(va_list arg_list, t_list *list)
 	if (arg == 0 && prec == 0
 			&& list->flag_found[get_pos(list->flag_chars, '.')] == 1)
 		return (malloc_empty_string());
-	if (list->h == 2)
-		var = ft_itoa((long long)((char)arg));
-	else if (list->h == 1)
-		var = ft_itoa((long long)((short)arg));
-	else if (list->l == 1)
-		var = ft_itoa((long long)((long)arg));
-	else if (list->l == 2)
-		var = ft_itoa(arg);
-	else
-		var = ft_itoa((long long)(int)arg);
+	var = ft_itoa(resize(arg, list));	
 	i = 0;
 	while (var[i])
 		i++;
@@ -92,22 +83,17 @@ char	*di_convert(va_list arg_list, t_list *list)
 
 char	*u_convert(va_list arg_list, t_list *list)
 {
-	int				i;
-	int				prec;
-	unsigned int	arg;
-	char			*var;
+	int					i;
+	int					prec;
+	long long unsigned	arg;
+	char				*var;
 
 	prec = list->flag_vals[get_pos(list->flag_chars, '.')];
-	arg = va_arg(arg_list, unsigned int);
+	arg = va_arg(arg_list, long long unsigned);
 	if (arg == 0 && prec == 0
 			&& list->flag_found[get_pos(list->flag_chars, '.')] == 1)
 		return (malloc_empty_string());
-	if (list->h == 2)
-		var = ft_itoa((long long unsigned)((char unsigned)arg));
-	else if (list->h == 1)
-		var = ft_itoa((long long unsigned)((short unsigned)arg));
-	else
-		var = ft_u_itoa((long long unsigned)arg);
+	var = ft_u_itoa(u_resize(arg, list));
 	i = 0;
 	while (var[i])
 		i++;

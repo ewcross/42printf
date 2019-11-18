@@ -6,37 +6,35 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:59:55 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/18 16:01:37 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/18 19:03:30 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void		check_stars(va_list arg_list, t_list *list)
+void		write_var(char *str, t_list *spec_list)
 {
-	int r_pos;
-	int zero_pos;
-	int dash_pos;
-	int dot_pos;
+	int i;
 
-	r_pos = get_pos(list->flag_chars, 'r');
-	zero_pos = get_pos(list->flag_chars, '0');
-	dash_pos = get_pos(list->flag_chars, '-');
-	dot_pos = get_pos(list->flag_chars, '.');
-	if (list->flag_vals[r_pos] == -1)
-		list->flag_vals[r_pos] = va_arg(arg_list, int);
-	else if (list->flag_vals[zero_pos] == -1)
-		list->flag_vals[zero_pos] = va_arg(arg_list, int);
-	else if (list->flag_vals[dash_pos] == -1)
-		list->flag_vals[dash_pos] = va_arg(arg_list, int);
-	if (list->flag_vals[dot_pos] == -1)
-		list->flag_vals[dot_pos] = va_arg(arg_list, int);
-	negs(r_pos, zero_pos, dash_pos, list);
+	i = 0;
+	if (spec_list->type == 'c' && str[0] == 0)
+	{
+		write(1, "\0", 1);
+		g_char_count++;
+	}
+	else
+	{
+		while (str[i])
+		{
+			write(1, str + i, 1);
+			g_char_count++;
+			i++;
+		}
+	}
 }
 
 void		write_padded(char *str, t_list *spec_list)
 {
-	int	i;
 	int r;
 	int zero;
 	int l;
@@ -49,19 +47,7 @@ void		write_padded(char *str, t_list *spec_list)
 		pad(str, ' ', r, spec_list->type);
 	else if (zero)
 		str = pad(str, '0', zero, spec_list->type);
-	i = 0;
-	if (spec_list->type == 'c' && str[0] == 0)
-	{
-		write(1, "\0", 1);
-		g_char_count++;
-	}
-	else
-		while (str[i])
-		{
-			write(1, str + i, 1);
-			g_char_count++;
-			i++;
-		}
+	write_var(str, spec_list);
 	if (!r && !zero)
 	{
 		l = spec_list->flag_vals[get_pos(spec_list->flag_chars, '-')];

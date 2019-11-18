@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 11:34:30 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/18 11:35:23 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/18 18:28:53 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ char	*make_after(int prec)
 	return (after);
 }
 
-char	*ftoa(long double f, int prec)
+char	*ftoa(double f, int prec)
 {
 	int		i;
 	int		to_print;
