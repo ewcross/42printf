@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:59:55 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/18 10:18:16 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/18 16:01:37 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,8 @@ int			write_spec(va_list arg_list, t_list *spec_list,
 		if (!(var = f_ptr_arr[type_index](arg_list, spec_list)))
 			return (0);
 	}
-	write_padded(var, spec_list);
+	if (spec_list->type != 'n')
+		write_padded(var, spec_list);
 	if (spec_list->type != 's')
 		free(var);
 	return (1);

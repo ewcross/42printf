@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 15:34:19 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/18 11:35:13 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/18 16:14:30 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,27 @@ char	*f_convert(va_list arg_list, t_list *list)
 		prec = 6;
 	arg = va_arg(arg_list, double);
 	var = ftoa((long double)arg, prec);
+	return (var);
+}
+
+char	*n_convert(va_list arg_list, t_list *list)
+{
+	char	*var;
+	void	*arg_ptr;
+	
+	arg_ptr = va_arg(arg_list, void *);
+	if (list->h == 2)
+		*((char *)arg_ptr) = (char)g_char_count;
+	else if (list->h == 1)
+		*((short *)arg_ptr) = (short)g_char_count;
+	else if (list->l == 1)
+		*((long *)arg_ptr) = (long)g_char_count;
+	else if (list->l == 2)
+		*((long long *)arg_ptr) = g_char_count;
+	else
+		*((int *)arg_ptr) = (int)g_char_count;
+	if (!(var = (char*)malloc(1)))
+		return (NULL);
+	var[0] = 0;
 	return (var);
 }

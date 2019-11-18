@@ -1,6 +1,7 @@
 to do:
 
 	- need to deal with l and ll when getting arg, not just h and hh
+	- test %n with h and l
 	- check freeing of var with %s
 	- find out about max unsigned long long - throws compiler error, and gives
 	  strange output, but should work
