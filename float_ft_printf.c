@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 11:34:30 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/18 18:28:53 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/19 13:25:02 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,9 @@ char		*ft_strjoin(char *s1, char *s2)
 	new_str = (char*)malloc(ft_getlen(s1) + ft_getlen(s2) + 1);
 	if (new_str == NULL)
 		return (NULL);
-	i = 0;
-	while (s1[i])
-	{
+	i = -1;
+	while (s1[++i])
 		new_str[i] = s1[i];
-		i++;
-	}
 	j = 0;
 	while (s2[j])
 	{
@@ -47,6 +44,8 @@ char		*ft_strjoin(char *s1, char *s2)
 		j++;
 	}
 	new_str[i] = 0;
+	free(s1);
+	free(s2);
 	return (new_str);
 }
 

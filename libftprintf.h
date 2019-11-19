@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/18 19:10:58 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/19 14:48:54 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # define START 0
 # define END 1
 # define CHAR 2
-# define TYPE_SET "cspdiuxXfn"
-# define TYPE_NUM 10
+# define TYPE_SET "cspdiuxXfen"
+# define TYPE_NUM 11
 # define SPEC_CHARS "-0.*123456789lh"
 # define SPEC_DELIMS "%-."
 # define F_NUM 4
@@ -52,10 +52,12 @@ char				*u_convert(va_list arg_list, t_list *list);
 char				*x_convert(va_list arg_list, t_list *list);
 char				*xx_convert(va_list arg_list, t_list *list);
 char				*f_convert(va_list arg_list, t_list *list);
+char				*e_convert(va_list arg_list, t_list *list);
 char				*n_convert(va_list arg_list, t_list *list);
 long long			resize(long long arg, t_list *list);
 long long unsigned	u_resize(long long unsigned arg, t_list *list);
 char				*copy(char *str);
+int					ft_strlen(char *str);
 char				*num_precision(char *str, int prec, int len);
 char				*add_prefix(char *str);
 int					hex_get_mem_size(unsigned long long n);
@@ -96,4 +98,7 @@ char				*ft_strjoin(char *s1, char *s2);
 void				ft_round(char *str, int next_digit);
 char				*make_after(int prec);
 char				*ftoa(double f, int prec);
+double				abs_value(double d);
+char				*make_exp_str(unsigned int exp, char pref);
+char				*get_exponent(double *arg);
 #endif

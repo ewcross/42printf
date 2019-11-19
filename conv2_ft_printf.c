@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 15:34:19 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/18 18:57:01 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/19 14:39:02 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,27 @@ char	*f_convert(va_list arg_list, t_list *list)
 	arg = va_arg(arg_list, double);
 	var = ftoa((double)arg, prec);
 	return (var);
+}
+
+char	*e_convert(va_list arg_list, t_list *list)
+{
+	int			prec;
+	double		arg;
+	char		*var;
+	char		*exp;
+
+	if (list->flag_found[get_pos(list->flag_chars, '.')])
+	{
+		prec = list->flag_vals[get_pos(list->flag_chars, '.')];
+		if (prec < 0)
+			prec = 6;
+	}
+	else
+		prec = 6;
+	arg = va_arg(arg_list, double);
+	exp = get_exponent(&arg);
+	var = ftoa((double)arg, prec);
+	return (ft_strjoin(var, exp));
 }
 
 char	*n_convert(va_list arg_list, t_list *list)
