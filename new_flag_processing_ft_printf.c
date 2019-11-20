@@ -6,7 +6,7 @@
 /*   By: elliotcross <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/19 16:37:35 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/19 16:55:31 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/20 14:26:54 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,4 @@ void	get_new_flags(const char *str, t_list *elem)
 	if (elem->new_flag_found[get_pos(NEW_FLAGS, ' ')]
 			&& elem->new_flag_found[get_pos(NEW_FLAGS, '+')])
 		elem->new_flag_found[get_pos(NEW_FLAGS, ' ')] = 0;
-	printf("space val is: %d\n", elem->new_flag_found[get_pos(NEW_FLAGS, ' ')]);
-	printf("+ val is: %d\n", elem->new_flag_found[get_pos(NEW_FLAGS, '+')]);
-	printf("# val is: %d\n", elem->new_flag_found[get_pos(NEW_FLAGS, '#')]);
 }

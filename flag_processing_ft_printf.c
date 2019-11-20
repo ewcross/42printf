@@ -6,13 +6,13 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:53:52 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/19 16:55:20 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/20 16:50:38 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	set_flag_value(t_list *elem, char flag, int value)
+void	set_flag_value(t_list *elem, int value, char flag)
 {
 	int i;
 
@@ -59,22 +59,26 @@ int		get_width(t_list *elem, const char *str, int i, char flag)
 {
 	int		width_start;
 
-	if (str[i + 1] == '*')
+	while (is_in(str[i], NEW_FLAGS))
+		i++;
+	if (flag == '%' && str[i] == '0')
 	{
-		if (i + 2 == elem->end_pos || is_in(str[i + 2], SPEC_DELIMS)
-				|| is_in(str[i + 2], SIZE_CHARS))
+		flag = '0';
+		i++;
+	}
+	if (str[i] == '*')
+	{
+		if (i + 1 == elem->end_pos || is_in(str[i + 1], SPEC_DELIMS)
+				|| is_in(str[i + 1], SIZE_CHARS))
 		{
-			set_flag_value(elem, flag, -1);
-			i += 2;
+			set_flag_value(elem, -1, flag);
+			return (i + 1);
 		}
 	}
-	else
-	{
-		width_start = ++i;
-		while (str[i] > 47 && str[i] < 58)
-			i++;
-		set_flag_value(elem, flag, flag_atoi(str, width_start, i));
-	}
+	width_start = i;
+	while (str[i] > 47 && str[i] < 58)
+		i++;
+	set_flag_value(elem, flag_atoi(str, width_start, i), flag);
 	return (i);
 }
 
@@ -113,11 +117,11 @@ void	set_format(const char *str, t_list *elem)
 	{
 		if (is_in(str[i], SPEC_DELIMS))
 		{
-			if (i == elem->start_pos && str[i + 1] == '0')
+			/*if (i == elem->start_pos && str[i + 1] == '0')
 				flag = str[++i];
-			else
-				flag = str[i];
-			i = get_width(elem, str, i, flag);
+			else*/
+			flag = str[i];
+			i = get_width(elem, str, ++i, flag);
 			if (is_in(str[i], SIZE_CHARS))
 				i = get_size_prefix(elem, str, i);
 		}

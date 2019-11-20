@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/19 16:56:18 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/20 16:43:07 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,23 @@
 # include <stdio.h>
 # include <stdlib.h>
 
+/*
+  SPEC_CHARS - all chars which are allowed within a specifier substring
+  FLAG_CHARS_ARR - the flags for which widths can be specified
+  F_NUM - the number of flags described by FLAG_CHARS_ARR
+  NEW_FLAGS - the flags for which widths are not specified, only their
+  			  presence is relevant
+  NEW_F_NUM - the number of flags described by NEW_FLAGS
+  TYPE_SET - the different type identifier chars handled
+  TYPE_NUM - the number of types handled
+*/
+
 # define START 0
 # define END 1
 # define CHAR 2
 # define TYPE_SET "cspdiuxXfen"
 # define TYPE_NUM 11
-# define SPEC_CHARS "-0.*123456789lh"
+# define SPEC_CHARS "-0.*123456789lh +#"
 # define SPEC_DELIMS "%-."
 # define FLAG_CHARS_ARR "r0-."
 # define F_NUM 4
@@ -73,7 +84,7 @@ char				*str_precision(char *str, int prec);
 void				push_back(t_list **alst, t_list *new);
 int					is_in(char ch, const char *set);
 void				get_new_flags(const char *str, t_list *elem);
-void				set_flag_value(t_list *elem, char flag, int value);
+void				set_flag_value(t_list *elem, int value, char flag);
 int					flag_atoi(const char *str, int start, int end);
 int					get_pos(char *arr, char ch);
 void				free_list(t_list **list);

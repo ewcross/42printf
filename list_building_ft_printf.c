@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:56:11 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/19 16:49:09 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/20 16:42:41 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	init_elem(t_list *elem, int *spec_pos)
 	i = 0;
 	while (NEW_FLAGS[i])
 	{
-		elem->flag_found[i] = 0;
+		elem->new_flag_found[i] = 0;
 		i++;
 	}
 }

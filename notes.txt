@@ -1,12 +1,23 @@
 to do:
 
-	- not pushed from tuesday evening
 	- edit make_exp_str to handle formatting for exponent part of
 	  output with %e
 	- test %n with h and l
-	- deal with freeing of strings
 	- find out about max unsigned long long - throws compiler error, and gives
 	  strange output, but should work
+
+	- need to change zero flag rules
+	- can incorporate into rule for % flag (r flag) - if flag is % and first
+	  digit is a zero, change flag to 0 and continue with atoi as
+	  noraml, otherwise just do normal atoi
+	- check that this works, e.g. "%   12d"
+
+	- add prefixing with space or + when flag is found - needs to
+	  behave exactly the same as a minus sign on an int - so needs
+	  to be added in the convert function - probably before precision
+	- look into # flag and what it does
+	  
+
 
 new flags:
 
