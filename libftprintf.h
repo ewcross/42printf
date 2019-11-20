@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/19 14:48:54 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/19 16:56:18 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@
 # define TYPE_NUM 11
 # define SPEC_CHARS "-0.*123456789lh"
 # define SPEC_DELIMS "%-."
-# define F_NUM 4
 # define FLAG_CHARS_ARR "r0-."
+# define F_NUM 4
+# define NEW_FLAGS " +#"
+# define NEW_F_NUM 3
 # define SIZE_CHARS "hl"
 
 typedef struct		s_struct
@@ -37,6 +39,7 @@ typedef struct		s_struct
 	char			flag_chars[F_NUM];
 	int				flag_vals[F_NUM];
 	char			flag_found[F_NUM];
+	char			new_flag_found[NEW_F_NUM];
 	int				h;
 	int				l;
 	struct s_struct	*next;
@@ -69,6 +72,7 @@ char				*ft_u_itoa(long long unsigned num);
 char				*str_precision(char *str, int prec);
 void				push_back(t_list **alst, t_list *new);
 int					is_in(char ch, const char *set);
+void				get_new_flags(const char *str, t_list *elem);
 void				set_flag_value(t_list *elem, char flag, int value);
 int					flag_atoi(const char *str, int start, int end);
 int					get_pos(char *arr, char ch);

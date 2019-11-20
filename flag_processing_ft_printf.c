@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:53:52 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/18 18:53:14 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/19 16:55:20 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ void	set_format(const char *str, t_list *elem)
 	end = elem->end_pos;
 	if (str[end] == 0)
 		return ;
+	get_new_flags(str, elem);
 	while (i < end)
 	{
 		if (is_in(str[i], SPEC_DELIMS))

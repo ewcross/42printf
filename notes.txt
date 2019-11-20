@@ -1,11 +1,33 @@
 to do:
 
+	- not pushed from tuesday evening
 	- edit make_exp_str to handle formatting for exponent part of
 	  output with %e
 	- test %n with h and l
 	- deal with freeing of strings
 	- find out about max unsigned long long - throws compiler error, and gives
 	  strange output, but should work
+
+new flags:
+
+	- space - adds space to positive and zero signed numeric types
+	- + - adds + sign to positive and zero signed numeric types
+	- # - does a bunch of shit
+	
+	- space and + just added to start of string in same
+	  way as - sign, after any spaces and before and zeros
+	- add ' ' and '+' to if statement in pad
+	- + takes precedence if both are found
+	- does nothing with signed - just d and i
+	- addition of space or + needs to happen inside convert
+	  function
+
+	- do initial check through specifier substring for "+ #"
+	  and maybe '''
+	- if found, set values in struct
+	- if both + and space found, set only +
+	- then change search for other flags so their width finding
+	  mechanism stops at a new flag char
 
 precision:
 	- d, i, o, u, x, X:
