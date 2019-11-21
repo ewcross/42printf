@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 15:34:19 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/21 12:38:16 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/21 16:04:33 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ char	*x_convert(va_list arg_list, t_list *list)
 		i++;
 	if (prec > i)
 		var = num_precision(var, prec, i - 1);
+	if (list->new_flag_found[get_pos(NEW_FLAGS, '#')])
+		var = add_prefix(var, 'x');
 	return (var);
 }
 
@@ -51,6 +53,8 @@ char	*xx_convert(va_list arg_list, t_list *list)
 		i++;
 	if (prec > i)
 		var = num_precision(var, prec, i - 1);
+	if (list->new_flag_found[get_pos(NEW_FLAGS, '#')])
+		var = add_prefix(var, 'X');
 	return (var);
 }
 
@@ -58,8 +62,10 @@ char	*f_convert(va_list arg_list, t_list *list)
 {
 	int			prec;
 	double		arg;
+	char		hash;
 	char		*var;
 
+	hash = list->new_flag_found[get_pos(NEW_FLAGS, '#')];
 	if (list->flag_found[get_pos(list->flag_chars, '.')])
 	{
 		prec = list->flag_vals[get_pos(list->flag_chars, '.')];
@@ -69,7 +75,7 @@ char	*f_convert(va_list arg_list, t_list *list)
 	else
 		prec = 6;
 	arg = va_arg(arg_list, double);
-	var = ftoa((double)arg, prec);
+	var = ftoa((double)arg, prec, hash);
 	if (var[0] != '-')
 		var = prefix_signed(var, list);
 	return (var);
@@ -79,9 +85,11 @@ char	*e_convert(va_list arg_list, t_list *list)
 {
 	int			prec;
 	double		arg;
+	char		hash;
 	char		*var;
 	char		*exp;
 
+	hash = list->new_flag_found[get_pos(NEW_FLAGS, '#')];
 	if (list->flag_found[get_pos(list->flag_chars, '.')])
 	{
 		prec = list->flag_vals[get_pos(list->flag_chars, '.')];
@@ -92,7 +100,7 @@ char	*e_convert(va_list arg_list, t_list *list)
 		prec = 6;
 	arg = va_arg(arg_list, double);
 	exp = get_exponent(&arg);
-	var = ftoa((double)arg, prec);
+	var = ftoa((double)arg, prec, hash);
 	if (var[0] != '-')
 		var = prefix_signed(var, list);
 	return (ft_strjoin(var, exp));

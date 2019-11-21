@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:44:32 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/18 19:12:11 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/21 14:28:19 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	*num_precision(char *str, int prec, int str_pos)
 	return (new);
 }
 
-char	*add_prefix(char *str)
+char	*add_prefix(char *str, char x)
 {
 	int		i;
 	char	*new_str;
@@ -81,7 +81,7 @@ char	*add_prefix(char *str)
 		i--;
 	}
 	free(str);
-	new_str[1] = 'x';
+	new_str[1] = x;
 	new_str[0] = '0';
 	return (new_str);
 }

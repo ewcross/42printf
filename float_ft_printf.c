@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 11:34:30 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/19 13:25:02 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/21 16:56:36 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,15 +81,17 @@ char	*make_after(int prec)
 	return (after);
 }
 
-char	*ftoa(double f, int prec)
+char	*ftoa(double f, int prec, char hash)
 {
 	int		i;
 	int		to_print;
 	char	*before;
 	char	*after;
 
-	if (prec == 0)
+	if (prec == 0 && !hash)
 		return (ft_itoa((long long)f));
+	else if (prec == 0 && hash)
+		return (ft_strjoin(ft_itoa((long long)f), make_after(0)));
 	before = ft_itoa((long long)f);
 	if (f < 0)
 		f *= -1;

@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:51:38 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/21 12:26:59 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/21 15:02:59 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,7 @@ char	*malloc_empty_string(void)
 char	*pad(char *str, char ch, int width, char type)
 {
 	int		i;
-	char	*point;
 
-	point = str;
 	i = 0;
 	while (str[i])
 		i++;
@@ -48,19 +46,15 @@ char	*pad(char *str, char ch, int width, char type)
 		i = 1;
 	width -= i;
 	i = 0;
-	if ((str[i] == '-' || str[i] == '+' || str[i] == ' ') && ch == '0')
-	{
-		write(1, str, 1);
-		g_char_count++;
-		point++;
-	}
+	if (ch == '0')
+		str = correct_pad_zero(str);
 	while (i < width)
 	{
 		write(1, &ch, 1);
 		g_char_count++;
 		i++;
 	}
-	return (point);
+	return (str);
 }
 
 int		is_in(char ch, const char *set)

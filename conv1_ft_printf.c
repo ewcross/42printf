@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:47:51 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/21 12:44:44 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/21 14:29:55 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char	*p_convert(va_list arg_list, t_list *list)
 
 	(void)list;
 	addr = (unsigned long long)va_arg(arg_list, void *);
-	var = add_prefix(hex_convert(addr, 87));
+	var = add_prefix(hex_convert(addr, 87), 'x');
 	return (var);
 }
 
