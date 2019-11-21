@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/20 16:43:07 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/21 12:39:53 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ char				*copy(char *str);
 int					ft_strlen(char *str);
 char				*num_precision(char *str, int prec, int len);
 char				*add_prefix(char *str);
+char				*prefix_signed(char *num, t_list *list);
 int					hex_get_mem_size(unsigned long long n);
 char				*hex_convert(unsigned long long n, int caps);
 int					get_mem_size(long long nb);

@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:47:51 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/20 15:35:18 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/21 12:44:44 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,14 @@ char	*di_convert(va_list arg_list, t_list *list)
 	if (arg == 0 && prec == 0
 			&& list->flag_found[get_pos(list->flag_chars, '.')] == 1)
 		return (malloc_empty_string());
-	var = ft_itoa(resize(arg, list));	
+	var = ft_itoa(resize(arg, list));
 	i = 0;
 	while (var[i])
 		i++;
 	if (prec > i - 1)
 		var = num_precision(var, prec, i - 1);
+	if (var[0] != '-')
+		var = prefix_signed(var, list);
 	return (var);
 }
 

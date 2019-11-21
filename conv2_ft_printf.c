@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 15:34:19 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/19 14:39:02 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/21 12:38:16 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ char	*f_convert(va_list arg_list, t_list *list)
 		prec = 6;
 	arg = va_arg(arg_list, double);
 	var = ftoa((double)arg, prec);
+	if (var[0] != '-')
+		var = prefix_signed(var, list);
 	return (var);
 }
 
@@ -91,6 +93,8 @@ char	*e_convert(va_list arg_list, t_list *list)
 	arg = va_arg(arg_list, double);
 	exp = get_exponent(&arg);
 	var = ftoa((double)arg, prec);
+	if (var[0] != '-')
+		var = prefix_signed(var, list);
 	return (ft_strjoin(var, exp));
 }
 

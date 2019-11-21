@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:51:38 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/18 19:02:17 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/21 12:26:59 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*pad(char *str, char ch, int width, char type)
 		i = 1;
 	width -= i;
 	i = 0;
-	if (str[i] == '-' && ch == '0')
+	if ((str[i] == '-' || str[i] == '+' || str[i] == ' ') && ch == '0')
 	{
 		write(1, str, 1);
 		g_char_count++;
