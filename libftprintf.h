@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/21 16:04:18 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/22 12:51:11 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@
 # define CHAR 2
 # define TYPE_SET "cspdiuxXfen"
 # define TYPE_NUM 11
-# define SPEC_CHARS "-0.*123456789lh +#"
+# define SPEC_CHARS "-0.*123456789lh +#'"
 # define SPEC_DELIMS "%-."
 # define FLAG_CHARS_ARR "r0-."
 # define F_NUM 4
-# define NEW_FLAGS " +#"
-# define NEW_F_NUM 3
+# define NEW_FLAGS " +#'"
+# define NEW_F_NUM 4
 # define SIZE_CHARS "hl"
 
 typedef struct		s_struct
@@ -100,6 +100,8 @@ void				negs(int r_pos, int zero_pos, int dash_pos, t_list *list);
 void				check_stars(va_list arg_list, t_list *list);
 char				*malloc_empty_string(void);
 char				*correct_pad_zero(char *str);
+int					commas_number(char *str);
+char				*add_commas(char *str);
 char				*pad(char *str, char ch, int width, char type);
 void				write_var(char *str, t_list *spec_list);
 void				write_padded(char *str, t_list *spec_list);

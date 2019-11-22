@@ -6,35 +6,53 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 19:02:43 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/21 17:07:14 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/22 12:37:20 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-char	*add_commas(char *str)
+int		commas_number(char* str)
 {
-	int		i;
-	int		end;
-	int		new_pos;
-	char	*new;
+	int i;
 
 	i = 0;
 	while (str[i])
 		i++;
 	if (str[0] == '-')
-	{
-		if (!(new = (char*)malloc(i + ((i - 1) / 3) + 1)))
-			return (NULL);
-		end = 1;
-	}
+		i--;
+	if (!(i % 3))
+		return ((i / 3) - 1);
 	else
-		if (!(new = (char*)malloc(i + (i / 3) + 1)))
-			return (NULL);
-	while (--i > end)
+		return (i / 3);
+}
+
+char	*add_commas(char *str)
+{
+	int		i;
+	int		commas;
+	int		pos;
+	char	*new;
+
+	i = ft_strlen(str);
+	commas = commas_number(str);
+	pos = i + commas;
+	if (!(new = (char*)malloc(pos + 1)))
+		return (NULL);
+	new[pos--] = 0;
+	str = str + (i - 1);
+	while (commas)
 	{
-		
+		i = 4;
+		while (--i > 0)
+			new[pos--] = *(str--);
+		new[pos--] = ',';
+		commas--;
 	}
+	while (pos > -1)
+		new[pos--] = *(str--);
+	free(++str);
+	return (new);
 }
 
 char	*correct_pad_zero(char *str)

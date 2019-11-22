@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 12:54:47 by ecross             #+#    #+#            */
-/*   Updated: 2019/11/21 16:57:55 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/22 12:59:04 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,23 @@ test ' flag with:
 
 int main(int c, char **v)
 {
-	int i = 1234567;
+	int i = 5423422;
 	unsigned int u = 1234567;
-	double f = 42.1234;
+	double f = 123.123;
 
 	(void)c;
-	/*setlocale(LC_NUMERIC, "en_GB");
+
+	setlocale(LC_NUMERIC, "en_GB");
+
+	ft_printf("mine: %e\n", f);
+	printf("real: %e\n", f);
+
 	printf("------\n");
-	printf("d %'#12d\n", i);
-	printf("------\n");
+
+	ft_printf("mine: d %'12.8d\n", i);
+	printf("real: d %'12.8d\n", i);
+
+	/*printf("------\n");
 	printf("i %+#12i\n", i);
 	printf("------\n");
 	printf("u %'#12u\n", u);
@@ -41,8 +49,6 @@ int main(int c, char **v)
 	printf("f %'#.f\n", f);
 	printf("------\n");
 	printf("p %'#30p\n", &f);*/
-	ft_printf("f %.30f\n", f);
-	printf("f %.30f\n", f);
 	(void)v;
 	return (0);
 }
