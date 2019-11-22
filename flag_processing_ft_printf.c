@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:53:52 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/20 16:50:38 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/22 16:04:37 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,9 +117,6 @@ void	set_format(const char *str, t_list *elem)
 	{
 		if (is_in(str[i], SPEC_DELIMS))
 		{
-			/*if (i == elem->start_pos && str[i + 1] == '0')
-				flag = str[++i];
-			else*/
 			flag = str[i];
 			i = get_width(elem, str, ++i, flag);
 			if (is_in(str[i], SIZE_CHARS))

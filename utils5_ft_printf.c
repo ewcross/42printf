@@ -6,13 +6,13 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 19:02:43 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/22 14:11:22 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/22 16:09:32 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int		commas_number(char* str)
+int					commas_number(char *str)
 {
 	int i;
 
@@ -27,7 +27,7 @@ int		commas_number(char* str)
 		return (i / 3);
 }
 
-char	*add_commas(char *str)
+char				*add_commas(char *str)
 {
 	int		i;
 	int		commas;
@@ -55,7 +55,7 @@ char	*add_commas(char *str)
 	return (new);
 }
 
-char	*correct_pad_zero(char *str)
+char				*correct_pad_zero(char *str)
 {
 	if (str[0] == '-' || str[0] == '+' || str[0] == ' ')
 	{

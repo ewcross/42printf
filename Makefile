@@ -6,7 +6,7 @@
 #    By: ecross <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/07 15:11:23 by ecross            #+#    #+#              #
-#    Updated: 2019/11/14 14:54:08 by ecross           ###   ########.fr        #
+#    Updated: 2019/11/22 17:02:03 by ecross           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,17 @@ SRCS = 	ft_printf.c \
 		list_building_ft_printf.c \
 		flag_processing_ft_printf.c \
 		output_ft_printf.c \
+		exponent_ft_printf.c \
+		float_ft_printf.c \
+		new_flag_processing_ft_printf.c \
 		conv1_ft_printf.c \
 		conv2_ft_printf.c \
+		conv3_ft_printf.c \
 		utils1_ft_printf.c \
 		utils2_ft_printf.c \
 		utils3_ft_printf.c \
-		utils4_ft_printf.c
+		utils4_ft_printf.c \
+		utils5_ft_printf.c
 
 OBJS = ${SRCS:.c=.o}
 

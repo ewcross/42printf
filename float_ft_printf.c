@@ -6,13 +6,13 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 11:34:30 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/22 14:17:15 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/22 16:09:01 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-char		*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	int		i;
 	int		j;
@@ -37,7 +37,6 @@ char		*ft_strjoin(char *s1, char *s2)
 	free(s2);
 	return (new_str);
 }
-
 
 void	ft_round(char *str, int next_digit)
 {
@@ -65,8 +64,8 @@ char	*make_after(int prec)
 {
 	char	*after;
 
-	if(!(after = (char*)malloc(prec + 2)))
-			return (NULL);
+	if (!(after = (char*)malloc(prec + 2)))
+		return (NULL);
 	if (prec == -1)
 		after[0] = 0;
 	else

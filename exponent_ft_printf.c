@@ -6,7 +6,7 @@
 /*   By: elliotcross <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/19 14:37:54 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/22 14:28:41 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/22 16:07:00 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,10 @@ char	*make_exp_str(unsigned int exp, char pref)
 		before[2] = 48;
 	}
 	else
+	{
 		if (!(before = (char*)malloc(4)))
-			return(NULL);
+			return (NULL);
+	}
 	before[3] = 0;
 	before[0] = 'e';
 	before[1] = pref;

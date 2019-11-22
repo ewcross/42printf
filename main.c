@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/14 12:54:47 by ecross             #+#    #+#            */
-/*   Updated: 2019/11/22 15:10:05 by ecross           ###   ########.fr       */
+/*   Created: 2019/11/22 16:05:07 by ecross            #+#    #+#             */
+/*   Updated: 2019/11/22 17:02:55 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ test ' flag with:
 
 int main(int c, char **v)
 {
-	double f = 123456.123456;
+	double f = 123.123;
 	(void)c;
 
 	setlocale(LC_NUMERIC, "en_GB");
 	
-	ft_printf("mine: g: %.g\n", f);
-	printf("real: g: %.g\n", f);
-
+	ft_printf("mine: g: %#.*g\n", atoi(v[1]), f);
+	printf("real: g: %#.*g\n", atoi(v[1]), f);
+	
 	/*ft_printf("mine: d: %'012d\n", i);
 	printf("real: d: %'012d\n", i);
 

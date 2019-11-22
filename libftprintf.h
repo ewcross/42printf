@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/22 15:05:53 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/22 17:03:11 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ char				*n_convert(va_list arg_list, t_list *list);
 long long			resize(long long arg, t_list *list);
 long long unsigned	u_resize(long long unsigned arg, t_list *list);
 void				get_x_p(double arg, int *x_p, t_list *list);
+char				*trim_zeros(char *str);
 char				*copy(char *str);
 int					ft_strlen(char *str);
 char				*num_precision(char *str, int prec, int len);
