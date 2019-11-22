@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 12:54:47 by ecross             #+#    #+#            */
-/*   Updated: 2019/11/22 12:59:04 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/22 15:10:05 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,30 +25,37 @@ test ' flag with:
 
 int main(int c, char **v)
 {
-	int i = 5423422;
-	unsigned int u = 1234567;
-	double f = 123.123;
-
+	double f = 123456.123456;
 	(void)c;
 
 	setlocale(LC_NUMERIC, "en_GB");
+	
+	ft_printf("mine: g: %.g\n", f);
+	printf("real: g: %.g\n", f);
 
-	ft_printf("mine: %e\n", f);
-	printf("real: %e\n", f);
+	/*ft_printf("mine: d: %'012d\n", i);
+	printf("real: d: %'012d\n", i);
 
 	printf("------\n");
-
-	ft_printf("mine: d %'12.8d\n", i);
-	printf("real: d %'12.8d\n", i);
-
-	/*printf("------\n");
-	printf("i %+#12i\n", i);
+	
+	ft_printf("mine: i: %+'012i\n", i);
+	printf("real: i: %+'012i\n", i);
+	
 	printf("------\n");
-	printf("u %'#12u\n", u);
+	
+	ft_printf("mine: u: %'012u\n", u);
+	printf("real: u: %'012u\n", u);
+	
 	printf("------\n");
-	printf("f %'#.f\n", f);
+	
+	ft_printf("mine: f: %+'012f\n", f);
+	printf("real: f: %+'012f\n", f);
+	
 	printf("------\n");
-	printf("p %'#30p\n", &f);*/
+	
+	ft_printf("mine: p: %'030p\n", &f);
+	printf("real: p: %'030p\n", &f);*/
+	
 	(void)v;
 	return (0);
 }

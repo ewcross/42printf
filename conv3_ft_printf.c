@@ -1,0 +1,57 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   conv3_ft_printf.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/22 13:33:31 by ecross            #+#    #+#             */
+/*   Updated: 2019/11/22 15:10:16 by ecross           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libftprintf.h"
+
+void	get_x_p(double arg, int *x_p, t_list *list)
+{
+	char	*exp_str;
+
+	exp_str = get_exponent(&arg);
+	x_p[0] = flag_atoi(exp_str, 2, ft_strlen(exp_str));
+	free(exp_str);
+	exp_str = NULL;
+	if (list->flag_found[get_pos(list->flag_chars, '.')])
+	{
+		x_p[1] = list->flag_vals[get_pos(list->flag_chars, '.')];
+		if (x_p[1] < 0)
+			x_p[1] = 1;
+	}
+	else
+		x_p[1] = 6;
+}
+
+char	*g_convert(va_list arg_list, t_list *list)
+{
+	int		x_p[2];
+	double	arg;
+	char	h_c[2];
+	char	*exp_str;
+	char	*var;
+	
+	h_c[0] = list->new_flag_found[get_pos(NEW_FLAGS, '#')];
+	h_c[1] = list->new_flag_found[get_pos(NEW_FLAGS, '\'')];
+	arg = va_arg(arg_list, double);
+	get_x_p(arg, x_p, list);
+	if (x_p[1] > x_p[0] && x_p[0] > -5)
+	{
+		var = ftoa((double)arg, x_p[1] - (x_p[0] + 1), h_c[0], h_c[1]);
+		if (var[0] != '-')
+			var = prefix_signed(var, list);
+		return (var);
+	}
+	exp_str = get_exponent(&arg);
+	var = ftoa((double)arg, x_p[1] - 1, h_c[0], 0);
+	if (var[0] != '-')
+		var = prefix_signed(var, list);
+	return (ft_strjoin(var, exp_str));
+}

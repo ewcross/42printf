@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:47:51 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/22 12:51:51 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/22 13:50:10 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,10 @@ char	*p_convert(va_list arg_list, t_list *list)
 
 	(void)list;
 	addr = (unsigned long long)va_arg(arg_list, void *);
-	var = add_prefix(hex_convert(addr, 87), 'x');
+	var = hex_convert(addr, 87);
+	if (list->new_flag_found[get_pos(NEW_FLAGS, '\'')])
+		var = add_commas(var);
+	var = add_prefix(var, 'x');
 	return (var);
 }
 
@@ -99,6 +102,8 @@ char	*u_convert(va_list arg_list, t_list *list)
 			&& list->flag_found[get_pos(list->flag_chars, '.')] == 1)
 		return (malloc_empty_string());
 	var = ft_u_itoa(u_resize(arg, list));
+	if (list->new_flag_found[get_pos(NEW_FLAGS, '\'')])
+		var = add_commas(var);
 	i = 0;
 	while (var[i])
 		i++;

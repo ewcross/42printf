@@ -4,33 +4,23 @@ to to:
 	  output with %e
 	- test %n with h and l
 	- test + and space properly
+	- test ' flag properly
 	- find out about max unsigned long long - throws compiler error, and gives
 	  strange output, but should work
 
-	- handle ' flag
 	- add %g functions
 	- add # functionality for g
 
-	- ' flag:
-				- works for: d, i, u, f
-				- f - just digits before decimal point - so apply to just
-				  before string after making it in ftoa
-				- error but works for p (apply before adding 0x prefix)
-				- all must apply same to negative numbers
-				- do nothing with arg of 0 as expected
-				- zero padding happens after commas - zeros dont get separated
-
-				- need to get initial number string add commas at this point
-				- for before:
-							- iterate past any - sign at start
-							- then count remaining chars
-							- calculate malloc size needed
-							- write backwards, putting comma every 3 chars
-							- if first char was -, finsih iteration at 1 not zero
-
-	- ' flag to do:
-				- add to libft and check flag getting works
-				- add to each converstion function
+	- %g:
+			- let P equal the precision if nonzero, 6 if the precision is
+			  omitted, or 1 if the precision is zero. Then, if a conversion
+			  with style E would have an exponent of X:
+ 					
+					if P > X ≥ −4, the conversion is with style f (or F)
+ 					and precision P − (X + 1).
+     				
+     				otherwise, the conversion is with style e (or E) and
+     				precision P − 1.
 
 precision:
 	- d, i, o, u, x, X:

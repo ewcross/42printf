@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 12:36:34 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/19 14:37:34 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/22 15:05:14 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void	init_f_ptr_arr(char *(*f_ptr_arr[])(va_list, t_list *))
 	f_ptr_arr[get_pos(TYPE_SET, 'X')] = xx_convert;
 	f_ptr_arr[get_pos(TYPE_SET, 'f')] = f_convert;
 	f_ptr_arr[get_pos(TYPE_SET, 'e')] = e_convert;
+	f_ptr_arr[get_pos(TYPE_SET, 'g')] = g_convert;
 	f_ptr_arr[get_pos(TYPE_SET, 'n')] = n_convert;
 }
 

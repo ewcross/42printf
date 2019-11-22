@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/22 12:51:11 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/22 15:05:53 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@
 # define START 0
 # define END 1
 # define CHAR 2
-# define TYPE_SET "cspdiuxXfen"
-# define TYPE_NUM 11
+# define TYPE_SET "cspdiuxXfeng"
+# define TYPE_NUM 12
 # define SPEC_CHARS "-0.*123456789lh +#'"
 # define SPEC_DELIMS "%-."
 # define FLAG_CHARS_ARR "r0-."
@@ -67,9 +67,11 @@ char				*x_convert(va_list arg_list, t_list *list);
 char				*xx_convert(va_list arg_list, t_list *list);
 char				*f_convert(va_list arg_list, t_list *list);
 char				*e_convert(va_list arg_list, t_list *list);
+char				*g_convert(va_list arg_list, t_list *list);
 char				*n_convert(va_list arg_list, t_list *list);
 long long			resize(long long arg, t_list *list);
 long long unsigned	u_resize(long long unsigned arg, t_list *list);
+void				get_x_p(double arg, int *x_p, t_list *list);
 char				*copy(char *str);
 int					ft_strlen(char *str);
 char				*num_precision(char *str, int prec, int len);
@@ -112,11 +114,10 @@ void				init_f_ptr_arr(char *(*f_ptr_arr[])(va_list, t_list *));
 int					write_output(const char *str, va_list arg_list,
 									t_list *spec_list);
 int					ft_printf(const char *str, ...);
-int					ft_getlen(char *str);
 char				*ft_strjoin(char *s1, char *s2);
 void				ft_round(char *str, int next_digit);
 char				*make_after(int prec);
-char				*ftoa(double f, int prec, char hash);
+char				*ftoa(double f, int prec, char hash, char comma);
 double				abs_value(double d);
 char				*make_exp_str(unsigned int exp, char pref);
 char				*get_exponent(double *arg);
