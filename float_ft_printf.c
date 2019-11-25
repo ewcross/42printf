@@ -6,37 +6,11 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 11:34:30 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/22 16:09:01 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/25 16:47:28 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-
-char	*ft_strjoin(char *s1, char *s2)
-{
-	int		i;
-	int		j;
-	char	*new_str;
-
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
-	if (!(new_str = (char*)malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
-		return (NULL);
-	i = -1;
-	while (s1[++i])
-		new_str[i] = s1[i];
-	j = 0;
-	while (s2[j])
-	{
-		new_str[i] = s2[j];
-		i++;
-		j++;
-	}
-	new_str[i] = 0;
-	free(s1);
-	free(s2);
-	return (new_str);
-}
 
 void	ft_round(char *str, int next_digit)
 {
@@ -76,6 +50,19 @@ char	*make_after(int prec)
 	return (after);
 }
 
+char	*make_before(double f)
+{
+	char	*before;
+
+	if ((f < 0 && f > -1) || (1.0 / f) == -INFINITY)
+		before = ft_itoa((long long)f - 1);
+	else
+		before = ft_itoa((long long)f);
+	if ((f < 0 && f > -1) || (1.0 / f) == -INFINITY)
+		before[1] = '0';
+	return (before);
+}
+
 char	*ftoa(double f, int prec, char hash, char commas)
 {
 	int		i;
@@ -85,7 +72,7 @@ char	*ftoa(double f, int prec, char hash, char commas)
 
 	if (prec == 0 && !hash)
 		prec = -1;
-	before = ft_itoa((long long)f);
+	before = make_before(f);
 	if (commas)
 		before = add_commas(before);
 	if (f < 0)
@@ -101,6 +88,7 @@ char	*ftoa(double f, int prec, char hash, char commas)
 		after[i + 1] = to_print + 48;
 		i++;
 	}
+	printf("next digit is %d\n", (int)(f * 10));
 	ft_round(after, (long long)(f * 10));
 	return (ft_strjoin(before, after));
 }

@@ -1,5 +1,18 @@
 to to:
 
+	- add rounding:
+					- just re-write rounding functions so it rounds the
+					  whole joined string, ignoring decimals and commas
+	- rounding function needs to know previous digit:
+					- when rounding just the mantissa can just go
+					  (long long)(f * 10) to get next digit
+					- but when rounding just the main part (i.e with
+					  precision of zero (or negative?) or when a float
+					  with no point is being converted), need to
+					  give the previous digit to the function
+					- also, when rounding just main part
+	- check rounding with commas
+
 	- edit make_exp_str to handle formatting for exponent part of
 	  output with %e
 	- test %n with h and l

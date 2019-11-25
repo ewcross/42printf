@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 16:05:07 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/25 12:43:58 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/25 16:49:45 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ test ' flag with:
 
 int main(int c, char **v)
 {
-	double f = 123.123;
+	double f = 10.227;
 	unsigned char ch = 9;
 	(void)c;
 
 	setlocale(LC_NUMERIC, "en_GB");
-	
-	ft_printf("mine: %0#47.2hhx\n", ch);
-	printf("real: %0#47.2hhx\n", ch);
+
+	ft_printf("mine: ...%.2f...\n", f);
+	printf("real: ...%.2f...\n", f);
 	
 	/*ft_printf("mine: d: %'012d\n", i);
 	printf("real: d: %'012d\n", i);

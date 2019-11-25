@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:46:58 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/18 19:11:24 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/25 15:28:47 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,26 +32,24 @@ int		get_mem_size(long long nb)
 char	*ft_itoa(long long n)
 {
 	int			mem_size;
-	long long	num;
 	char		*str;
 
-	num = n;
 	mem_size = get_mem_size(n);
 	str = (char*)malloc(sizeof(char) * (mem_size + 1));
 	if (str == NULL)
 		return (NULL);
 	str[mem_size--] = 0;
-	if (num < 0)
+	if (n < 0)
 	{
 		str[0] = '-';
-		num *= -1;
+		n *= -1;
 	}
-	while (num > 9)
+	while (n > 9)
 	{
-		str[mem_size--] = (num % 10) + 48;
-		num /= 10;
+		str[mem_size--] = (n % 10) + 48;
+		n /= 10;
 	}
-	str[mem_size] = (num % 10) + 48;
+	str[mem_size] = (n % 10) + 48;
 	return (str);
 }
 

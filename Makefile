@@ -6,7 +6,7 @@
 #    By: ecross <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/07 15:11:23 by ecross            #+#    #+#              #
-#    Updated: 2019/11/25 13:13:18 by ecross           ###   ########.fr        #
+#    Updated: 2019/11/25 15:35:25 by ecross           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SRCS = 	ft_printf.c \
 		utils2_ft_printf.c \
 		utils3_ft_printf.c \
 		utils4_ft_printf.c \
-		utils5_ft_printf.c
+		utils5_ft_printf.c \
+		utils6_ft_printf.c
 
 OBJS = ${SRCS:.c=.o}
 

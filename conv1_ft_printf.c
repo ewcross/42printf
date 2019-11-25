@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:47:51 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/25 13:33:13 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/25 16:06:56 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,7 @@ char	*s_convert(va_list arg_list, t_list *list)
 	var = va_arg(arg_list, char *);
 	var = copy(var);
 	if (!var)
-	{
-		if (!(var = (char*)malloc(7)))
-			return (NULL);
-		while (null[++i])
-			var[i] = null[i];
-		var[i] = null[i];
-	}
+		var = ft_strdup("(null)");
 	if (list->flag_found[prec_pos])
 		var = str_precision(var, list->flag_vals[prec_pos]);
 	return (var);

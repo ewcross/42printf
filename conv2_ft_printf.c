@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 15:34:19 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/22 15:01:36 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/25 16:18:09 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*x_convert(va_list arg_list, t_list *list)
 		i++;
 	if (prec > i)
 		var = num_precision(var, prec, i - 1);
-	if (list->new_flag_found[get_pos(NEW_FLAGS, '#')])
+	if (arg && list->new_flag_found[get_pos(NEW_FLAGS, '#')])
 		var = add_prefix(var, 'x');
 	return (var);
 }
@@ -53,7 +53,7 @@ char	*xx_convert(va_list arg_list, t_list *list)
 		i++;
 	if (prec > i)
 		var = num_precision(var, prec, i - 1);
-	if (list->new_flag_found[get_pos(NEW_FLAGS, '#')])
+	if (arg && list->new_flag_found[get_pos(NEW_FLAGS, '#')])
 		var = add_prefix(var, 'X');
 	return (var);
 }
@@ -77,6 +77,10 @@ char	*f_convert(va_list arg_list, t_list *list)
 	else
 		prec = 6;
 	arg = va_arg(arg_list, double);
+	if (arg == INFINITY)
+		return (ft_strdup("inf"));
+	if (arg == -INFINITY)
+		return (ft_strdup("-inf"));
 	var = ftoa((double)arg, prec, hash, commas);
 	if (var[0] != '-')
 		var = prefix_signed(var, list);
@@ -101,6 +105,10 @@ char	*e_convert(va_list arg_list, t_list *list)
 	else
 		prec = 6;
 	arg = va_arg(arg_list, double);
+	if (arg == INFINITY)
+		return (ft_strdup("inf"));
+	if (arg == -INFINITY)
+		return (ft_strdup("-inf"));
 	exp = get_exponent(&arg);
 	var = ftoa((double)arg, prec, hash, 0);
 	if (var[0] != '-')

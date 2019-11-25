@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/22 17:03:11 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/25 16:24:42 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <math.h>
 
 /*
   SPEC_CHARS - all chars which are allowed within a specifier substring
@@ -72,6 +73,7 @@ char				*n_convert(va_list arg_list, t_list *list);
 long long			resize(long long arg, t_list *list);
 long long unsigned	u_resize(long long unsigned arg, t_list *list);
 void				get_x_p(double arg, int *x_p, t_list *list);
+int					g_inf_checker(double arg, char **var_addr);
 char				*trim_zeros(char *str);
 char				*copy(char *str);
 int					ft_strlen(char *str);
@@ -115,9 +117,11 @@ void				init_f_ptr_arr(char *(*f_ptr_arr[])(va_list, t_list *));
 int					write_output(const char *str, va_list arg_list,
 									t_list *spec_list);
 int					ft_printf(const char *str, ...);
+char				*ft_strdup(const char *src);
 char				*ft_strjoin(char *s1, char *s2);
 void				ft_round(char *str, int next_digit);
 char				*make_after(int prec);
+char				*make_before(double f);
 char				*ftoa(double f, int prec, char hash, char comma);
 double				abs_value(double d);
 char				*make_exp_str(unsigned int exp, char pref);

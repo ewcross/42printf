@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 13:33:31 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/22 16:58:32 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/25 16:24:02 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,21 @@ char	*trim_zeros(char *str)
 	return (new);
 }
 
+int		g_inf_checker(double arg, char **var_addr)
+{
+	if (arg == INFINITY)
+	{
+		*var_addr = ft_strdup("inf");
+		return (1);
+	}
+	if (arg == -INFINITY)
+	{
+		*var_addr = ft_strdup("-inf");
+		return (1);
+	}
+	return (0);
+}
+
 char	*g_convert(va_list arg_list, t_list *list)
 {
 	int		x_p[2];
@@ -65,7 +80,8 @@ char	*g_convert(va_list arg_list, t_list *list)
 
 	h_c[0] = list->new_flag_found[get_pos(NEW_FLAGS, '#')];
 	h_c[1] = list->new_flag_found[get_pos(NEW_FLAGS, '\'')];
-	arg = va_arg(arg_list, double);
+	if (g_inf_checker((arg = va_arg(arg_list, double)), &var))
+		return (var);
 	get_x_p(arg, x_p, list);
 	if (x_p[1] > x_p[0] && x_p[0] > -5)
 	{
