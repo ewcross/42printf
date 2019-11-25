@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:53:52 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/25 12:46:40 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/25 13:28:51 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ int		get_width(t_list *elem, const char *str, int i, char flag)
 	{
 		flag = '0';
 		i++;
+		while (is_in(str[i], NEW_FLAGS))
+			i++;
 	}
 	if (str[i] == '*')
 	{

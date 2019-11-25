@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:47:51 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/22 13:50:10 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/25 13:33:13 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char	*di_convert(va_list arg_list, t_list *list)
 	arg = va_arg(arg_list, long long);
 	if (arg == 0 && prec == 0
 			&& list->flag_found[get_pos(list->flag_chars, '.')] == 1)
-		return (malloc_empty_string());
+		return (prefix_signed(malloc_empty_string(), list));
 	var = ft_itoa(resize(arg, list));
 	if (list->new_flag_found[get_pos(NEW_FLAGS, '\'')])
 		var = add_commas(var);
