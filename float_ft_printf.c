@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 11:34:30 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/26 13:12:07 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/26 13:54:58 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,6 +144,5 @@ char	*ftoa(double f, int prec, char hash, char commas)
 		i++;
 	}
 	after = ft_strjoin(before, after);
-	printf("digit to round from is: %d\n", (int)(f * 10));
 	return (ft_round(after, (long long)(f * 10), commas));
 }
