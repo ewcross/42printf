@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/26 13:05:57 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/11/26 15:43:11 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ typedef struct		s_struct
 	struct s_struct	*next;
 }					t_list;
 
-long long			g_char_count;
+int					g_char_count;
 
 char				*c_convert(va_list arg_list, t_list *list);
 char				*s_convert(va_list arg_list, t_list *list);
