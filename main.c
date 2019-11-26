@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 16:05:07 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/25 16:49:45 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/26 13:37:03 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,37 +25,17 @@ test ' flag with:
 
 int main(int c, char **v)
 {
-	double f = 10.227;
-	unsigned char ch = 9;
+	float f = 10.2;
 	(void)c;
 
 	setlocale(LC_NUMERIC, "en_GB");
 
-	ft_printf("mine: ...%.2f...\n", f);
-	printf("real: ...%.2f...\n", f);
-	
-	/*ft_printf("mine: d: %'012d\n", i);
-	printf("real: d: %'012d\n", i);
-
-	printf("------\n");
-	
-	ft_printf("mine: i: %+'012i\n", i);
-	printf("real: i: %+'012i\n", i);
-	
-	printf("------\n");
-	
-	ft_printf("mine: u: %'012u\n", u);
-	printf("real: u: %'012u\n", u);
-	
-	printf("------\n");
-	
-	ft_printf("mine: f: %+'012f\n", f);
-	printf("real: f: %+'012f\n", f);
-	
-	printf("------\n");
-	
-	ft_printf("mine: p: %'030p\n", &f);
-	printf("real: p: %'030p\n", &f);*/
+    ft_printf("mine: ...%.15f\n", 0.87650894254);
+    printf("real: ...%.15f\n", 0.87650894254);
+    ft_printf("mine: ...%.16f\n", 0.999999999999999900);
+    printf("real: ...%.16f\n", 0.999999999999999900);
+    ft_printf("mine: ...%.18f\n", 0.125978548534310421);
+    printf("real: ...%.18f\n", 0.125978548534310421);
 	
 	(void)v;
 	return (0);

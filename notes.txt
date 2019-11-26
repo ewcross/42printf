@@ -11,6 +11,11 @@ to to:
 					  with no point is being converted), need to
 					  give the previous digit to the function
 					- also, when rounding just main part
+					- end conditions:
+										- finding a digit th:wq
+										at is not a 9
+										- finding a -, + or space
+										- when i = 0 (or -1)
 	- check rounding with commas
 
 	- edit make_exp_str to handle formatting for exponent part of

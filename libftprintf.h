@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/25 16:24:42 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/26 13:05:57 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,9 @@ int					write_output(const char *str, va_list arg_list,
 int					ft_printf(const char *str, ...);
 char				*ft_strdup(const char *src);
 char				*ft_strjoin(char *s1, char *s2);
-void				ft_round(char *str, int next_digit);
+char				*comma_or_not(char *str);
+char				*make_new_num(char *str, int i, char commas);
+char				*ft_round(char *str, int next_digit, char commas);
 char				*make_after(int prec);
 char				*make_before(double f);
 char				*ftoa(double f, int prec, char hash, char comma);
