@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 13:33:31 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/25 16:24:02 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/27 11:12:45 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	get_x_p(double arg, int *x_p, t_list *list)
 	exp_str = get_exponent(&arg);
 	x_p[0] = flag_atoi(exp_str, 2, ft_strlen(exp_str));
 	free(exp_str);
-	exp_str = NULL;
 	if (list->flag_found[get_pos(list->flag_chars, '.')])
 	{
 		x_p[1] = list->flag_vals[get_pos(list->flag_chars, '.')];

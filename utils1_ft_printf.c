@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:44:32 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/21 14:28:19 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/27 11:45:13 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ char	*hex_convert(unsigned long long n, int caps)
 	if (!(str = (char*)malloc(len + 1)))
 		return (NULL);
 	str[len--] = 0;
-	while (n > 9)
+	while (n > 15)
 	{
 		if (n % 16 > 9)
 			str[len--] = (n % 16) + caps;
@@ -119,8 +119,8 @@ char	*hex_convert(unsigned long long n, int caps)
 		n /= 16;
 	}
 	if (n % 16 > 9)
-		str[len--] = (n % 16) + caps;
+		str[len] = (n % 16) + caps;
 	else
-		str[len--] = (n % 16) + 48;
+		str[len] = (n % 16) + 48;
 	return (str);
 }
