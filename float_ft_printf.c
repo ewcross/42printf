@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 11:34:30 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/26 13:54:58 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/27 15:03:18 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,18 @@ char	*make_new_num(char *str, int i, char commas)
 {
 	char *new;
 	
+	if (!(new = (char*)malloc(2)))
+		return (NULL);
 	if (i == -1)
 	{
-		if (!(new = (char*)malloc(2)))
-				return (NULL);
 		new[1] = 0;
 		new[0] = '1';
 	}
 	else
 	{
-		if (!(new = (char*)malloc(3)))
-				return (NULL);
-		new[2] = 0;
-		new[0] = str[i];
-		new[1] = '1';
+		str[i] = '1';
+		new[1] = 0;
+		new[0] = '-';
 	}
 	if (commas)
 		return (ft_strjoin(ft_strjoin(new, comma_or_not(str)), str));
@@ -81,7 +79,7 @@ char	*ft_round(char *str, int next_digit, char commas)
 				i--;
 			}
 		}
-		if (i == -1 || str[i] == '-' || str[i] == '+' || str[i] == ' ')
+		if (i == -1 || str[i] == '-')
 			return (make_new_num(str, i, commas));
 		else if (str[i] > 47 && str[i] < 57)
 			str[i] += 1;
