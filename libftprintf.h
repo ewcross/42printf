@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/26 15:43:11 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/28 11:53:06 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@
 # define NEW_FLAGS " +#'"
 # define NEW_F_NUM 4
 # define SIZE_CHARS "hl"
+# define FLT_EPS 0.000000000000001
 
 typedef struct		s_struct
 {
@@ -119,9 +120,11 @@ int					write_output(const char *str, va_list arg_list,
 int					ft_printf(const char *str, ...);
 char				*ft_strdup(const char *src);
 char				*ft_strjoin(char *s1, char *s2);
-char				*comma_or_not(char *str);
+int					comma_or_not(char *str);
 char				*make_new_num(char *str, int i, char commas);
 char				*ft_round(char *str, int next_digit, char commas);
+char				*inc_exp(char *str);
+char				*reformat_e(char *str, char *exp_str);
 char				*make_after(int prec);
 char				*make_before(double f);
 char				*ftoa(double f, int prec, char hash, char comma);

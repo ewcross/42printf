@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 16:05:07 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/27 15:03:07 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/30 15:20:31 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ int main(int argc, char **v)
 {
 	(void)argc;
 	(void)v;
-
-	ft_printf("mine: %e\n", 999.999999);
-	printf("real: %e\n", 999.999999);
-	ft_printf("mine: %e\n", -99.999999);
-	printf("real: %e\n", -99.999999);
-	ft_printf("mine: %'.4f\n", -99.999999);
-	printf("real: %'.4f\n", -99.999999);
-
+	
 	setlocale(LC_NUMERIC, "en_GB");
+
+	ft_printf("mine: %.15e\n",  0.999999999999999000);
+	printf("real: %.15e\n",  0.999999999999999000);
+	ft_printf("mine: %.15e\n",  1.000000000000001);
+	printf("real: %.15e\n",  1.000000000000001);
+	ft_printf("mine: %.15e\n",  0.000000000000001);
+	printf("real: %.15e\n",  0.000000000000001);
 }

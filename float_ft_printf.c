@@ -6,17 +6,16 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 11:34:30 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/27 15:03:18 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/28 09:05:48 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-char	*comma_or_not(char *str)
+int		comma_or_not(char *str)
 {
 	int		i;
 	int		digits;
-	char	*new;
 
 	digits = 0;
 	i = 0;
@@ -26,37 +25,36 @@ char	*comma_or_not(char *str)
 			digits++;
 		i++;
 	}
-	if (!(new = (char*)malloc(2)))
-		return (NULL);
-	new[1] = 0;
 	if (digits % 3 || !digits)
-		new[0] = 0;
-	else
-		new[0] = ',';
-	return (new);
+		return (0);;
+	return (1);
 }
 
 char	*make_new_num(char *str, int i, char commas)
 {
 	char *new;
-	
-	if (!(new = (char*)malloc(2)))
+
+	if (!(new = (char*)malloc(3)))
 		return (NULL);
+	new[2] = 0;
 	if (i == -1)
 	{
-		new[1] = 0;
 		new[0] = '1';
+		new[1] = ',';
 	}
 	else
 	{
-		str[i] = '1';
-		new[1] = 0;
 		new[0] = '-';
+		new[1] = '1';
+		str[i] = ',';
 	}
-	if (commas)
-		return (ft_strjoin(ft_strjoin(new, comma_or_not(str)), str));
-	else
-		return (ft_strjoin(new, str));
+	if (!commas || !comma_or_not(str))
+	{
+		new[1] = 0;
+		if (i != -1)
+			str[i] = '1';
+	}
+	return(ft_strjoin(new, str));
 }
 
 char	*ft_round(char *str, int next_digit, char commas)
@@ -74,10 +72,7 @@ char	*ft_round(char *str, int next_digit, char commas)
 			if (str[i] == ',' || str[i] == '.')
 				i--;
 			else
-			{
-				str[i] = 48;
-				i--;
-			}
+				str[i--] = 48;
 		}
 		if (i == -1 || str[i] == '-')
 			return (make_new_num(str, i, commas));

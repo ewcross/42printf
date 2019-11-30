@@ -1,5 +1,22 @@
 to to:
 
+	if val > 1.0
+
+	0.9999 = 1.0
+	1.0 - 0.9999 = 0.0001 - any number bigger than this means val is
+							less than 0.9999 - so less than 1.0
+
+	if val == 1.0
+
+	0.9999 = 1.0
+	1.0 - 1.0 = 0
+	if |1.0 - 0.9999| < 0.0001
+
+
+	- change exp getting function so it takes the ftoa output string
+	  and looks at digits before point or null byte, then moves the point
+	  or null byte to 
+
 	- add rounding:
 					- just re-write rounding functions so it rounds the
 					  whole joined string, ignoring decimals and commas

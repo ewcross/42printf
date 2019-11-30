@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 15:34:19 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/27 14:57:25 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/28 10:59:05 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,14 +96,13 @@ char	*e_convert(va_list arg_list, t_list *list)
 	char		*var;
 
 	hash = list->new_flag_found[get_pos(NEW_FLAGS, '#')];
+	prec = 6;
 	if (list->flag_found[get_pos(list->flag_chars, '.')])
 	{
 		prec = list->flag_vals[get_pos(list->flag_chars, '.')];
 		if (prec < 0)
 			prec = 6;
 	}
-	else
-		prec = 6;
 	arg = va_arg(arg_list, double);
 	if (arg == INFINITY)
 		return (ft_strdup("inf"));
@@ -111,9 +110,10 @@ char	*e_convert(va_list arg_list, t_list *list)
 		return (ft_strdup("-inf"));
 	exp = get_exponent(&arg);
 	var = ftoa((double)arg, prec, hash, 0);
+	var = reformat_e(var, exp);
 	if (var[0] != '-')
 		var = prefix_signed(var, list);
-	return (ft_strjoin(var, exp));
+	return (var);
 }
 
 char	*n_convert(va_list arg_list, t_list *list)

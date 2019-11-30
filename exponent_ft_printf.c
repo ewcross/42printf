@@ -6,7 +6,7 @@
 /*   By: elliotcross <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/19 14:37:54 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/27 14:44:59 by ecross           ###   ########.fr       */
+/*   Updated: 2019/11/28 17:02:56 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*get_exponent(double *arg)
 	char			pref;
 
 	exp = 0;
-	if (abs_value(*arg) >= 1.0)
+	if ((1.0 - abs_value(*arg)) <= FLT_EPS)
 	{
 		pref = '+';
 		while (abs_value(*arg) >= 10)
@@ -60,7 +60,9 @@ char	*get_exponent(double *arg)
 	else
 	{
 		pref = '-';
-		while (abs_value(*arg) < 1.0 && *arg)
+		/*while ((1.0 - abs_value(*arg)) > FLT_EPS && *arg)*/
+		while (!(10.0 + FLT_EPS > abs_value(*arg)
+					&& abs_value(*arg) > 1.0 - FLT_EPS) && *arg)
 		{
 			*arg *= 10;
 			exp++;
