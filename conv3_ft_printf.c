@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 13:33:31 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/27 11:12:45 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/02 15:17:47 by elliotcro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,11 @@ char	*g_convert(va_list arg_list, t_list *list)
 	if (g_inf_checker((arg = va_arg(arg_list, double)), &var))
 		return (var);
 	get_x_p(arg, x_p, list);
+	printf("exp is %d\n", x_p[0]);
+	printf("prec is %d\n", x_p[1]);
 	if (x_p[1] > x_p[0] && x_p[0] > -5)
 	{
+		printf("using f with prec %d\n", x_p[1] - (x_p[0] + 1));
 		var = ftoa((double)arg, x_p[1] - (x_p[0] + 1), h_c[0], h_c[1]);
 		if (var[0] != '-')
 			var = prefix_signed(var, list);
@@ -91,9 +94,11 @@ char	*g_convert(va_list arg_list, t_list *list)
 			var = trim_zeros(var);
 		return (var);
 	}
+	printf("using e with prec %d\n", x_p[1] - 1);
 	exp_str = get_exponent(&arg);
 	var = ftoa((double)arg, x_p[1] - 1, h_c[0], 0);
+	var = reformat_e(var, exp_str);
 	if (var[0] != '-')
 		var = prefix_signed(var, list);
-	return (ft_strjoin(var, exp_str));
+	return (var);
 }
