@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 16:05:07 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/04 13:32:05 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/04 17:42:12 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,8 @@ int main(int argc, char **v)
 	
 	setlocale(LC_NUMERIC, "en_GB");
 
-	double d = 0.0000000000000001;
-	printf("double %lu\n", sizeof(double));
-	printf("long double %lu\n", sizeof(long double));
-	/*ft_printf("mine: %.15g\n", d);
-	printf("real: %.15g\n", d);*/
+	ft_printf("mine: ...%06.6f...\n", INFINITY);
+	printf("real: ...%06.6f...\n", INFINITY);
+	ft_printf("mine: ...%f...\n", NAN);
+	printf("real: ...%f...\n", NAN);
 }

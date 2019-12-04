@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/03 18:41:34 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/04 17:40:39 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <math.h>
-
-/*
-  SPEC_CHARS - all chars which are allowed within a specifier substring
-  FLAG_CHARS_ARR - the flags for which widths can be specified
-  F_NUM - the number of flags described by FLAG_CHARS_ARR
-  NEW_FLAGS - the flags for which widths are not specified, only their
-  			  presence is relevant
-  NEW_F_NUM - the number of flags described by NEW_FLAGS
-  TYPE_SET - the different type identifier chars handled
-  TYPE_NUM - the number of types handled
-*/
 
 # define START 0
 # define END 1
@@ -125,6 +114,7 @@ char				*make_new_num(char *str, int i, char commas);
 char				*ft_round(char *str, int next_digit, char commas);
 int					pos_atoi(char *str, int start);
 char				*inc_exp(char *str);
+int					float_specials(double arg, char **var_addr);
 char				*reformat_e(char *str, char *exp_str);
 char				*make_after(int prec);
 char				*make_before(double f);

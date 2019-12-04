@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:44:32 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/27 11:45:13 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/04 15:07:43 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,9 @@ char	*num_precision(char *str, int prec, int str_pos)
 	int		str_begin;
 	char	*new;
 
+	str_begin = 0;
 	if (str[0] == '-')
 		str_begin = 1;
-	else
-		str_begin = 0;
 	if (!(new = (char*)malloc(prec + 1 + str_begin)))
 		return (NULL);
 	new[str_begin + prec--] = 0;

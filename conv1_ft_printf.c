@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:47:51 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/27 12:02:55 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/04 16:21:08 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,25 @@ char	*s_convert(va_list arg_list, t_list *list)
 
 char	*p_convert(va_list arg_list, t_list *list)
 {
+	int				i;
+	int				prec;
 	unsigned long	addr;
 	char			*var;
 
 	(void)list;
-	addr = (unsigned long long)va_arg(arg_list, void *);
+	prec = list->flag_vals[get_pos(list->flag_chars, '.')];
+	addr = (unsigned long)va_arg(arg_list, void *);
+	if (addr == 0 && prec == 0
+			&& list->flag_found[get_pos(list->flag_chars, '.')] == 1)
+		return (add_prefix(malloc_empty_string(), 'x'));
 	var = hex_convert(addr, 87);
 	if (list->new_flag_found[get_pos(NEW_FLAGS, '\'')])
 		var = add_commas(var);
+	i = 0;
+	while (var[i])
+		i++;
+	if (prec > i)
+		var = num_precision(var, prec, i - 1);
 	var = add_prefix(var, 'x');
 	return (var);
 }

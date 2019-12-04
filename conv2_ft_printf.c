@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 15:34:19 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/03 19:12:19 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/04 17:28:23 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,8 @@ char	*f_convert(va_list arg_list, t_list *list)
 	else
 		prec = 6;
 	arg = va_arg(arg_list, double);
-	if (arg == INFINITY)
-		return (ft_strdup("inf"));
-	if (arg == -INFINITY)
-		return (ft_strdup("-inf"));
-	var = ftoa((double)arg, prec, hash, commas);
+	if (!float_specials(arg, &var))
+		var = ftoa((double)arg, prec, hash, commas);
 	if (var[0] != '-')
 		var = prefix_signed(var, list);
 	return (var);
@@ -104,13 +101,12 @@ char	*e_convert(va_list arg_list, t_list *list)
 			prec = 6;
 	}
 	arg = va_arg(arg_list, double);
-	if (arg == INFINITY)
-		return (ft_strdup("inf"));
-	if (arg == -INFINITY)
-		return (ft_strdup("-inf"));
-	exp = get_exponent(&arg);
-	var = ftoa((double)arg, prec, hash, 0);
-	var = reformat_e(var, exp);
+	if (!float_specials(arg, &var))
+	{
+		exp = get_exponent(&arg);
+		var = ftoa((double)arg, prec, hash, 0);
+		var = reformat_e(var, exp);
+	}
 	if (var[0] != '-')
 		var = prefix_signed(var, list);
 	return (var);
