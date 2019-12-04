@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 12:36:34 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/22 16:10:54 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/04 18:54:46 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	negs(int r_pos, int zero_pos, int dash_pos, t_list *list)
 	}
 }
 
-void	init_f_ptr_arr(char *(*f_ptr_arr[])(va_list, t_list *))
+void	init_f_ptr_arr(char *(*f_ptr_arr[])(t_list *, va_list))
 {
 	f_ptr_arr[get_pos(TYPE_SET, 'c')] = c_convert;
 	f_ptr_arr[get_pos(TYPE_SET, 's')] = s_convert;

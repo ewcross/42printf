@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:59:55 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/04 15:50:07 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/04 19:04:44 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void		write_padded(char *str, t_list *spec_list)
 }
 
 int			write_spec(va_list arg_list, t_list *spec_list,
-					char *(*f_ptr_arr[TYPE_NUM])(va_list, t_list *))
+					char *(*f_ptr_arr[TYPE_NUM])(t_list *, va_list))
 {
 	int		type_index;
 	char	*var;
@@ -72,7 +72,7 @@ int			write_spec(va_list arg_list, t_list *spec_list,
 	else
 	{
 		type_index = get_pos(TYPE_SET, spec_list->type);
-		if (!(var = f_ptr_arr[type_index](arg_list, spec_list)))
+		if (!(var = f_ptr_arr[type_index](spec_list, arg_list)))
 			return (0);
 	}
 	if (spec_list->type != 'n')
@@ -93,7 +93,7 @@ const char	*write_plaintext(const char *ch_ptr)
 int			write_output(const char *str, va_list arg_list, t_list *spec_list)
 {
 	const char	*ch_ptr;
-	char		*(*f_ptr_arr[TYPE_NUM])(va_list, t_list *);
+	char		*(*f_ptr_arr[TYPE_NUM])(t_list *, va_list);
 
 	init_f_ptr_arr(f_ptr_arr);
 	ch_ptr = str;

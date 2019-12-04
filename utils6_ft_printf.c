@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:34:02 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/04 17:28:35 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/04 18:33:40 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,28 +32,28 @@ int		pos_atoi(char *str, int start)
 	return (output * neg);
 }
 
-char    *inc_exp(char *str)
+char	*inc_exp(char *str)
 {
 	int i;
 
 	i = 0;
 	while (str[i])
-	        i++;
+		i++;
 	i--;
 	while (str[i] == 57 && (str[i] != '+' || str[i] != '-'))
-	        str[i--] = 48;
+		str[i--] = 48;
 	if (str[i] == '+' || str[i] == '-')
 	{
-	        str[0] = str[1];
-	        str[1] = '1';
-	        return (ft_strjoin(ft_strdup("e"), str));
+		str[0] = str[1];
+		str[1] = '1';
+		return (ft_strjoin(ft_strdup("e"), str));
 	}
 	else if (str[i] > 47 && str[i] < 57)
-	        str[i] += 1;
+		str[i] += 1;
 	return (str);
 }
 
-char    *reformat_e(char *str, char *exp_str)
+char	*reformat_e(char *str, char *exp_str)
 {
 	int		i;
 	char	*new;
@@ -62,18 +62,18 @@ char    *reformat_e(char *str, char *exp_str)
 			|| (str[0] == '-' && str[1] == '1' && str[2] == '0'))
 	{
 		if (!(new = (char*)malloc(ft_strlen(str))))
-		        return (NULL);
+			return (NULL);
 		i = 0;
 		while (str[++i])
-		        new[i - 1] = str[i];
+			new[i - 1] = str[i];
 		new[i - 1] = 0;
 		if (str[0] == '-')
 		{
-		        new[0] = '-';
-		        new[1] = '1';
+			new[0] = '-';
+			new[1] = '1';
 		}
 		else
-		        new[0] = '1';
+			new[0] = '1';
 		free(str);
 		return (ft_strjoin(new, inc_exp(exp_str)));
 	}

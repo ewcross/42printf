@@ -6,13 +6,13 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:47:51 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/04 16:21:08 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/04 18:58:29 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-char	*c_convert(va_list arg_list, t_list *list)
+char	*c_convert(t_list *list, va_list arg_list)
 {
 	char *var;
 
@@ -25,7 +25,7 @@ char	*c_convert(va_list arg_list, t_list *list)
 	return (var);
 }
 
-char	*s_convert(va_list arg_list, t_list *list)
+char	*s_convert(t_list *list, va_list arg_list)
 {
 	int		prec_pos;
 	int		i;
@@ -44,7 +44,7 @@ char	*s_convert(va_list arg_list, t_list *list)
 	return (var);
 }
 
-char	*p_convert(va_list arg_list, t_list *list)
+char	*p_convert(t_list *list, va_list arg_list)
 {
 	int				i;
 	int				prec;
@@ -69,7 +69,7 @@ char	*p_convert(va_list arg_list, t_list *list)
 	return (var);
 }
 
-char	*di_convert(va_list arg_list, t_list *list)
+char	*di_convert(t_list *list, va_list arg_list)
 {
 	int			i;
 	int			prec;
@@ -94,7 +94,7 @@ char	*di_convert(va_list arg_list, t_list *list)
 	return (var);
 }
 
-char	*u_convert(va_list arg_list, t_list *list)
+char	*u_convert(t_list *list, va_list arg_list)
 {
 	int					i;
 	int					prec;

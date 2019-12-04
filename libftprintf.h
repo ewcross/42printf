@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/04 17:40:39 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/04 19:05:43 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,22 +49,24 @@ typedef struct		s_struct
 
 int					g_char_count;
 
-char				*c_convert(va_list arg_list, t_list *list);
-char				*s_convert(va_list arg_list, t_list *list);
-char				*p_convert(va_list arg_list, t_list *list);
-char				*di_convert(va_list arg_list, t_list *list);
-char				*u_convert(va_list arg_list, t_list *list);
-char				*x_convert(va_list arg_list, t_list *list);
-char				*xx_convert(va_list arg_list, t_list *list);
-char				*f_convert(va_list arg_list, t_list *list);
-char				*e_convert(va_list arg_list, t_list *list);
-char				*g_convert(va_list arg_list, t_list *list);
-char				*n_convert(va_list arg_list, t_list *list);
+char				*c_convert(t_list *list, va_list arg_list);
+char				*s_convert(t_list *list, va_list arg_list);
+char				*p_convert(t_list *list, va_list arg_list);
+char				*di_convert(t_list *list, va_list arg_list);
+char				*u_convert(t_list *list, va_list arg_list);
+char				*x_convert(t_list *list, va_list arg_list);
+char				*xx_convert(t_list *list, va_list arg_list);
+char				*f_convert(t_list *list, va_list arg_list);
+char				*e_convert(t_list *list, va_list arg_list);
+char				*g_convert(t_list *list, va_list arg_list);
+char				*n_convert(t_list *list, va_list arg_list);
 long long			resize(long long arg, t_list *list);
 long long unsigned	u_resize(long long unsigned arg, t_list *list);
 void				get_x_p(double arg, int *x_p, t_list *list);
 int					g_inf_checker(double arg, char **var_addr);
 char				*trim_zeros(char *str);
+int					dots(char *str);
+char				*make_f(double arg, int *x_p, char *h_c, t_list *list);
 char				*copy(char *str);
 int					ft_strlen(char *str);
 char				*num_precision(char *str, int prec, int len);
@@ -101,9 +103,9 @@ char				*pad(char *str, char ch, int width, char type);
 void				write_var(char *str, t_list *spec_list);
 void				write_padded(char *str, t_list *spec_list);
 int					write_spec(va_list arg_list, t_list *spec_list,
-							char *(*f_ptr_arr[TYPE_NUM])(va_list, t_list *));
+							char *(*f_ptr_arr[TYPE_NUM])(t_list *, va_list));
 const char			*write_plaintext(const char *ch_ptr);
-void				init_f_ptr_arr(char *(*f_ptr_arr[])(va_list, t_list *));
+void				init_f_ptr_arr(char *(*f_ptr_arr[])(t_list *, va_list));
 int					write_output(const char *str, va_list arg_list,
 									t_list *spec_list);
 int					ft_printf(const char *str, ...);

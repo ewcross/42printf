@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   conv3_ft_printf.c                                  :+:      :+:    :+:   */
+/*   g_flag_ft_printf_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/22 13:33:31 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/04 17:24:37 by ecross           ###   ########.fr       */
+/*   Created: 2019/12/04 18:16:12 by ecross            #+#    #+#             */
+/*   Updated: 2019/12/04 18:16:13 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,30 +92,5 @@ char	*make_f(double arg, int *x_p, char *h_c, t_list *list)
 		var = prefix_signed(var, list);
 	if (!h_c[0])
 		var = trim_zeros(var);
-	return (var);
-}
-
-char	*g_convert(va_list arg_list, t_list *list)
-{
-	int		x_p[2];
-	double	arg;
-	char	h_c[2];
-	char	*exp_str;
-	char	*var;
-
-	h_c[0] = list->new_flag_found[get_pos(NEW_FLAGS, '#')];
-	h_c[1] = list->new_flag_found[get_pos(NEW_FLAGS, '\'')];
-	if (g_inf_checker((arg = va_arg(arg_list, double)), &var))
-		return (var);
-	get_x_p(arg, x_p, list);
-	if ((x_p[1] > x_p[0] && x_p[0] > -5) || (x_p[0] == 0 && x_p[1] == 0))
-		return (make_f(arg, x_p, h_c, list));
-	exp_str = get_exponent(&arg);
-	var = ftoa((double)arg, x_p[1] - 1, h_c[0], 0);
-	if (!h_c[0] && dots(var))
-		var = trim_zeros(var);
-	var = reformat_e(var, exp_str);
-	if (var[0] != '-')
-		var = prefix_signed(var, list);
 	return (var);
 }
