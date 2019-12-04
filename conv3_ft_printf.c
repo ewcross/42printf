@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 13:33:31 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/04 12:50:01 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/04 13:31:16 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,20 @@ int		g_inf_checker(double arg, char **var_addr)
 	return (0);
 }
 
+int		dots(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '.')
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 char	*make_f(double arg, int *x_p, char *h_c, t_list *list)
 {
 	char	*var;
@@ -94,15 +108,12 @@ char	*g_convert(va_list arg_list, t_list *list)
 	if (g_inf_checker((arg = va_arg(arg_list, double)), &var))
 		return (var);
 	get_x_p(arg, x_p, list);
-	printf("exp int is %d\n", x_p[0]);
-	printf("prec int is %d\n", x_p[1]);
 	if ((x_p[1] > x_p[0] && x_p[0] > -5) || (x_p[0] == 0 && x_p[1] == 0))
-	{
-		printf("making f\n");
 		return (make_f(arg, x_p, h_c, list));
-	}
 	exp_str = get_exponent(&arg);
 	var = ftoa((double)arg, x_p[1] - 1, h_c[0], 0);
+	if (!h_c[0] && dots(var))
+		var = trim_zeros(var);
 	var = reformat_e(var, exp_str);
 	if (var[0] != '-')
 		var = prefix_signed(var, list);

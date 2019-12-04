@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:34:02 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/03 18:51:28 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/04 13:19:03 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ char    *reformat_e(char *str, char *exp_str)
 {
 	int		i;
 	char	*new;
-	
+
 	if ((str[0] == '1' && str[1] == '0')
-	                || (str[0] == '-' && str[1] == '1' && str[2] == '0'))
+			|| (str[0] == '-' && str[1] == '1' && str[2] == '0'))
 	{
 		if (!(new = (char*)malloc(ft_strlen(str))))
 		        return (NULL);
