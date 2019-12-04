@@ -6,11 +6,31 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:34:02 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/28 11:03:19 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/12/03 18:51:28 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+
+int		pos_atoi(char *str, int start)
+{
+	int output;
+	int neg;
+
+	output = 0;
+	neg = 1;
+	if (str[start] == 43 || str[start] == 45)
+	{
+		neg *= 44 - str[start];
+		start++;
+	}
+	while (str[start])
+	{
+		output = (output * 10) + (str[start] - 48);
+		start++;
+	}
+	return (output * neg);
+}
 
 char    *inc_exp(char *str)
 {

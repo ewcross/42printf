@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/11/28 11:53:06 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/12/03 18:41:34 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,7 @@ char				*ft_strjoin(char *s1, char *s2);
 int					comma_or_not(char *str);
 char				*make_new_num(char *str, int i, char commas);
 char				*ft_round(char *str, int next_digit, char commas);
+int					pos_atoi(char *str, int start);
 char				*inc_exp(char *str);
 char				*reformat_e(char *str, char *exp_str);
 char				*make_after(int prec);

@@ -1,1688 +1,1744 @@
-7,8c7,8
-< 7 --> 23.0004
+8c8
 < 8 --> 3.9e-05
 ---
-> 7 --> 23.00041
-> 8 --> 0.000039
-11,16c11,16
+> 8 --> 3.90000e-05
+11,12c11,12
 < 11 --> 1e-06
 < 12 --> -1e-06
-< 13 --> 9873
-< 14 --> -875
-< 15 --> 1000
-< 16 --> -100
 ---
 > 11 --> 1.00000e-06
 > 12 --> -1.00000e-06
-> 13 --> 9873.000001
-> 14 --> -875.000001
-> 15 --> 999.999999
-> 16 --> -99.999999
-19,22c19,22
-< 19 --> 23.3751
-< 20 --> -985.765
-< 21 --> 0.0894255
-< 22 --> -56.2013
----
-> 19 --> 23.375094
-> 20 --> -985.765426
-> 21 --> 0.089426
-> 22 --> -56.201268
-25,27c25,27
-< 25 --> 43.44
-< 26 --> -5.03
-< 27 --> 2
----
-> 25 --> 43.439999
-> 26 --> -5.029999
-> 27 --> 1.999999
-31,34c31,34
+31,32c31,32
 < 31 --> this 2 float
 < 32 --> 7
-< 33 --> 1
+---
+> 31 --> this 1.6 float
+> 32 --> 7.4
+34c34
 < 34 --> -4
 ---
-> 31 --> this 2e+00 float
-> 32 --> 7e+00
-> 33 --> 1e+00
-> 34 --> -4e+00
-39,42c39,42
+> 34 --> -3.85
+39,40c39,40
 < 39 --> -7
 < 40 --> -0.0003
-< 41 --> this 2 float
-< 42 --> 8
 ---
-> 39 --> -7e+00
-> 40 --> -3e-04
-> 41 --> this 1.5 float
-> 42 --> 7.5
-44c44
-< 44 --> -4
----
-> 44 --> -3.9
-50c50
-< 50 --> -0.0003
----
-> 50 --> -3e-04
-55,56c55,56
-< 55 --> 574
-< 56 --> -958
----
-> 55 --> 573.924
-> 56 --> -958.125
+> 39 --> -7.00036
+> 40 --> -0
 58c58
 < 58 --> 3.9e-05
 ---
 > 58 --> 3.90e-05
-60c60
-< 60 --> -0.00032
----
-> 60 --> -3.20e-04
 68c68
 < 68 --> 3.9e-06
 ---
-> 68 --> 0.0000039
-70,76c70,76
+> 68 --> 3.900000e-06
+70,72c70,72
 < 70 --> -3.2e-05
 < 71 --> 1e-07
 < 72 --> -1e-07
-< 73 --> 9873
-< 74 --> -875
-< 75 --> 1000
-< 76 --> -100
 ---
-> 70 --> -0.000032
+> 70 --> -3.200000e-05
 > 71 --> 1.000000e-07
 > 72 --> -1.000000e-07
-> 73 --> 9873.000001
-> 74 --> -875.000001
-> 75 --> 999.9999999
-> 76 --> -99.9999999
-79,80c79,80
-< 79 --> 23.37509
+80c80,367
 < 80 --> -985.7654
 ---
-> 79 --> 23.3750945
-> 80 --> -985.7654265
-82,87c82,87
-< 82 --> -56.20127
-< 83 --> 43.44
-< 84 --> -5.03
-< 85 --> 43.44
-< 86 --> -5.029999
-< 87 --> 1.999999
----
-> 82 --> -56.2012685
-> 83 --> 43.4399999
-> 84 --> -5.0299999
-> 85 --> 43.4399995
-> 86 --> -5.0299995
-> 87 --> 1.9999995
-89c89
-< 89 --> 4
----
-> 89 --> 3.9999999
-97c97
+> 80 --> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 2
+> prec int is 6
+> making f
+> new prec is int is 3
+> exp int is 2
+> prec int is 6
+> making f
+> new prec is int is 3
+> exp int is 1
+> prec int is 6
+> making f
+> new prec is int is 4
+> exp int is -5
+> prec int is 6
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is -4
+> prec int is 6
+> making f
+> new prec is int is 9
+> exp int is -6
+> prec int is 6
+> exp int is -6
+> prec int is 6
+> exp int is 3
+> prec int is 6
+> making f
+> new prec is int is 2
+> exp int is 2
+> prec int is 6
+> making f
+> new prec is int is 3
+> exp int is 2
+> prec int is 6
+> making f
+> new prec is int is 3
+> exp int is 1
+> prec int is 6
+> making f
+> new prec is int is 4
+> exp int is -1
+> prec int is 6
+> making f
+> new prec is int is 6
+> exp int is -1
+> prec int is 6
+> making f
+> new prec is int is 6
+> exp int is 1
+> prec int is 6
+> making f
+> new prec is int is 4
+> exp int is 2
+> prec int is 6
+> making f
+> new prec is int is 3
+> exp int is -2
+> prec int is 6
+> making f
+> new prec is int is 7
+> exp int is 1
+> prec int is 6
+> making f
+> new prec is int is 4
+> exp int is 1
+> prec int is 6
+> making f
+> new prec is int is 4
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 1
+> prec int is 6
+> making f
+> new prec is int is 4
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is -1
+> prec int is 6
+> making f
+> new prec is int is 6
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 2
+> prec int is 0
+> exp int is 2
+> prec int is 0
+> exp int is 1
+> prec int is 0
+> exp int is -5
+> prec int is 0
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is -4
+> prec int is 0
+> making f
+> new prec is int is 3
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 2
+> prec int is 1
+> exp int is 2
+> prec int is 1
+> exp int is 1
+> prec int is 1
+> exp int is -5
+> prec int is 1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is -4
+> prec int is 1
+> making f
+> new prec is int is 4
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 2
+> prec int is 3
+> making f
+> new prec is int is 0
+> exp int is 2
+> prec int is 3
+> making f
+> new prec is int is 0
+> exp int is 1
+> prec int is 3
+> making f
+> new prec is int is 1
+> exp int is -5
+> prec int is 3
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is -4
+> prec int is 3
+> making f
+> new prec is int is 6
+> exp int is 0
+> prec int is 7
+> making f
+> new prec is int is 6
+> exp int is 0
+> prec int is 7
+> making f
+> new prec is int is 6
+> exp int is 0
+> prec int is 7
+> making f
+> new prec is int is 6
+> exp int is 0
+> prec int is 7
+> making f
+> new prec is int is 6
+> exp int is 2
+> prec int is 7
+> making f
+> new prec is int is 4
+> exp int is 2
+> prec int is 7
+> making f
+> new prec is int is 4
+> exp int is 1
+> prec int is 7
+> making f
+> new prec is int is 5
+> exp int is -6
+> prec int is 7
+> exp int is 0
+> prec int is 7
+> making f
+> new prec is int is 6
+> exp int is -5
+> prec int is 7
+> exp int is -7
+> prec int is 7
+> exp int is -7
+> prec int is 7
+> exp int is 3
+> prec int is 7
+> making f
+> new prec is int is 3
+> exp int is 2
+> prec int is 7
+> making f
+> new prec is int is 4
+> exp int is 2
+> prec int is 7
+> making f
+> new prec is int is 4
+> exp int is 1
+> prec int is 7
+> making f
+> new prec is int is 5
+> exp int is -1
+> prec int is 7
+> making f
+> new prec is int is 7
+> exp int is -1
+> prec int is 7
+> making f
+> new prec is int is 7
+> exp int is 1
+> prec int is 7
+> making f
+> new prec is int is 5
+> exp int is 2
+> prec int is 7
+> making f
+> new prec is -985.7654
+97c384
 < 97 --> 3.9e-07
 ---
-> 97 --> 0.00000039
-99,105c99,419
+> 97 --> 3.9000000e-07
+99,101c386,388
 < 99 --> -3.2e-06
 < 100 --> 1e-08
 < 101 --> -1e-08
-< 102 --> 9873
-< 103 --> -875
-< 104 --> 1000
-< 105 --> -100
 ---
-> 99 --> -0.0000032
+> 99 --> -3.2000000e-06
 > 100 --> 1.0000000e-08
 > 101 --> -1.0000000e-08
-> 102 --> 9873.000001
-> 103 --> -875.000001
-> 104 --> 999.9999999
-> 105 --> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 2
-> prec is 6
-> using f with prec 6
-> exp is 2
-> prec is 6
-> using f with prec 6
-> exp is 1
-> prec is 6
-> using f with prec 6
-> exp is 5
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 4
-> prec is 6
-> using f with prec 6
-> exp is 6
-> prec is 6
-> using e with prec 5
-> exp is 6
-> prec is 6
-> using e with prec 5
-> exp is 3
-> prec is 6
-> using f with prec 6
-> exp is 2
-> prec is 6
-> using f with prec 6
-> exp is 2
-> prec is 6
-> using f with prec 6
-> exp is 1
-> prec is 6
-> using f with prec 6
-> exp is 1
-> prec is 6
-> using f with prec 6
-> exp is 1
-> prec is 6
-> using f with prec 6
-> exp is 1
-> prec is 6
-> using f with prec 6
-> exp is 2
-> prec is 6
-> using f with prec 6
-> exp is 2
-> prec is 6
-> using f with prec 6
-> exp is 1
-> prec is 6
-> using f with prec 6
-> exp is 1
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 1
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 1
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 2
-> prec is 0
-> using e with prec -1
-> exp is 2
-> prec is 0
-> using e with prec -1
-> exp is 1
-> prec is 0
-> using e with prec -1
-> exp is 5
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 4
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 2
-> prec is 1
-> using e with prec 0
-> exp is 2
-> prec is 1
-> using e with prec 0
-> exp is 1
-> prec is 1
-> using e with prec 0
-> exp is 5
-> prec is 1
-> using e with prec 0
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 4
-> prec is 1
-> using e with prec 0
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 2
-> prec is 3
-> using f with prec 3
-> exp is 2
-> prec is 3
-> using f with prec 3
-> exp is 1
-> prec is 3
-> using f with prec 3
-> exp is 5
-> prec is 3
-> using e with prec 2
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 4
-> prec is 3
-> using e with prec 2
-> exp is 0
-> prec is 7
-> using f with prec 7
-> exp is 0
-> prec is 7
-> using f with prec 7
-> exp is 0
-> prec is 7
-> using f with prec 7
-> exp is 0
-> prec is 7
-> using f with prec 7
-> exp is 2
-> prec is 7
-> using f with prec 7
-> exp is 2
-> prec is 7
-> using f with prec 7
-> exp is 1
-> prec is 7
-> using f with prec 7
-> exp is 6
-> prec is 7
-> using f with prec 7
-> exp is 0
-> prec is 7
-> using f with prec 7
-> exp is 5
-> prec is 7
-> using f with prec 7
-> exp is 7
-> prec is 7
-> using e with prec 6
-> exp is 7
-> prec is 7
-> using e with prec 6
-> exp is 3
-> prec is 7
-> using f with prec 7
-> exp is 2
-> prec is 7
-> using f with prec 7
-> exp is 2
-> prec is 7
-> using f with prec 7
-> exp is 1
-> prec is 7
-> using f with prec 7
-> exp is 1
-> prec is 7
-> using f with prec 7
-> exp is 1
-> prec is 7
-> using f with prec 7
-> exp is 1
-> prec is 7
-> using f with prec 7
-> exp is 2
-> prec is 7
-> using f with prec 7
-> exp is 2
-> prec is 7
-> using f with prec 7
-> exp is 1
-> prec is 7
-> using f with prec 7
-> exp is 1
-> prec is 7
-> using f with prec 7
-> exp is 0
-> prec is 7
-> using f with prec 7
-> exp is 1
-> prec is 7
-> using f with prec 7
-> exp is 0
-> prec is 7
-> using f with prec 7
-> exp is 0
-> prec is 7
-> using f with prec 7
-> exp is 1
-> prec is 7
-> using f with prec 7
-> exp is 0
-> prec is 7
-> using f with prec 7
-> exp is 0
-> prec is 8
-> using f with prec 8
-> exp is 0
-> prec is 8
-> using f with prec 8
-> exp is 0
-> prec is 8
-> using f with prec 8
-> exp is 0
-> prec is 8
-> using f with prec 8
-> exp is 2
-> prec is 8
-> using f with prec 8
-> exp is 2
-> prec is 8
-> using f with prec 8
-> exp is 1
-> prec is 8
-> using f with prec 8
-> exp is 7
-> prec is 8
-> using f with prec 8
-> exp is 0
-> prec is 8
-> using f with prec 8
-> exp is 6
-> prec is 8
-> using f with prec 8
-> exp is 8
-> prec is 8
-> using e with prec 7
-> exp is 8
-> prec is 8
-> using e with prec 7
-> exp is 3
-> prec is 8
-> using f with prec 8
-> exp is 2
-> prec is 8
-> using f with prec 8
-> exp is 2
-> prec is 8
-> using f with prec 8
-> exp is 1
-> prec is 8
-> using f wit-99.99999999
-108,109c422,423
-< 108 --> 23.375094
-< 109 --> -985.76543
----
-> 108 --> 23.3750945
-> 109 --> -985.7654265
-111,112c425,426
-< 111 --> -56.201268
-< 112 --> 43.44
----
-> 111 --> -56.2012685
-> 112 --> 43.4399999
-114,116c428,430
-< 114 --> 43.439999
-< 115 --> -5.0299995
-< 116 --> 1.9999995
----
-> 114 --> 43.43999949
-> 115 --> -5.02999949
-> 116 --> 1.99999949
-126c440
+126c413
 < 126 --> 3.9e-07
 ---
-> 126 --> 0.00000039
-128,131c442,445
+> 126 --> 3.90000000e-07
+128,130c415,417
 < 128 --> -3.2e-06
 < 129 --> 1e-08
 < 130 --> -1e-08
-< 131 --> 9873
 ---
-> 128 --> -0.0000032
-> 129 --> 0.00000001
-> 130 --> -0.00000001
-> 131 --> 9873.000001
-133,134c447,448
-< 133 --> 1000
-< 134 --> -100
----
-> 133 --> 999.99999999
-> 134 --> -99.99999999
-137,138c451,452
-< 137 --> 23.3750945
-< 138 --> -985.765426
----
-> 137 --> 23.375094499
-> 138 --> -985.765426499
-143c457
-< 143 --> 43.4399995
----
-> 143 --> 43.43999949
-154,161c468,475
-< 154 --> 23.83413751
-< 155 --> -985.2459765
+> 128 --> -3.20000000e-06
+> 129 --> 1.00000000e-08
+> 130 --> -1.00000000e-08
+156c443,729
 < 156 --> 23.83413751
-< 157 --> -985.2459765
+---
+> 156 --> int is 4
+> exp int is -2
+> prec int is 7
+> making f
+> new prec is int is 8
+> exp int is 1
+> prec int is 7
+> making f
+> new prec is int is 5
+> exp int is 1
+> prec int is 7
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 7
+> making f
+> new prec is int is 6
+> exp int is 1
+> prec int is 7
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 7
+> making f
+> new prec is int is 6
+> exp int is 0
+> prec int is 7
+> making f
+> new prec is int is 6
+> exp int is -1
+> prec int is 7
+> making f
+> new prec is int is 7
+> exp int is 0
+> prec int is 7
+> making f
+> new prec is int is 6
+> exp int is 0
+> prec int is 8
+> making f
+> new prec is int is 7
+> exp int is 0
+> prec int is 8
+> making f
+> new prec is int is 7
+> exp int is 0
+> prec int is 8
+> making f
+> new prec is int is 7
+> exp int is 0
+> prec int is 8
+> making f
+> new prec is int is 7
+> exp int is 2
+> prec int is 8
+> making f
+> new prec is int is 5
+> exp int is 2
+> prec int is 8
+> making f
+> new prec is int is 5
+> exp int is 1
+> prec int is 8
+> making f
+> new prec is int is 6
+> exp int is -7
+> prec int is 8
+> exp int is 0
+> prec int is 8
+> making f
+> new prec is int is 7
+> exp int is -6
+> prec int is 8
+> exp int is -8
+> prec int is 8
+> exp int is -8
+> prec int is 8
+> exp int is 3
+> prec int is 8
+> making f
+> new prec is int is 4
+> exp int is 2
+> prec int is 8
+> making f
+> new prec is int is 5
+> exp int is 2
+> prec int is 8
+> making f
+> new prec is int is 5
+> exp int is 1
+> prec int is 8
+> making f
+> new prec is int is 6
+> exp int is -1
+> prec int is 8
+> making f
+> new prec is int is 8
+> exp int is -1
+> prec int is 8
+> making f
+> new prec is int is 8
+> exp int is 1
+> prec int is 8
+> making f
+> new prec is int is 6
+> exp int is 2
+> prec int is 8
+> making f
+> new prec is int is 5
+> exp int is -2
+> prec int is 8
+> making f
+> new prec is int is 9
+> exp int is 1
+> prec int is 8
+> making f
+> new prec is int is 6
+> exp int is 1
+> prec int is 8
+> making f
+> new prec is int is 6
+> exp int is 0
+> prec int is 8
+> making f
+> new prec is int is 7
+> exp int is 1
+> prec int is 8
+> making f
+> new prec is int is 6
+> exp int is 0
+> prec int is 8
+> making f
+> new prec is int is 7
+> exp int is 0
+> prec int is 8
+> making f
+> new prec is int is 7
+> exp int is -1
+> prec int is 8
+> making f
+> new prec is int is 8
+> exp int is 0
+> prec int is 8
+> making f
+> new prec is int is 7
+> exp int is 0
+> prec int is 9
+> making f
+> new prec is int is 8
+> exp int is 0
+> prec int is 9
+> making f
+> new prec is int is 8
+> exp int is 0
+> prec int is 9
+> making f
+> new prec is int is 8
+> exp int is 0
+> prec int is 9
+> making f
+> new prec is int is 8
+> exp int is 2
+> prec int is 9
+> making f
+> new prec is int is 6
+> exp int is 2
+> prec int is 9
+> making f
+> new prec is int is 6
+> exp int is 1
+> prec int is 9
+> making f
+> new prec is int is 7
+> exp int is -7
+> prec int is 9
+> exp int is 0
+> prec int is 9
+> making f
+> new prec is int is 8
+> exp int is -6
+> prec int is 9
+> exp int is -8
+> prec int is 9
+> exp int is -8
+> prec int is 9
+> exp int is 3
+> prec int is 9
+> making f
+> new prec is int is 5
+> exp int is 2
+> prec int is 9
+> making f
+> new prec is int is 6
+> exp int is 2
+> prec int is 9
+> making f
+> new prec is int is 6
+> exp int is 1
+> prec int is 9
+> making f
+> new prec is int is 7
+> exp int is -1
+> prec int is 9
+> making f
+> new prec is int is 9
+> exp int is -1
+> prec int is 9
+> making f
+> new prec is int is 9
+> exp int is 1
+> prec int is 9
+> making f
+> new prec is int is 7
+> exp int is 2
+> prec int is 9
+> making f
+> new prec is int is 6
+> exp int is -2
+> prec int is 9
+> making f
+> new prec is int is 10
+> exp int is 1
+> prec int is 9
+> making f
+> new prec is int is 7
+> exp int is 1
+> prec int is 9
+> making f
+> new prec is int is 7
+> exp int is 0
+> prec int is 9
+> making f
+> new prec is int is 8
+> exp int is 1
+> prec int is 9
+> making f
+> new prec is int is 7
+> exp int is 0
+> prec int is 9
+> making f
+> new prec is int is 8
+> exp int is 0
+> prec int is 9
+> making f
+> new prec is int is 8
+> exp int is -1
+> prec int is 9
+> making f
+> new prec is int is 9
+> exp int is 0
+> prec int is 9
+> making f
+> new prec is int is 8
+> exp int is 0
+> prec int is 10
+> making f
+> new prec is int is 9
+> exp int is 0
+> prec int is 10
+> making f
+> new prec is int is 9
+> exp int is 0
+> prec int is 10
+> making f
+> new prec is int is 9
+> exp int is 0
+> prec int is 10
+> making f
+> new prec is int is 9
+> exp int is 2
+> prec int is 10
+> making f
+> new prec is int is 7
+> exp int is 2
+> prec int is 10
+> making f
+> new prec is int is 7
+> exp int is 1
+> prec int is 10
+> making f
+> new prec is int is 8
+> exp int is 2
+> prec int is 10
+> making f
+> new prec is int is 7
+> exp int is 1
+> prec int is 23.83413751
+158c731
 < 158 --> 0.8765089426
-< 159 --> -56.47852013
-< 160 --> 23.00000004
+---
+> 158 --> 0.8765089425
+161c734
 < 161 --> 3.9e-09
 ---
-> 154 --> 23.8341375094
-> 155 --> -985.2459765426
-> 156 --> 23.8341375094
-> 157 --> -985.2459765426
-> 158 --> 0.8765089425
-> 159 --> -56.4785201269
-> 160 --> 23.000000041
-> 161 --> 0.0000000039
-163,169c477,483
+> 161 --> 3.900000000e-09
+163,165c736,738
 < 163 --> -3.2e-08
 < 164 --> 1e-10
 < 165 --> -1e-10
-< 166 --> 9873
-< 167 --> -875
-< 168 --> 1000
-< 169 --> -100
 ---
-> 163 --> -0.000000032
+> 163 --> -3.200000000e-08
 > 164 --> 1.000000000e-10
 > 165 --> -1.000000000e-10
-> 166 --> 9873.0000000001
-> 167 --> -875.0000000001
-> 168 --> 999.9999999999
-> 169 --> -99.9999999999
-172,188c486,502
-< 172 --> 1.0259785412
-< 173 --> 1.0259785485
+174c747
 < 174 --> 1e-11
-< 175 --> 100
-< 176 --> 1.02597854124
-< 177 --> 1.02597854853
-< 178 --> 1e-12
-< 179 --> 100
-< 180 --> 1.025978541137
-< 181 --> 1.025978548534
-< 182 --> 1e-13
-< 183 --> 100
-< 184 --> 1.0259785414366
-< 185 --> 1.0259785485343
-< 186 --> 1e-14
-< 187 --> 10
-< 188 --> 1.02597854243659
 ---
-> 172 --> 1.02597854124
-> 173 --> 1.02597854853
 > 174 --> 1.0000000000e-11
-> 175 --> 99.99999999999
-> 176 --> 1.025978541237
-> 177 --> 1.025978548534
+178c751
+< 178 --> 1e-12
+---
 > 178 --> 1.00000000000e-12
-> 179 --> 99.999999999999
-> 180 --> 1.0259785411366
-> 181 --> 1.0259785485343
+182c755
+< 182 --> 1e-13
+---
 > 182 --> 1.000000000000e-13
-> 183 --> 99.9999999999999
-> 184 --> 1.02597854143659
-> 185 --> 1.02597854853431
+186c759
+< 186 --> 1e-14
+---
 > 186 --> 1.0000000000000e-14
-> 187 --> 9.99999999999999
-> 188 --> 1.025978542436587
-190c504
+190c763
 < 190 --> 1e-15
 ---
 > 190 --> 1.00000000000000e-15
-192,198c506,512
-< 192 --> 1.025978542436587
-< 193 --> 1.02597854853431
+194,195c767,768
 < 194 --> 1e-16
 < 195 --> 0.9999999999999999
-< 196 --> 1.0259785424365875
-< 197 --> 1.0259785485343105
+---
+> 194 --> 1.000000000000001e-16
+> 195 --> 1
+198c771
 < 198 --> 1.0000000000000001e-17
 ---
-> 192 --> 1.0259785424365875
-> 193 --> 1.0259785485343105
-> 194 --> 1.000000000000001e-16
-> 195 --> 0.9999999999999998
-> 196 --> 1.02597854243658748
-> 197 --> 1.02597854853431047
 > 198 --> 1.0000000000000007e-17
-201,208c515,828
+201,202c774,775
 < 201 --> 0.125978548534310425
 < 202 --> 7.
-< 203 --> 7.
-< 204 --> -7.
-< 205 --> -7.
-< 206 --> +7
-< 207 --> +7.3
-< 208 --> -7
 ---
 > 201 --> 0.125978548534310431
-> 202 --> 7e+00
-> 203 --> 7.3
-> 204 --> -7e+00
-> 205 --> -7.3
-> 206 --> +7e+00
-> 207 --> h prec 8
-> exp is 1
-> prec is 8
-> using f with prec 8
-> exp is 1
-> prec is 8
-> using f with prec 8
-> exp is 1
-> prec is 8
-> using f with prec 8
-> exp is 2
-> prec is 8
-> using f with prec 8
-> exp is 2
-> prec is 8
-> using f with prec 8
-> exp is 1
-> prec is 8
-> using f with prec 8
-> exp is 1
-> prec is 8
-> using f with prec 8
-> exp is 0
-> prec is 8
-> using f with prec 8
-> exp is 1
-> prec is 8
-> using f with prec 8
-> exp is 0
-> prec is 8
-> using f with prec 8
-> exp is 0
-> prec is 8
-> using f with prec 8
-> exp is 1
-> prec is 8
-> using f with prec 8
-> exp is 0
-> prec is 8
-> using f with prec 8
-> exp is 0
-> prec is 9
-> using f with prec 9
-> exp is 0
-> prec is 9
-> using f with prec 9
-> exp is 0
-> prec is 9
-> using f with prec 9
-> exp is 0
-> prec is 9
-> using f with prec 9
-> exp is 2
-> prec is 9
-> using f with prec 9
-> exp is 2
-> prec is 9
-> using f with prec 9
-> exp is 1
-> prec is 9
-> using f with prec 9
-> exp is 7
-> prec is 9
-> using f with prec 9
-> exp is 0
-> prec is 9
-> using f with prec 9
-> exp is 6
-> prec is 9
-> using f with prec 9
-> exp is 8
-> prec is 9
-> using f with prec 9
-> exp is 8
-> prec is 9
-> using f with prec 9
-> exp is 3
-> prec is 9
-> using f with prec 9
-> exp is 2
-> prec is 9
-> using f with prec 9
-> exp is 2
-> prec is 9
-> using f with prec 9
-> exp is 1
-> prec is 9
-> using f with prec 9
-> exp is 1
-> prec is 9
-> using f with prec 9
-> exp is 1
-> prec is 9
-> using f with prec 9
-> exp is 1
-> prec is 9
-> using f with prec 9
-> exp is 2
-> prec is 9
-> using f with prec 9
-> exp is 2
-> prec is 9
-> using f with prec 9
-> exp is 1
-> prec is 9
-> using f with prec 9
-> exp is 1
-> prec is 9
-> using f with prec 9
-> exp is 0
-> prec is 9
-> using f with prec 9
-> exp is 1
-> prec is 9
-> using f with prec 9
-> exp is 0
-> prec is 9
-> using f with prec 9
-> exp is 0
-> prec is 9
-> using f with prec 9
-> exp is 1
-> prec is 9
-> using f with prec 9
-> exp is 0
-> prec is 9
-> using f with prec 9
-> exp is 0
-> prec is 10
-> using f with prec 10
-> exp is 0
-> prec is 10
-> using f with prec 10
-> exp is 0
-> prec is 10
-> using f with prec 10
-> exp is 0
-> prec is 10
-> using f with prec 10
-> exp is 2
-> prec is 10
-> using f with prec 10
-> exp is 2
-> prec is 10
-> using f with prec 10
-> exp is 1
-> prec is 10
-> using f with prec 10
-> exp is 2
-> prec is 10
-> using f with prec 10
-> exp is 1
-> prec is 10
-> using f with prec 10
-> exp is 2
-> prec is 10
-> using f with prec 10
-> exp is 1
-> prec is 10
-> using f with prec 10
-> exp is 1
-> prec is 10
-> using f with prec 10
-> exp is 1
-> prec is 10
-> using f with prec 10
-> exp is 9
-> prec is 10
-> using f with prec 10
-> exp is 0
-> prec is 10
-> using f with prec 10
-> exp is 8
-> prec is 10
-> using f with prec 10
-> exp is 10
-> prec is 10
-> using e with prec 9
-> exp is 10
-> prec is 10
-> using e with prec 9
-> exp is 3
-> prec is 10
-> using f with prec 10
-> exp is 2
-> prec is 10
-> using f with prec 10
-> exp is 2
-> prec is 10
-> using f with prec 10
-> exp is 1
-> prec is 10
-> using f with prec 10
-> exp is 1
-> prec is 10
-> using f with prec 10
-> exp is 1
-> prec is 10
-> using f with prec 10
-> exp is 0
-> prec is 11
-> using f with prec 11
-> exp is 0
-> prec is 11
-> using f with prec 11
-> exp is 11
-> prec is 11
-> using e with prec 10
-> exp is 1
-> prec is 11
-> using f with prec 11
-> exp is 0
-> prec is 12
-> using f with prec 12
-> exp is 0
-> prec is 12
-> using f with prec 12
-> exp is 12
-> prec is 12
-> using e with prec 11
-> exp is 1
-> prec is 12
-> using f with prec 12
-> exp is 0
-> prec is 13
-> using f with prec 13
-> exp is 0
-> prec is 13
-> using f with prec 13
-> exp is 13
-> prec is 13
-> using e with prec 12
-> exp is 1
-> prec is 13
-> using f with prec 13
-> exp is 0
-> prec is 14
-> using f with prec 14
-> exp is 0
-> prec is 14
-> using f with prec 14
-> exp is 14
-> prec is 14
-> using e with prec 13
-> exp is 0
-> prec is 14
-> using f with prec 14
-> exp is 0
-> prec is 15
-> using f with prec 15
-> exp is 0
-> prec is 15
-> using f with prec 15
-> exp is 15
-> prec is 15
-> using e with prec 14
-> exp is 1
-> prec is 15
-> using f with prec 15
-> exp is 0
-> prec is 16
-> using f with prec 16
-> exp is 0
-> prec is 16
-> using f with prec 16
-> exp is 16
-> prec is 16
-> using e with prec 15
-> exp is 0
-> prec is 16
-> using f with prec 16
-> exp is 0
-> prec is 17
-> using f with prec 17
-> exp is 0
-> prec is 17
-> using f with prec 17
-> exp is 17
-> prec is 17
-> using e with prec 16
-> exp is 0
-> prec is 17
-> using f with prec 17
-> exp is 1
-> prec is 18
-> using f with prec 18
-> exp is 1
-> prec is 18
-> using f with prec 18
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 3
-> using f wit+7.3
-> 208 --> -7e+00
-210,211c830,831
+> 202 --> 7.400000
+204c777
+< 204 --> -7.
+---
+> 204 --> -7.400000
+206c779
+< 206 --> +7
+---
+> 206 --> +7.4
+208c781
+< 208 --> -7
+---
+> 208 --> -7.4
+210c783
 < 210 -->     7
-< 211 -->     7
 ---
-> 210 --> 7e+00
-> 211 -->   7.3
-214,215c834,835
+> 210 -->   7.3
+214c787
 < 214 -->    -7
-< 215 -->    -7
 ---
-> 214 --> -7e+00
-> 215 -->  -7.3
-218,219c838,839
+> 214 -->  -7.3
+218c791
 < 218 --> 00007
-< 219 --> 00007
 ---
-> 218 --> 7e+00
-> 219 --> 007.3
-222,223c842,843
+> 218 --> 007.3
+222c795
 < 222 --> -0007
-< 223 --> -0007
 ---
-> 222 --> -7e+00
-> 223 --> -07.3
-226,227c846,847
+> 222 --> -07.3
+226c799
 < 226 --> 7    
-< 227 --> 7    
 ---
-> 226 --> 7e+00
-> 227 --> 7.3  
-230,231c850,851
+> 226 --> 7.3  
+230c803
 < 230 --> -7   
-< 231 --> -7   
 ---
-> 230 --> -7e+00
-> 231 --> -7.3 
-234,235c854,855
+> 230 --> -7.3 
+232c805,1086
+< 232 --> -7.3 
+---
+> 232 --> 10
+> making f
+> new prec is int is 8
+> exp int is 2
+> prec int is 10
+> making f
+> new prec is int is 7
+> exp int is -1
+> prec int is 10
+> making f
+> new prec is int is 10
+> exp int is 1
+> prec int is 10
+> making f
+> new prec is int is 8
+> exp int is 1
+> prec int is 10
+> making f
+> new prec is int is 8
+> exp int is -9
+> prec int is 10
+> exp int is 0
+> prec int is 10
+> making f
+> new prec is int is 9
+> exp int is -8
+> prec int is 10
+> exp int is -10
+> prec int is 10
+> exp int is -10
+> prec int is 10
+> exp int is 3
+> prec int is 10
+> making f
+> new prec is int is 6
+> exp int is 2
+> prec int is 10
+> making f
+> new prec is int is 7
+> exp int is 2
+> prec int is 10
+> making f
+> new prec is int is 7
+> exp int is 1
+> prec int is 10
+> making f
+> new prec is int is 8
+> exp int is -1
+> prec int is 10
+> making f
+> new prec is int is 10
+> exp int is -1
+> prec int is 10
+> making f
+> new prec is int is 10
+> exp int is 0
+> prec int is 11
+> making f
+> new prec is int is 10
+> exp int is 0
+> prec int is 11
+> making f
+> new prec is int is 10
+> exp int is -11
+> prec int is 11
+> exp int is 1
+> prec int is 11
+> making f
+> new prec is int is 9
+> exp int is 0
+> prec int is 12
+> making f
+> new prec is int is 11
+> exp int is 0
+> prec int is 12
+> making f
+> new prec is int is 11
+> exp int is -12
+> prec int is 12
+> exp int is 1
+> prec int is 12
+> making f
+> new prec is int is 10
+> exp int is 0
+> prec int is 13
+> making f
+> new prec is int is 12
+> exp int is 0
+> prec int is 13
+> making f
+> new prec is int is 12
+> exp int is -13
+> prec int is 13
+> exp int is 1
+> prec int is 13
+> making f
+> new prec is int is 11
+> exp int is 0
+> prec int is 14
+> making f
+> new prec is int is 13
+> exp int is 0
+> prec int is 14
+> making f
+> new prec is int is 13
+> exp int is -14
+> prec int is 14
+> exp int is 0
+> prec int is 14
+> making f
+> new prec is int is 13
+> exp int is 0
+> prec int is 15
+> making f
+> new prec is int is 14
+> exp int is 0
+> prec int is 15
+> making f
+> new prec is int is 14
+> exp int is -15
+> prec int is 15
+> exp int is -1
+> prec int is 15
+> making f
+> new prec is int is 15
+> exp int is 0
+> prec int is 16
+> making f
+> new prec is int is 15
+> exp int is 0
+> prec int is 16
+> making f
+> new prec is int is 15
+> exp int is -16
+> prec int is 16
+> exp int is 0
+> prec int is 16
+> making f
+> new prec is int is 15
+> exp int is 0
+> prec int is 17
+> making f
+> new prec is int is 16
+> exp int is 0
+> prec int is 17
+> making f
+> new prec is int is 16
+> exp int is -17
+> prec int is 17
+> exp int is 0
+> prec int is 17
+> making f
+> new prec is int is 16
+> exp int is -1
+> prec int is 18
+> making f
+> new prec is int is 18
+> exp int is -1
+> prec int is 18
+> making f
+> new prec is int is 18
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0-7.3 
+234c1088
 < 234 --> 7    
-< 235 --> 7    
 ---
-> 234 --> 7e+00
-> 235 --> 7.3  
-238,239c858,859
+> 234 --> 7.3  
+238c1092
 < 238 --> -7   
-< 239 --> -7   
 ---
-> 238 --> -7e+00
-> 239 --> -7.3 
-242,243c862,863
+> 238 --> -7.3 
+242c1096
 < 242 --> 7    
-< 243 --> 7    
 ---
-> 242 --> 7e+00
-> 243 --> 7.3  
-246,247c866,867
+> 242 --> 7.3  
+246c1100
 < 246 --> -7   
-< 247 --> -7   
 ---
-> 246 --> -7e+00
-> 247 --> -7.3 
-250,259c870,879
+> 246 --> -7.3 
+250c1104
 < 250 --> 7.   
-< 251 --> 7.   
-< 252 --> 7.30 
-< 253 --> 7.30000
+---
+> 250 --> 7.300000
+254c1108
 < 254 --> -7.  
-< 255 --> -7.  
-< 256 --> -7.30
-< 257 --> -7.30000
+---
+> 254 --> -7.300000
+258c1112
 < 258 -->    +7
-< 259 -->    +7
 ---
-> 250 --> 7e+00
-> 251 --> 7.3  
-> 252 --> 7.300
-> 253 --> 7.300000
-> 254 --> -7e+00
-> 255 --> -7.3 
-> 256 --> -7.300
-> 257 --> -7.300000
-> 258 --> +7e+00
-> 259 -->  +7.3
-262,263c882,883
+> 258 -->  +7.3
+262c1116
 < 262 -->    -7
-< 263 -->    -7
 ---
-> 262 --> -7e+00
-> 263 -->  -7.3
-266,267c886,887
+> 262 -->  -7.3
+266c1120
 < 266 --> +0007
-< 267 --> +0007
 ---
-> 266 --> +7e+00
-> 267 --> +07.3
-270,271c890,891
+> 266 --> +07.3
+270c1124
 < 270 --> -0007
-< 271 --> -0007
 ---
-> 270 --> -7e+00
-> 271 --> -07.3
-274,275c894,895
+> 270 --> -07.3
+274c1128
 < 274 --> +7   
-< 275 --> +7   
 ---
-> 274 --> +7e+00
-> 275 --> +7.3 
-278,279c898,899
+> 274 --> +7.3 
+278c1132
 < 278 --> -7   
-< 279 --> -7   
 ---
-> 278 --> -7e+00
-> 279 --> -7.3 
-282,283c902,903
+> 278 --> -7.3 
+282c1136
 < 282 --> +7   
-< 283 --> +7   
 ---
-> 282 --> +7e+00
-> 283 --> +7.3 
-286,287c906,907
+> 282 --> +7.3 
+286c1140
 < 286 --> -7   
-< 287 --> -7   
 ---
-> 286 --> -7e+00
-> 287 --> -7.3 
-290,291c910,911
+> 286 --> -7.3 
+290c1144
 < 290 --> +7   
-< 291 --> +7   
 ---
-> 290 --> +7e+00
-> 291 --> +7.3 
-294,295c914,915
+> 290 --> +7.3 
+294c1148
 < 294 --> -7   
-< 295 --> -7   
 ---
-> 294 --> -7e+00
-> 295 --> -7.3 
-298,307c918,927
+> 294 --> -7.3 
+298c1152
 < 298 --> +7.  
-< 299 --> +7.  
-< 300 --> +7.30
-< 301 --> +7.30000
+---
+> 298 --> +7.300000
+302,303c1156,1444
 < 302 --> -7.  
 < 303 --> -7.  
-< 304 --> -7.30
-< 305 --> -7.30000
+---
+> 302 --> -7.300000
+> 303 --> 
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new pre-7.  
+306c1447
 < 306 -->     7
-< 307 -->     7
 ---
-> 298 --> +7e+00
-> 299 --> +7.3 
-> 300 --> +7.300
-> 301 --> +7.300000
-> 302 --> -7e+00
-> 303 --> -7.3 
-> 304 --> -7.300
-> 305 --> -7.300000
-> 306 -->  7e+00
-> 307 -->   7.3
-310,312c930,1245
+> 306 -->   7.3
+310c1451
 < 310 -->    -7
-< 311 -->    -7
-< 312 -->  -7.3
 ---
-> 310 --> -7e+00
-> 311 -->  -7.3
-> 312 --> h prec 3
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp  -7.3
-314,315c1247,1248
+> 310 -->  -7.3
+314c1455
 < 314 -->  0007
-< 315 -->  0007
 ---
-> 314 -->  7e+00
-> 315 -->  07.3
-318,319c1251,1252
+> 314 -->  07.3
+318c1459
 < 318 --> -0007
-< 319 --> -0007
 ---
-> 318 --> -7e+00
-> 319 --> -07.3
-322,323c1255,1256
+> 318 --> -07.3
+322c1463
 < 322 -->  7   
-< 323 -->  7   
 ---
-> 322 -->  7e+00
-> 323 -->  7.3 
-326,327c1259,1260
+> 322 -->  7.3 
+326c1467
 < 326 --> -7   
-< 327 --> -7   
 ---
-> 326 --> -7e+00
-> 327 --> -7.3 
-330,331c1263,1264
+> 326 --> -7.3 
+330c1471
 < 330 -->  7   
-< 331 -->  7   
 ---
-> 330 -->  7e+00
-> 331 -->  7.3 
-334,335c1267,1268
+> 330 -->  7.3 
+334c1475
 < 334 --> -7   
-< 335 --> -7   
 ---
-> 334 --> -7e+00
-> 335 --> -7.3 
-338,339c1271,1272
+> 334 --> -7.3 
+338c1479
 < 338 -->  7   
-< 339 -->  7   
 ---
-> 338 -->  7e+00
-> 339 -->  7.3 
-342,343c1275,1276
+> 338 -->  7.3 
+342c1483
 < 342 --> -7   
-< 343 --> -7   
 ---
-> 342 --> -7e+00
-> 343 --> -7.3 
-346,355c1279,1288
+> 342 --> -7.3 
+346c1487
 < 346 -->  7.  
-< 347 -->  7.  
-< 348 -->  7.30
-< 349 -->  7.30000
+---
+> 346 -->  7.300000
+350c1491
 < 350 --> -7.  
-< 351 --> -7.  
-< 352 --> -7.30
-< 353 --> -7.30000
+---
+> 350 --> -7.300000
+354c1495
 < 354 --> +7
-< 355 --> +7
 ---
-> 346 -->  7e+00
-> 347 -->  7.3 
-> 348 -->  7.300
-> 349 -->  7.300000
-> 350 --> -7e+00
-> 351 --> -7.3 
-> 352 --> -7.300
-> 353 --> -7.300000
-> 354 --> +7e+00
-> 355 --> +7.3
-358,359c1291,1292
+> 354 --> +7.3
+358c1499
 < 358 --> -7
-< 359 --> -7
 ---
-> 358 --> -7e+00
-> 359 --> -7.3
-362,363c1295,1296
+> 358 --> -7.3
+362c1503
 < 362 --> +7
-< 363 --> +7
 ---
-> 362 --> +7e+00
-> 363 --> +7.3
-366,367c1299,1300
+> 362 --> +7.3
+366c1507
 < 366 --> -7
-< 367 --> -7
 ---
-> 366 --> -7e+00
-> 367 --> -7.3
-370,371c1303,1304
+> 366 --> -7.3
+370,371c1511,1512
 < 370 --> 0.23699999999999998845368054389837197959423065185546875
 < 371 --> 0.23699999999999998845368054389837
 ---
 > 370 --> 0.237000000000000010658141036401502788066864013671875
 > 371 --> 0.2370000000000000106581410364015
-375a1309,1500
-> is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 0
-> prec is 0
-> using e with prec -1
-> exp is 0
-> prec is 1
-> using f with prec 1
-> exp is 0
-> prec is 3
-> using f with prec 3
-> exp is 0
-> prec is 6
-> using f with prec 6
-> exp is 1
-> prec is 100
-> using f with prec 100
-> exp is 1
-> prec is 32
-> using f with prec 32
-> exp is 1
-> prec is 4
-> using f with prec 4
-> exp is 1
-> prec is 4
-> using f with prec 4
-> exp is 0
-> prec is 10
-> using f with prec 10
-> exp is 2
-> prec is 2000
-> using f with prec 2000
+375c1516,1805
+< 375 --> 623.283765107234785318723879754543304443359375
+---
+> 375 --> c is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is 0
+> prec int is 0
+> making f
+> new prec is int is -1
+> exp int is 0
+> prec int is 1
+> making f
+> new prec is int is 0
+> exp int is 0
+> prec int is 3
+> making f
+> new prec is int is 2
+> exp int is 0
+> prec int is 6
+> making f
+> new prec is int is 5
+> exp int is -1
+> prec int is 100
+> making f
+> new prec is int is 100
+> exp int is -1
+> prec int is 32
+> making f
+> new prec is int is 32
+> exp int is -1
+> prec int is 4
+> making f
+> new prec is int is 4
+> exp int is -1
+> prec int is 4
+> making f
+> new prec is int is 4
+> exp int is 0
+> prec int is 10
+> making f
+> new prec is int is 9
+> exp int 623.283765107234785318723879754543304443359375
+> is 2
+> prec int is 2000
+> making f
+> new prec is int is 1997

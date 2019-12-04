@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 13:33:31 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/02 15:17:47 by elliotcro        ###   ########.fr       */
+/*   Updated: 2019/12/04 12:50:01 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void	get_x_p(double arg, int *x_p, t_list *list)
 	char	*exp_str;
 
 	exp_str = get_exponent(&arg);
-	x_p[0] = flag_atoi(exp_str, 2, ft_strlen(exp_str));
+	x_p[0] = pos_atoi(exp_str, 1);
 	free(exp_str);
 	if (list->flag_found[get_pos(list->flag_chars, '.')])
 	{
 		x_p[1] = list->flag_vals[get_pos(list->flag_chars, '.')];
-		if (x_p[1] < 0)
+		if (x_p[1] < 1)
 			x_p[1] = 1;
 	}
 	else
@@ -69,6 +69,18 @@ int		g_inf_checker(double arg, char **var_addr)
 	return (0);
 }
 
+char	*make_f(double arg, int *x_p, char *h_c, t_list *list)
+{
+	char	*var;
+
+	var = ftoa((double)arg, x_p[1] - (x_p[0] + 1), h_c[0], h_c[1]);
+	if (var[0] != '-')
+		var = prefix_signed(var, list);
+	if (!h_c[0])
+		var = trim_zeros(var);
+	return (var);
+}
+
 char	*g_convert(va_list arg_list, t_list *list)
 {
 	int		x_p[2];
@@ -82,19 +94,13 @@ char	*g_convert(va_list arg_list, t_list *list)
 	if (g_inf_checker((arg = va_arg(arg_list, double)), &var))
 		return (var);
 	get_x_p(arg, x_p, list);
-	printf("exp is %d\n", x_p[0]);
-	printf("prec is %d\n", x_p[1]);
-	if (x_p[1] > x_p[0] && x_p[0] > -5)
+	printf("exp int is %d\n", x_p[0]);
+	printf("prec int is %d\n", x_p[1]);
+	if ((x_p[1] > x_p[0] && x_p[0] > -5) || (x_p[0] == 0 && x_p[1] == 0))
 	{
-		printf("using f with prec %d\n", x_p[1] - (x_p[0] + 1));
-		var = ftoa((double)arg, x_p[1] - (x_p[0] + 1), h_c[0], h_c[1]);
-		if (var[0] != '-')
-			var = prefix_signed(var, list);
-		if (!h_c[0])
-			var = trim_zeros(var);
-		return (var);
+		printf("making f\n");
+		return (make_f(arg, x_p, h_c, list));
 	}
-	printf("using e with prec %d\n", x_p[1] - 1);
 	exp_str = get_exponent(&arg);
 	var = ftoa((double)arg, x_p[1] - 1, h_c[0], 0);
 	var = reformat_e(var, exp_str);
