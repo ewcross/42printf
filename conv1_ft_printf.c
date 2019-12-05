@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:47:51 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/05 17:08:32 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/05 18:54:35 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,20 @@ char	*c_convert(t_list *list, va_list arg_list)
 {
 	char	*var;
 
-	(void)list;
 	var = (char*)malloc(2);
 	if (!var)
 		return (NULL);
-	var[0] = va_arg(arg_list, int);
 	var[1] = 0;
+	if (list->l == 1 || list->l == 2)
+	{
+		list->wide_char_found = 1;
+		list->w_int = va_arg(arg_list, wint_t);
+		var[0] = 0;
+		if (list->w_int > 255)
+			return (NULL);
+		return (var);
+	}
+	var[0] = va_arg(arg_list, int);
 	return (var);
 }
 

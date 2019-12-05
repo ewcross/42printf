@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 16:05:07 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/05 17:06:28 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/05 18:56:22 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,14 @@ test ' flag with:
 int main(int argc, char **v)
 {
 	(void)argc;
-	(void)v;
-
-	wchar_t wint = 'h';
-
 	setlocale(LC_NUMERIC, "en_GB");
 
 	int a = 0;
-	wchar_t *s = L"hello";
-	/*while (a < 300)
-	{
-		printf("a = %d[%d]\n", a, printf("%lc", a));
-		a++;
-	}*/
+	wchar_t wch = atoi(v[1]);
 
-	ft_printf("%ls\n", s);
-	printf("%ls", s);
+	ft_printf(" --> %d\n", ft_printf("mine:...%d...%lc", 5,  wch,));
+	printf(" --> %d\n", printf("real:...%d...%lc", 5,  wch,));
 
+	(void)v;
 	return (0);
 }

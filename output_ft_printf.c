@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:59:55 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/04 19:04:44 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/05 18:54:25 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,12 @@ void		write_var(char *str, t_list *spec_list)
 	int i;
 
 	i = 0;
-	if (spec_list->type == 'c' && str[0] == 0)
+	if (spec_list->type == 'c' && spec_list->wide_char_found)
+	{
+		write(1, &(spec_list->w_int), 1);
+		g_char_count++;
+	}
+	else if (spec_list->type == 'c' && str[0] == 0)
 	{
 		write(1, "\0", 1);
 		g_char_count++;
@@ -90,6 +95,22 @@ const char	*write_plaintext(const char *ch_ptr)
 	return (ch_ptr);
 }
 
+int			wint_too_big(va_list arg_list, t_list *list)
+{
+	wint_t	w_int;
+	va_list list_copy;
+
+	if (list->l == 1 || list->l == 2)
+	{
+		va_copy(list_copy, arg_list);
+		w_int = va_arg(list_copy, wint_t);
+		va_end(list_copy);
+		if (w_int > 255)
+			return (1);
+	}
+	return (0);
+}
+
 int			write_output(const char *str, va_list arg_list, t_list *spec_list)
 {
 	const char	*ch_ptr;
@@ -99,6 +120,8 @@ int			write_output(const char *str, va_list arg_list, t_list *spec_list)
 	ch_ptr = str;
 	while (spec_list)
 	{
+		if (spec_list->type == 'c' && wint_too_big(arg_list, spec_list))
+			return (0);
 		while (ch_ptr < str + spec_list->start_pos)
 			ch_ptr = write_plaintext(ch_ptr);
 		if (spec_list->type == 0)

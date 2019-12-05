@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/05 16:27:34 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/05 18:52:54 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ typedef struct		s_struct
 	int				flag_vals[F_NUM];
 	char			flag_found[F_NUM];
 	char			new_flag_found[NEW_F_NUM];
+	char			wide_char_found;
+	wchar_t			w_int;
 	int				h;
 	int				l;
 	struct s_struct	*next;

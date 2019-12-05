@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:56:11 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/03 18:39:41 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/05 17:45:53 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	init_elem(t_list *elem, int *spec_pos)
 	elem->next = NULL;
 	elem->start_pos = spec_pos[START];
 	elem->end_pos = spec_pos[END];
+	elem->wide_char_found = 0;
 	elem->h = 0;
 	elem->l = 0;
 	i = 0;
