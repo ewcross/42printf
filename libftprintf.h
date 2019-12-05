@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/05 18:52:54 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/05 19:37:49 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ typedef struct		s_struct
 	char			flag_found[F_NUM];
 	char			new_flag_found[NEW_F_NUM];
 	char			wide_char_found;
-	wchar_t			w_int;
+	wint_t			w_int;
+	char			wide_str_found;
+	wchar_t			*w_str;
 	int				h;
 	int				l;
 	struct s_struct	*next;
@@ -70,7 +72,8 @@ int					g_inf_checker(double arg, char **var_addr);
 char				*trim_zeros(char *str);
 int					dots(char *str);
 char				*make_f(double arg, int *x_p, char *h_c, t_list *list);
-char				*copy(char *str);
+void				wide_str_handling(va_list arg_list, t_list *list);
+int					wint_too_big(va_list arg_list, t_list *list);
 int					ft_strlen(char *str);
 char				*num_precision(char *str, int prec, int len);
 char				*add_prefix(char *str, char x);
