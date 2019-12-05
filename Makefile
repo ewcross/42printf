@@ -6,7 +6,7 @@
 #    By: ecross <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/07 15:11:23 by ecross            #+#    #+#              #
-#    Updated: 2019/12/04 19:17:25 by ecross           ###   ########.fr        #
+#    Updated: 2019/12/05 15:55:44 by ecross           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ ${NAME}:	${OBJS}
 
 all:		${NAME}
 
-bonus:		fclean all
+bonus:		all
 
 clean:
 	${RM} ${OBJS}

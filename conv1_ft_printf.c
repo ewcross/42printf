@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:47:51 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/04 18:58:29 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/05 17:08:32 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*c_convert(t_list *list, va_list arg_list)
 {
-	char *var;
+	char	*var;
 
 	(void)list;
 	var = (char*)malloc(2);
@@ -38,7 +38,7 @@ char	*s_convert(t_list *list, va_list arg_list)
 	var = va_arg(arg_list, char *);
 	var = copy(var);
 	if (!var)
-		var = ft_strdup("(null)");
+		var = ft_strdup(null);
 	if (list->flag_found[prec_pos])
 		var = str_precision(var, list->flag_vals[prec_pos]);
 	return (var);

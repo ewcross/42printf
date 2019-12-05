@@ -1,0 +1,16 @@
+to do:
+
+		- add resizing function to c and s converters
+		- c gets wint_t
+		- s gets wchar_t
+		- could make both return wchar_t but then need to change all processing
+		  funcitons to handle that
+		- test what happens with write function - should maybe work with char
+		  but should only write first char of a wchar_t string
+		- change function which writes var string to write correct
+		  number of bytes (sizeof(wchar_t)) or sizeof(wint_t)
+		- return value is always +1 for any char
+		- for char - if value is more than 255, return -1;
+		- this value is returned instead of writing the block, e.g:
+				- "hello...%d---%lc...there", 5, 256
+				  gives "hello...5" and -1 return (only prints %d block)
