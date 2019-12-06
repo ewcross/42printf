@@ -6,11 +6,60 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 17:28:49 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/04 18:34:12 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/06 11:36:16 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+
+wchar_t	*ft_strdup_wide(wchar_t *src)
+{
+	int		i;
+	wchar_t	*new_str;
+
+	if (!src)
+		return (NULL);
+	i = 0;
+	while (src[i])
+		i++;
+	new_str = (wchar_t*)malloc(sizeof(wchar_t) * (i + 1));
+	if (!new_str)
+		return (NULL);
+	i = 0;
+	while (src[i])
+	{
+		new_str[i] = src[i];
+		i++;
+	}
+	new_str[i] = 0;
+	return (new_str);
+}
+
+wchar_t	*str_prec_wide(wchar_t *str, int prec)
+{
+	int		i;
+	wchar_t	*new;
+
+	i = 0;
+	while (str[i])
+		i++;
+	if (prec > -1 && prec < i)
+	{
+		if (!(new = (wchar_t*)malloc(sizeof(wchar_t) * (prec + 1))))
+			return (NULL);
+		new[prec] = 0;
+		i = 0;
+		while (i < prec)
+		{
+			new[i] = str[i];
+			i++;
+		}
+		free(str);
+		return (new);
+	}
+	else
+		return (str);
+}
 
 int		float_specials(double arg, char **var_addr)
 {

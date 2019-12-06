@@ -1,11 +1,7 @@
 to do:
 
-		- need to write ft_strdup_wide and str_prec_wide functions
 		- also remember to free list->w_str in same way as a normal
 		  string after writing it
-		- s gets wchar_t string if l present and points wchar pointer
-		  in list to new string
-		- test if some chars in string are too big
 		- test what happens with write function - should maybe work with char
 		  but should only write first char of a wchar_t string
 		- change function which writes var string to write one wint_t if

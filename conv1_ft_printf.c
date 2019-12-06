@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:47:51 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/05 19:42:28 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/06 11:39:09 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*s_convert(t_list *list, va_list arg_list)
 	{
 		list->wide_str_found = 1;
 		var = ft_strdup("h");
-		wide_str_handling(arg_list, list)
+		wide_str_handling(arg_list, list, prec_pos);
 	}
 	else
 	{

@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:59:55 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/05 19:42:11 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/06 11:25:01 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void		write_var(char *str, t_list *spec_list)
 		write(1, "\0", 1);
 		g_char_count++;
 	}
+	else if (spec_list->type == 's' && spec_list->wide_str_found)
+		put_wstr(spec_list->w_str);
 	else
 	{
 		while (str[i])
@@ -82,6 +84,8 @@ int			write_spec(va_list arg_list, t_list *spec_list,
 	}
 	if (spec_list->type != 'n')
 		write_padded(var, spec_list);
+	if (spec_list->type == 's' && spec_list->wide_str_found)
+		free(spec_list->w_str);
 	free(var);
 	return (1);
 }
@@ -105,6 +109,8 @@ int			write_output(const char *str, va_list arg_list, t_list *spec_list)
 	while (spec_list)
 	{
 		if (spec_list->type == 'c' && wint_too_big(arg_list, spec_list))
+			return (0);
+		if (spec_list->type == 's' && wstr_too_big(arg_list, spec_list))
 			return (0);
 		while (ch_ptr < str + spec_list->start_pos)
 			ch_ptr = write_plaintext(ch_ptr);

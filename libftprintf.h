@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/05 19:37:49 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/06 11:28:21 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,11 @@ int					g_inf_checker(double arg, char **var_addr);
 char				*trim_zeros(char *str);
 int					dots(char *str);
 char				*make_f(double arg, int *x_p, char *h_c, t_list *list);
-void				wide_str_handling(va_list arg_list, t_list *list);
+wchar_t				*str_prec_wide(wchar_t *str, int prec);
+wchar_t				*ft_strdup_wide(wchar_t *src);
+void				put_wstr(wchar_t *w_str);
+void				wide_str_handling(va_list arg_list, t_list *list, int prec);
+int					wstr_too_big(va_list arg_list, t_list *list);
 int					wint_too_big(va_list arg_list, t_list *list);
 int					ft_strlen(char *str);
 char				*num_precision(char *str, int prec, int len);

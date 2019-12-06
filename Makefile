@@ -6,7 +6,7 @@
 #    By: ecross <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/07 15:11:23 by ecross            #+#    #+#              #
-#    Updated: 2019/12/05 18:59:09 by ecross           ###   ########.fr        #
+#    Updated: 2019/12/06 11:29:38 by ecross           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRCS = 	ft_printf.c \
 		float_ft_printf_bonus.c \
 		exponent_ft_printf_bonus.c \
 		g_flag_ft_printf_bonus.c \
+		wide_processing_ft_printf_bonus.c \
 		conv1_ft_printf.c \
 		conv2_ft_printf.c \
 		conv3_ft_printf_bonus.c \
