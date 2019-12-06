@@ -6,13 +6,13 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 11:28:47 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/06 11:40:21 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/06 15:34:39 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void		put_wstr(wchar_t *w_str)
+void	put_wstr(wchar_t *w_str)
 {
 	int i;
 

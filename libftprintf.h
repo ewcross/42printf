@@ -6,7 +6,7 @@
 /*   By: ecross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:27:16 by ecross            #+#    #+#             */
-/*   Updated: 2019/12/06 11:28:21 by ecross           ###   ########.fr       */
+/*   Updated: 2019/12/06 12:20:57 by ecross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdarg.h>
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <math.h>
 # include <wchar.h>
