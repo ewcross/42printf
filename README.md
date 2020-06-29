@@ -22,4 +22,5 @@ This library can then be linked with other projects, provided the ```libftprintf
 
 ## Resources
 
-* [*Computer Graphics From Scratch* by Gabriel Gambetta](https://www.gabrielgambetta.com/computer-graphics-from-scratch/introduction.html)
+* [*Format specification syntax: printf and wprintf functions* by Microsoft](https://docs.microsoft.com/en-us/cpp/c-runtime-library/format-specification-syntax-printf-and-wprintf-functions?view=vs-2019)
+* [*Secrets of “printf”* by Prof. Don Colton](https://www.cypress.com/file/54441/download)
