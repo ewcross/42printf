@@ -2,19 +2,16 @@
 
 A re-coding of the C library function printf.
 
-This project re-creating printf from scratch in C, with 
+This project involved creating a library in C, which mimicked a large portion of the funcitonality of the original printf C lib function. 
 
 ## Details
 
-The ft_printf function includes 
+The ft_printf library includes 
 
-## Compilation
+## Compilation and Usage
 
-A Makefile is included, and to compile simply use ```make```.
-
-## Usage
-
-Usage.
+A Makefile is included, simply use ```make``` to compile the ```.c``` files and link into the library ```libftprintf.a```.
+This library can then be linked with other projects, and the ```libftprintf.h``` header file included.
 
 ## Resources
 
