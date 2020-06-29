@@ -1,12 +1,12 @@
-# printf
+# ft_printf
 
-A ray-tracer, written in c.
+A re-coding of the C library function printf.
 
-General description.
+This project re-creating printf from scratch in C, with 
 
 ## Details
 
-Hello.
+The ft_printf function includes 
 
 ## Compilation
 
